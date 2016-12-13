@@ -18,12 +18,14 @@
   <script src="js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
-
+<div class="clearfix-wrapper">
 <header class="header">
   <div class="logo-container">
     <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
+    <!-- TODO srcset; svg by ress -->
   </div>
 
+  <!--
   <ul class="links-container">
     <li>
       <a href="#leistungen"></a>
@@ -40,9 +42,8 @@
     <li>
       <a href="#leistungen"></a>
     </li>
-
-
   </ul>
+  -->
 </header>
 
 <section class="gallery">
@@ -52,23 +53,43 @@
 
 <footer class="footer">
   <address class="vcard">
-    <h1 itemprop="name">Martina Klein</h1>
-    <h2 itemprop="jobTitle">Stylistin und Modeberaterin</h2>
-    <a class="email" itemprop="email" href="mailto:modeberatung@web.de">modeberatung@web.de</a>
-    <a class="telephone" itemprop="telephone" href="tel:+491616823820">0161/6823820</a>
+    <div>
+      <h1 itemprop="name">Martina Klein</h1>
+      <h2 itemprop="jobTitle">Stylistin und Modeberaterin</h2>
+    </div>
+
+    <div>
+      <a class="email" itemprop="email" href="mailto:modeberatung@web.de">modeberatung@web.de</a>
+      <a class="telephone" itemprop="telephone" href="tel:+491616823820">0161/6823820</a>
+
+      <!-- Instagram Badge -->
+      <!--
+      <a href="https://www.instagram.com/kleider.ordnung/?ref=badge" class="ig-b- ig-b-48">
+        <img src="http://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram" />
+      </a>
+      -->
+
+    </div>
+
   </address>
 </footer>
 
-
+</div>
 <script type="text/javascript" src="js/instafeed.min.js"></script>
-<!--<script type="text/javascript">
-  var feed = new Instafeed({
+<script type="text/javascript">
+  var userFeed = new Instafeed({
     get: 'user',
     userId: '4261608683',
-    accessToken: '',
-    template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+    todoReplaceExampleValues:'',
+    clientId: '02b47e1b98ce4f04adc271ffbd26611d',
+    accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
+    resolution: 'standard_resolution',
+    template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
+    sortBy: 'most-recent',
+    limit: 9,
+    links: false
   });
-  feed.run();
-</script>-->
+  // userFeed.run();
+</script>
 </body>
 </html>

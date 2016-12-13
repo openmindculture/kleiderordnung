@@ -13,6 +13,7 @@ html,body {
   min-height:100%;
   margin:0;
   padding:0;
+  padding-bottom:6em;
 }
 
 .header,.footer {
@@ -20,7 +21,7 @@ html,body {
   width: 100%;
 }
 
-.logo-container,.footer .vcard {
+.logo-container {
   border-bottom: solid 2px #fc2e3b;
   width:500px;
   max-width:100%;
@@ -71,23 +72,43 @@ ul.links-container li:nth-child(even) a{
   position: fixed;
   width: 100%;
   bottom: 0;
+  height:6em;
 }
 .footer .vcard {
-  margin: 5% auto 5% auto;
+  margin: 1em auto 0 auto;
   padding: 0 0 2.5% 0;
+}
+.footer .vcard h1, .footer .vcard h2, .footer .vcard a {
+  display: inline;
+  margin: 0 0.5em 0 0.5em;
 }
 .footer .vcard h1 {
   font-family: 'Great Vibes', Helvetica, sans-serif;
-  font-size:3em;
+  font-size:2.2em;
+  font-weight:normal;
+}
+.footer .vcard h2 {
   font-weight:normal;
 }
 .footer .vcard a {
-  display:block;
   font-size:1.5em;
 }
 .footer a, footer a:link, footer a:visited, footer a:hover, footer a:active{
   color:#fff;
   text-decoration:none;
+}
+#instafeed {
+  text-align:center;
+}
+#instafeed img {
+  max-width: 32%;
+  margin-bottom: 0.25em;
+}
+#instafeed a {
+  margin-right:1%;
+}
+#instafeed a:nth-child(3n){
+  margin-right:0;
 }
 
 .rot {
@@ -96,4 +117,26 @@ ul.links-container li:nth-child(even) a{
 
 .blau {
   color: #283583
+}
+
+@media screen and (max-width:420px) {
+  .footer {
+    height: 9em;
+  }
+  .clearfix-wrapper {
+    padding-bottom: 9em;
+  }
+  .footer .vcard h1, .footer .vcard h2 {
+    display: block;
+  }
+  ul.links-container li {
+    width: 18%;
+  }
+}
+
+@media screen and (max-width:350px) {
+  ul.links-container li a {
+    width: 50px;
+    height: 50px;
+  }
 }
