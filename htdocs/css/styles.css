@@ -1,0 +1,99 @@
+* {
+  font-style:normal;
+  text-decoration:none;
+  margin:0;
+  padding:0;
+}
+html,body {
+  margin:0;
+  padding:0;
+}
+
+.clearfix-wrapper{
+  min-height:100%;
+  margin:0;
+  padding:0;
+}
+
+.header,.footer {
+  text-align: center;
+  width: 100%;
+}
+
+.logo-container,.footer .vcard {
+  border-bottom: solid 2px #fc2e3b;
+  width:500px;
+  max-width:100%;
+  overflow:hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+ul.links-container {
+ list-style: none;
+ padding:0;
+  margin:1em 0 0 0;
+}
+
+ul.links-container li {
+  margin:0 0 0;
+  width: 100px;
+  height: 100px;
+  list-style: none;
+  display: inline-block;
+}
+
+ul.links-container li a {
+  background-color: #fc2e3b;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+}
+
+ul.links-container li:nth-child(even) a{
+  background-color:#283583;
+}
+
+.footer {
+  background-color:#283583;
+  color:#fff;
+  text-decoration:none;
+  padding:0;
+  margin:0;
+  text-align:center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.footer .vcard {
+  margin: 5% auto 5% auto;
+  padding: 0 0 2.5% 0;
+}
+.footer .vcard h1 {
+  font-family: 'Great Vibes', Helvetica, sans-serif;
+  font-size:3em;
+  font-weight:normal;
+}
+.footer .vcard a {
+  display:block;
+  font-size:1.5em;
+}
+.footer a, footer a:link, footer a:visited, footer a:hover, footer a:active{
+  color:#fff;
+  text-decoration:none;
+}
+
+.rot {
+  color: #fc2e3b
+}
+
+.blau {
+  color: #283583
+}
