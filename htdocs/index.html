@@ -22,28 +22,52 @@
 <header class="header">
   <div class="logo-container">
     <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
-    <!-- TODO srcset; svg by ress -->
+    <!-- TODO srcset; svg by ress
+
+    Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
+    Die weiteren Punkte als Bereiche eines One-Pagers.
+    -->
   </div>
 
  <ul class="links-container">
-    <li>
-      <a href="#leistungen"></a>
+    <li><!-- Kleid weiss auf rot -->
+      <a href="#leistungen" onClick="helper.showTab('tab-a')"></a>
     </li>
-    <li>
-      <a href="#leistungen"></a>
+    <li><!-- Krawatte weiss auf blau -->
+      <a href="#b" onClick="helper.showTab('tab-b')"></a>
     </li>
-    <li>
-      <a href="#leistungen"></a>
+    <li><!-- Kleiderbügel weiss auf rot -->
+      <a href="#c" onClick="helper.showTab('tab-c')"></a>
     </li>
-    <li>
-      <a href="#leistungen"></a>
+    <li><!-- Jackett (oder Hose oder Hemd) blau -->
+      <a href="#d" onClick="helper.showTab('tab-d')"></a>
     </li>
-    <li>
-      <a href="#leistungen"></a>
+    <li><!-- Pumps weiss auf rot -->
+      <a href="#e" onClick="helper.showTab('tab-e')"></a>
     </li>
   </ul>
 
 </header>
+
+  <section class="tabs">
+    <div id="tab-a">
+      <img src="img/Martinapuppchen2.png" style="float:left; height:300px;"/>
+      <h2>Über mich</h2>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
+    </div>
+
+    <div id="tab-b" class="hidden">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
+    </div>
+    <div id="tab-c" class="hidden">
+
+    </div>
+    <div id="tab-d" class="hidden">
+
+    </div>
+    <div id="tab-e" class="hidden">
+
+    </div></section>
 
 <section class="gallery">
   <!-- Instagram-Bilder nachladen -->

@@ -31,3 +31,15 @@ alias: kleiderordnung-@stilberatung-duesseldorf.de
 Instagram: @kleider.ordnung
 
 modeberatung@web.de
+
+Sacramento (Schreibschrift)
+Kozuka mincho pr6N ("ORDNUNG")
+Georgia, (Webfont), Serif (nicht Cambria) (Fließtext)
+
+
+Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
+Die weiteren Punkte als Bereiche eines One-Pagers.
+Footer nicht fixed, sondern am Ende, erreichbar über Navi.
+Footer mit runden Logos für Facebook und Instagram weiß in roten Kreisen.
+
+Fotos in runden Kreisen. Externes Insta auch.

@@ -111,12 +111,25 @@ ul.links-container li:nth-child(even) a{
   margin-right:0;
 }
 
+/* vars */
 .rot {
   color: #fc2e3b
 }
 
 .blau {
   color: #283583
+}
+/* vars end*/
+
+/*
+Fotos in runden Kreisen. Externes Insta auch.
+
+Georgia, Webfont), Serif
+(nicht Cambria)
+*/
+
+.hidden {
+  display: none;
 }
 
 @media screen and (max-width:420px) {

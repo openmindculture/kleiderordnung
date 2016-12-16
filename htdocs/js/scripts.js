@@ -118,4 +118,15 @@ helper.event = {
       });
     }
   }
+
 };
+
+//* todo schöner schreiben */
+helper.showTab = function(idtoshow) {
+  helper.class.add(document.getElementById('a'),'hidden'); console.log("hidden a");
+  helper.class.add(document.getElementById('b'),'hidden'); console.log("hidden b");
+  helper.class.add(document.getElementById('c'),'hidden');
+  helper.class.add(document.getElementById('d'),'hidden');
+  helper.class.add(document.getElementById('e'),'hidden'); console.log("showing " + idtoshow);
+  helper.class.remove(idtoshow,'hidden');
+}
