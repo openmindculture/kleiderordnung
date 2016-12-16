@@ -1,5 +1,14 @@
 * {
   font-style:normal;
+  font-family: Georgia, Serif;
+  /* add webfont alternative
+
+  Schriftarten:
+
+  Sacramento (Schreibschrift)
+  Kozuka mincho pr6N ("ORDNUNG")
+  Georgia, (Webfont), Serif (nicht Cambria) (Fließtext)
+  */
   text-decoration:none;
   margin:0;
   padding:0;
