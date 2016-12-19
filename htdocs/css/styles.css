@@ -44,7 +44,10 @@ html,body {
   max-width: 100%;
   text-align: center;
 }
-
+.content-wrapper {
+	width: 100%;
+	text-align: center;
+}
 ul.links-container {
  list-style: none;
  padding:0;
@@ -61,6 +64,9 @@ ul.links-container li {
 
 ul.links-container li a {
   background-color: #fc2e3b;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 66% 66%;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -69,6 +75,22 @@ ul.links-container li a {
 
 ul.links-container li:nth-child(even) a{
   background-color:#283583;
+}
+
+.link-ueber {
+	background-image: url(../img/icon-business-woman.svg);
+}
+.link-b {
+	background-image:url(../img/icon-tie.svg);
+}
+.link-leistungen{
+	background-image:url(../img/icon-clothing-hanger.svg);
+}
+.link-d{
+	background-image:url(../img/icon-tie.svg);
+}
+.link-kontakt{
+	background-image:url(../img/icon-envelope.svg);
 }
 
 .footer {

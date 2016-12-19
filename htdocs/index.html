@@ -28,29 +28,30 @@
     Die weiteren Punkte als Bereiche eines One-Pagers.
     -->
   </div>
-
+  
+</header>
+<div class="content-wrapper">
  <ul class="links-container">
     <li><!-- Kleid weiss auf rot -->
-      <a href="#leistungen" onClick="helper.showTab('tab-a')"></a>
+      <a class="link-ueber" href="#ueber-mich" onClick="helper.showTab('ueber-mich')"></a>
     </li>
     <li><!-- Krawatte weiss auf blau -->
-      <a href="#b" onClick="helper.showTab('tab-b')"></a>
+      <a class="link-b" href="#tab-b" onClick="helper.showTab('tab-b')"></a>
     </li>
     <li><!-- Kleiderbügel weiss auf rot -->
-      <a href="#c" onClick="helper.showTab('tab-c')"></a>
+      <a class="link-leistungen" href="#leistungen" onClick="helper.showTab('leistungen')"></a>
     </li>
     <li><!-- Jackett (oder Hose oder Hemd) blau -->
-      <a href="#d" onClick="helper.showTab('tab-d')"></a>
+      <a class="link-d" href="#tab-d" onClick="helper.showTab('tab-d')"></a>
     </li>
     <li><!-- Pumps weiss auf rot -->
-      <a href="#e" onClick="helper.showTab('tab-e')"></a>
+      <a class="link-kontakt" href="#kontakt" onClick="helper.showTab('kontakt')"></a>
     </li>
   </ul>
-
-</header>
+</div>
 
   <section class="tabs">
-    <div id="tab-a">
+    <div id="ueber-mich">
       <img src="img/Martinapuppchen2.png" style="float:left; height:300px;"/>
       <h2>Über mich</h2>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
@@ -59,14 +60,29 @@
     <div id="tab-b" class="hidden">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
     </div>
-    <div id="tab-c" class="hidden">
-
+    <div id="leistungen" class="hidden">
+		Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.
     </div>
     <div id="tab-d" class="hidden">
 
     </div>
-    <div id="tab-e" class="hidden">
+    <div id="kontakt" class="hidden">
+		Kontakt zur Stylistin und Modeberaterin Martina Klein
+		<form action="kontakt.php" method="POST">
+			<label for="name">Name</label>
+			<input type="text" name="name" placeholer="Name" />
+         
+         <label for="email">E-Mail</label>
+			<input type="email" name="email" placeholder="E-Mail"/>
 
+			<label for="nachricht">Nachricht</label>
+			<textarea name="nachricht" placeholder="Nachricht"></textarea>      
+         
+			<input type="submit" value="absenden"/>
+			<!-- spam protection helpers -->
+			<input type="readonly" class="hidden visuallyhidden" name="antispam" value="" />			
+			<input type="hidden" name="csrftoken" value=""/>
+		</form>
     </div></section>
 
 <section class="gallery">
