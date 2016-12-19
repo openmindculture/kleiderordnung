@@ -49,9 +49,11 @@ html,body {
 	text-align: center;
 }
 ul.links-container {
- list-style: none;
- padding:0;
-  margin:1em 0 0 0;
+	height: 66px;
+ 	list-style: none;
+ 	margin: 1em 0 0 0;
+ 	overflow: visible;
+	padding:0;
 }
 
 ul.links-container li {
@@ -64,13 +66,18 @@ ul.links-container li {
 
 ul.links-container li a {
   background-color: #fc2e3b;
-  background-position: 50% 50%;
+  background-position: .5em .5em;
   background-repeat: no-repeat;
-  background-size: 66% 66%;
+  background-size: 40px 40px;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   display: inline-block;
+}
+ul.links-container li a.active{
+	border-radius: 50% 50% 0 0;
+	margin: 0 0 -1em 0;
+	padding: 0 0 1em 0;
 }
 
 ul.links-container li:nth-child(even) a{
@@ -91,6 +98,18 @@ ul.links-container li:nth-child(even) a{
 }
 .link-kontakt{
 	background-image:url(../img/icon-envelope.svg);
+}
+.tabs > div {
+	padding: 1em;
+	width: 500px;
+	margin: 0 auto;
+}
+.tab-red {
+  background-color: #fc2e3b
+}
+
+.tab-blue {
+  background-color: #283583
 }
 
 .footer {

@@ -121,12 +121,20 @@ helper.event = {
 
 };
 
-//* todo schöner schreiben */
-helper.showTab = function(idtoshow) {
-  helper.class.add(document.getElementById('a'),'hidden'); console.log("hidden a");
-  helper.class.add(document.getElementById('b'),'hidden'); console.log("hidden b");
-  helper.class.add(document.getElementById('c'),'hidden');
-  helper.class.add(document.getElementById('d'),'hidden');
-  helper.class.add(document.getElementById('e'),'hidden'); console.log("showing " + idtoshow);
-  helper.class.remove(idtoshow,'hidden');
+//* todo schöner, abstrakter schreiben und Links von IDs befreien */
+helper.showTab = function(idtoshow,callerelement) {
+  helper.class.remove(document.getElementById('link-ueber'),'active');
+  helper.class.remove(document.getElementById('link-b'),'active');
+  helper.class.remove(document.getElementById('link-leistungen'),'active');
+  helper.class.remove(document.getElementById('link-d'),'active');
+  helper.class.remove(document.getElementById('link-kontakt'),'active');	
+	
+  helper.class.add(document.getElementById('ueber-mich'),'hidden');
+  helper.class.add(document.getElementById('tab-b'),'hidden');
+  helper.class.add(document.getElementById('leistungen'),'hidden');
+  helper.class.add(document.getElementById('tab-d'),'hidden');
+  helper.class.add(document.getElementById('kontakt'),'hidden');
+  
+  helper.class.remove(document.getElementById(idtoshow),'hidden');
+  helper.class.add(callerelement,'active');
 }

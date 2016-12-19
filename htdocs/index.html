@@ -33,40 +33,40 @@
 <div class="content-wrapper">
  <ul class="links-container">
     <li><!-- Kleid weiss auf rot -->
-      <a class="link-ueber" href="#ueber-mich" onClick="helper.showTab('ueber-mich')"></a>
+      <a id="link-ueber" class="link-ueber" href="#ueber-mich" onClick="helper.showTab('ueber-mich',this)"></a>
     </li>
     <li><!-- Krawatte weiss auf blau -->
-      <a class="link-b" href="#tab-b" onClick="helper.showTab('tab-b')"></a>
+      <a id="link-b" class="link-b" href="#tab-b" onClick="helper.showTab('tab-b',this)"></a>
     </li>
     <li><!-- Kleiderbügel weiss auf rot -->
-      <a class="link-leistungen" href="#leistungen" onClick="helper.showTab('leistungen')"></a>
+      <a id="link-leistungen" class="link-leistungen active" href="#leistungen" onClick="helper.showTab('leistungen',this)"></a>
     </li>
     <li><!-- Jackett (oder Hose oder Hemd) blau -->
-      <a class="link-d" href="#tab-d" onClick="helper.showTab('tab-d')"></a>
+      <a id="link-d" class="link-d" href="#tab-d" onClick="helper.showTab('tab-d',this)"></a>
     </li>
     <li><!-- Pumps weiss auf rot -->
-      <a class="link-kontakt" href="#kontakt" onClick="helper.showTab('kontakt')"></a>
+      <a id="link-kontakt" class="link-kontakt" href="#kontakt" onClick="helper.showTab('kontakt',this)"></a>
     </li>
   </ul>
 </div>
 
   <section class="tabs">
-    <div id="ueber-mich">
+    <div id="ueber-mich" class="hidden tab-red">
       <img src="img/Martinapuppchen2.png" style="float:left; height:300px;"/>
       <h2>Über mich</h2>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
     </div>
 
-    <div id="tab-b" class="hidden">
+    <div id="tab-b" class="hidden tab-blue">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
     </div>
-    <div id="leistungen" class="hidden">
+    <div id="leistungen" class="tab-red">
 		Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.
     </div>
-    <div id="tab-d" class="hidden">
-
+    <div id="tab-d" class="hidden tab-blue">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis.
     </div>
-    <div id="kontakt" class="hidden">
+    <div id="kontakt" class="hidden tab-red">
 		Kontakt zur Stylistin und Modeberaterin Martina Klein
 		<form action="kontakt.php" method="POST">
 			<label for="name">Name</label>
