@@ -49,7 +49,7 @@ html,body {
 	width: 100%;
 	text-align: center;
 }
-ul.links-container {
+ul.tablist {
 	height: 66px;
  	list-style: none;
  	margin: 1em 0 0 0;
@@ -57,15 +57,12 @@ ul.links-container {
 	padding:0;
 }
 
-ul.links-container li {
-  margin:0 0 0;
-  width: 100px;
-  height: 100px;
+ul.tablist li {
   list-style: none;
   display: inline-block;
 }
 
-ul.links-container li a {
+ul.tablist li  {
   background-color: #fc2e3b;
   background-position: .5em .5em;
   background-repeat: no-repeat;
@@ -74,15 +71,23 @@ ul.links-container li a {
   width: 60px;
   height: 60px;
   display: inline-block;
+  margin: 0 20px 0 20px;
+  padding: 0;
 }
-ul.links-container li a.active{
+ul.tablist li.active{
 	border-radius: 50% 50% 0 0;
-	margin: 0 0 -1em 0;
+	margin-bottom: -1em;
 	padding: 0 0 1em 0;
 }
 
-ul.links-container li:nth-child(even) a{
+ul.tablist li:nth-child(even) {
   background-color:#283583;
+}
+ul.tablist a {
+	display:block;
+	width:100%;
+	height:100%;
+	margin:0;
 }
 
 .link-ueber {
@@ -105,13 +110,26 @@ ul.links-container li:nth-child(even) a{
 	width: 500px;
 	margin: 0 auto;
 	border-radius: .5em;
+	overflow: hidden;
+}
+.tabs > div article {
+	display:block;
+	padding:0;
+	margin-left: 0;
+	margin-right: 0;s
+	position: relative;
+	transition: all .5s ease;
+}
+.tabs > div.fadetext article {
+	margin-left: -500px;
+	margin-right: 500px;
 }
 .tab-red {
-  background-color: #fc2e3b
+  background-color: #fc2e3b;
 }
 
 .tab-blue {
-  background-color: #283583
+  background-color: #283583;
 }
 
 .footer {

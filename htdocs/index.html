@@ -31,43 +31,44 @@
   
 </header>
 <div class="content-wrapper">
- <ul class="links-container">
-    <li><!-- Kleid weiss auf rot -->
-      <a id="link-ueber" class="link-ueber" href="#ueber-mich" onClick="helper.showTab('ueber-mich',this)"></a>
+ <ul class="tablist" id="tablist">
+    <li class="link-ueber"><!-- Kleid weiss auf rot -->
+      <a id="link-ueber" href="#ueber-mich" onClick="helper.showTab('ueber-mich',this)"></a>
     </li>
-    <li><!-- Krawatte weiss auf blau -->
-      <a id="link-b" class="link-b" href="#tab-b" onClick="helper.showTab('tab-b',this)"></a>
+    <li class="link-b"><!-- Krawatte weiss auf blau -->
+      <a id="link-b" href="#tab-b" onClick="helper.showTab('tab-b',this)"></a>
     </li>
-    <li><!-- Kleiderbügel weiss auf rot -->
-      <a id="link-leistungen" class="link-leistungen active" href="#leistungen" onClick="helper.showTab('leistungen',this)"></a>
+    <li class="link-leistungen active" ><!-- Kleiderbügel weiss auf rot -->
+      <a id="link-leistungen" href="#leistungen" onClick="helper.showTab('leistungen',this)"></a>
     </li>
-    <li><!-- Jackett (oder Hose oder Hemd) blau -->
-      <a id="link-d" class="link-d" href="#tab-d" onClick="helper.showTab('tab-d',this)"></a>
+    <li class="link-d" ><!-- Jackett (oder Hose oder Hemd) blau -->
+      <a id="link-d" href="#tab-d" onClick="helper.showTab('tab-d',this)"></a>
     </li>
-    <li><!-- Pumps weiss auf rot -->
-      <a id="link-kontakt" class="link-kontakt" href="#kontakt" onClick="helper.showTab('kontakt',this)"></a>
+    <li class="link-kontakt"><!-- Pumps weiss auf rot -->
+      <a id="link-kontakt" href="#kontakt" onClick="helper.showTab('kontakt',this)"></a>
     </li>
   </ul>
 </div>
 
-  <section class="tabs">
+  <section class="tabs" id="tabcontainer">
     <div id="ueber-mich" class="hidden tab-red">
-      <img src="img/Martinapuppchen2.png" style="float:left; height:300px;"/>
+      <article>
       <h2>Über mich</h2>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
+    </article>
     </div>
 
     <div id="tab-b" class="hidden tab-blue">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
+ <article>     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.</article>
     </div>
-    <div id="leistungen" class="tab-red">
-		Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.
+    <div id="leistungen" class="tab-red"><article>
+		Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.</article>
     </div>
-    <div id="tab-d" class="hidden tab-blue">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis.
+    <div id="tab-d" class="hidden tab-blue"><article>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis.</article>
     </div>
     <div id="kontakt" class="hidden tab-red">
-		Kontakt zur Stylistin und Modeberaterin Martina Klein
+<article>		<h2>Kontakt zur Stylistin und Modeberaterin Martina Klein</h2>
 		<form action="kontakt.php" method="POST">
 			<label for="name">Name</label>
 			<input type="text" name="name" placeholer="Name" />
@@ -82,7 +83,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci ali
 			<!-- spam protection helpers -->
 			<input type="readonly" class="hidden visuallyhidden" name="antispam" value="" />			
 			<input type="hidden" name="csrftoken" value=""/>
-		</form>
+		</form></article>
     </div></section>
 
 <section class="gallery">

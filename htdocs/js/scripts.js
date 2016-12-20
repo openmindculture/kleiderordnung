@@ -80,6 +80,7 @@ helper.class = {
   }
 };
 
+
 helper.event = {
   addListener: function (element, event, handler) {
     if (!element) {
@@ -123,18 +124,22 @@ helper.event = {
 
 //* todo schöner, abstrakter schreiben und Links von IDs befreien */
 helper.showTab = function(idtoshow,callerelement) {
-  helper.class.remove(document.getElementById('link-ueber'),'active');
-  helper.class.remove(document.getElementById('link-b'),'active');
-  helper.class.remove(document.getElementById('link-leistungen'),'active');
-  helper.class.remove(document.getElementById('link-d'),'active');
-  helper.class.remove(document.getElementById('link-kontakt'),'active');	
+	var i=0, lis = document.getElementById('tablist').childNodes;
+	for (i=0; i<lis.length; i++) {
+		if (lis[i].nodeType===1) {
+			helper.class.remove(lis[i],'active');
+		}
+	}
 	
-  helper.class.add(document.getElementById('ueber-mich'),'hidden');
-  helper.class.add(document.getElementById('tab-b'),'hidden');
-  helper.class.add(document.getElementById('leistungen'),'hidden');
-  helper.class.add(document.getElementById('tab-d'),'hidden');
-  helper.class.add(document.getElementById('kontakt'),'hidden');
-  
-  helper.class.remove(document.getElementById(idtoshow),'hidden');
-  helper.class.add(callerelement,'active');
+	var tabs = document.getElementById('tabcontainer').childNodes;
+	for (i=0; i<tabs.length; i++) {
+		if(tabs[i].nodeType===1){
+			helper.class.add(tabs[i],'hidden');
+			helper.class.add(tabs[i],'fadetext');
+		}	
+	}
+  var eltoshow = document.getElementById(idtoshow)
+  helper.class.remove(eltoshow,'hidden');
+  window.setTimeout(function(){helper.class.remove(eltoshow,'fadetext')},5);
+  helper.class.add(callerelement.parentElement,'active');
 }
