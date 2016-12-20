@@ -74,6 +74,12 @@ ul.tablist li  {
   margin: 0 20px 0 20px;
   padding: 0;
 }
+ul.tablist li:first-child {
+	margin-left: 0;
+}
+ul.tablist li:last-child {
+	margin-right: 0;
+}
 ul.tablist li.active{
 	border-radius: 50% 50% 0 0;
 	margin-bottom: -1em;
@@ -108,6 +114,7 @@ ul.tablist a {
 .tabs > div {
 	padding: 1em;
 	width: 500px;
+	max-width: 88%;
 	margin: 0 auto;
 	border-radius: .5em;
 	overflow: hidden;
@@ -202,7 +209,7 @@ Georgia, Webfont), Serif
   display: none;
 }
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:520px) {
   .footer {
     height: 9em;
   }
@@ -212,14 +219,26 @@ Georgia, Webfont), Serif
   .footer .vcard h1, .footer .vcard h2 {
     display: block;
   }
-  ul.links-container li {
-    width: 18%;
+  ul.tablist li {
+    margin: 0 10px 0 10px;
+  }
+  ul.tablist li:first-child {
+	 margin-left: 0;
+  }
+  ul.tablist li:last-child {
+	margin-right: 0;
   }
 }
 
-@media screen and (max-width:350px) {
-  ul.links-container li a {
-    width: 50px;
-    height: 50px;
+@media screen and (max-width:420px) {
+	ul.tablist {
+	  height:48px;
+	}
+   ul.tablist li {
+     width: 40px;
+     height: 40px;
+     background-size: 25px;
   }
 }
+
+/* todo even smaller screens, print, and any incapable client should fall back to a rollout version */
