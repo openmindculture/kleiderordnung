@@ -1,6 +1,6 @@
 * {
   font-style:normal;
-  font-family: Georgia, Serif;
+  font-family: Georgia, serif;
   /* add webfont alternative
 
   Schriftarten:
@@ -8,6 +8,7 @@
   Sacramento (Schreibschrift)
   Kozuka mincho pr6N ("ORDNUNG")
   Georgia, (Webfont), Serif (nicht Cambria) (Fließtext)
+  Georgia gilt als klassischer "web safe" font und braucht keinen Webfont Fallback!
   */
   text-decoration:none;
   margin:0;
