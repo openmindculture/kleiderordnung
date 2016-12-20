@@ -122,8 +122,13 @@ helper.event = {
 
 };
 
-//* todo schöner, abstrakter schreiben und Links von IDs befreien */
-helper.showTab = function(idtoshow,callerelement) {
+helper.showTab = function(e) {
+	var idtoshow = '';
+	if (e.target && e.target.dataset && e.target.dataset.tab) {
+	  idtoshow = e.target.dataset.tab;
+	} else {
+	  return;
+	}
 	var i=0, lis = document.getElementById('tablist').childNodes;
 	for (i=0; i<lis.length; i++) {
 		if (lis[i].nodeType===1) {
@@ -141,5 +146,18 @@ helper.showTab = function(idtoshow,callerelement) {
   var eltoshow = document.getElementById(idtoshow)
   helper.class.remove(eltoshow,'hidden');
   window.setTimeout(function(){helper.class.remove(eltoshow,'fadetext')},5);
-  helper.class.add(callerelement.parentElement,'active');
+  helper.class.add(e.target.parentElement,'active');
 }
+
+/* attach link handlers for nice tab navigation effect */
+/* TODO wirklich barrierefrei sollte der Tabbereich initial ausgeklappt sein
+   und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
+/* TODO Redundanzen beseitigen und häufig verwendete Elemente / IDs dauerhaft speichern */
+helper.event.ready(function(){
+	var i=0, lis = document.getElementById('tablist').childNodes;
+	for (i=0; i<lis.length; i++) {
+		if (lis[i].nodeType===1) {
+			lis[i].addEventListener('click',helper.showTab);
+		}
+	}
+});
