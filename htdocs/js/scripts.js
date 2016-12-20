@@ -145,8 +145,9 @@ helper.showTab = function(e) {
 	}
   var eltoshow = document.getElementById(idtoshow)
   helper.class.remove(eltoshow,'hidden');
-  window.setTimeout(function(){helper.class.remove(eltoshow,'fadetext')},5);
+  window.setTimeout(function(){window.scrollTo(0,0);helper.class.remove(eltoshow,'fadetext')},5);
   helper.class.add(e.target.parentElement,'active');
+  
 }
 
 /* attach link handlers for nice tab navigation effect */

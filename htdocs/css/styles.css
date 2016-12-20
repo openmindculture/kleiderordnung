@@ -167,15 +167,53 @@ ul.tablist a {
 #instafeed {
   text-align:center;
 }
+.gallery {
+  text-align: center;
+  
+}
+.gallery .square-box {
+	width: 32%;
+	margin-right:1%;
+   display: inline-block;
+   border-radius:50%;
+   background-color: #fff;
+}
+.gallery img {
+	/* pragmatisch quadratisch: mehr als 100% erlauben und den Rest mit Overflow abschneiden */
+	max-width: 120%;
+}
 #instafeed img {
   max-width: 32%;
   margin-bottom: 0.25em;
 }
 #instafeed a {
   margin-right:1%;
+  border-radius: 50%;
 }
-#instafeed a:nth-child(3n){
+#instafeed a:nth-child(3n), .gallery > div:nth-child(3n){
   margin-right:0;
+}
+
+/* square box for responsive containers guaranteed to be square size */
+.square-box{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    background: #4679BD;
+}
+.square-box:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.square-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+    text-align: center;
 }
 
 /* vars */
