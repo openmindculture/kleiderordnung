@@ -103,6 +103,7 @@ ul.links-container li:nth-child(even) a{
 	padding: 1em;
 	width: 500px;
 	margin: 0 auto;
+	border-radius: .5em;
 }
 .tab-red {
   background-color: #fc2e3b
