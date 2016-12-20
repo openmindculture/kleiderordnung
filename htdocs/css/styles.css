@@ -105,12 +105,13 @@ ul.tablist a {
 .link-leistungen{
 	background-image:url(../img/icon-clothing-hanger.svg);
 }
-.link-d{
-	background-image:url(../img/icon-tie.svg);
-}
 .link-kontakt{
 	background-image:url(../img/icon-envelope.svg);
 }
+.link-media{
+	background-image:url(../img/instagram-social-network-logo-of-photo-camera.svg);
+}
+
 .tabs > div {
 	padding: 1em;
 	width: 500px;
@@ -137,40 +138,29 @@ ul.tablist a {
 
 .tab-blue {
   background-color: #283583;
+  color:#fff;
 }
 
-.footer {
-  background-color:#283583;
-  color:#fff;
-  text-decoration:none;
-  padding:0;
-  margin:0;
-  text-align:center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  height:6em;
-}
-.footer .vcard {
+.vcard {
   margin: 1em auto 0 auto;
   padding: 0 0 2.5% 0;
 }
-.footer .vcard h1, .footer .vcard h2, .footer .vcard a {
+.vcard h1, .footer .vcard h2, .footer .vcard a {
   display: inline;
   margin: 0 0.5em 0 0.5em;
 }
-.footer .vcard h1 {
+.vcard h1 {
   font-family: 'Sacramento', Helvetica, sans-serif;
   font-size:2.2em;
   font-weight:normal;
 }
-.footer .vcard h2 {
+.vcard h2 {
   font-weight:normal;
 }
-.footer .vcard a {
+.vcard a {
   font-size:1.5em;
 }
-.footer a, footer a:link, footer a:visited, footer a:hover, footer a:active{
+.vcard a, .vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active{
   color:#fff;
   text-decoration:none;
 }

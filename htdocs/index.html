@@ -41,13 +41,15 @@
     <li class="link-leistungen active" ><!-- Kleiderbügel weiss auf rot -->
       <a id="link-leistungen" href="#leistungen" data-tab="leistungen" title="Leistungen" tabindex="3" nonClick="helper.showTab('leistungen',this)"></a>
     </li>
-    <li class="link-d" ><!-- Jackett (oder Hose oder Hemd) blau -->
-      <a id="link-d" href="#tab-d" data-tab="tab-d" title="D" tabindex="4" nonClick="helper.showTab('tab-d',this)"></a>
-    </li>
+
     <li class="link-kontakt"><!-- Pumps weiss auf rot -->
       <a id="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt" tabindex="5" nonClick="helper.showTab('kontakt',this)"></a>
+      
     </li>
-  </ul>
+     <li class="link-media" ><!-- Jackett (oder Hose oder Hemd) blau -->
+      <a id="link-media" href="#media" data-tab="media" title="Impressionen, Eindrücke" tabindex="5" nonClick="helper.showTab('tab-d',this)"></a>
+    </li>
+     </ul>
 </div>
 
   <section class="tabs" id="tabcontainer">
@@ -64,35 +66,10 @@
     <div id="leistungen" class="tab-red"><article>
 		Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.</article>
     </div>
-    <div id="tab-d" class="hidden tab-blue"><article>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis.</article>
-    </div>
-    <div id="kontakt" class="hidden tab-red">
-<article>		<h2>Kontakt zur Stylistin und Modeberaterin Martina Klein</h2>
-		<form action="kontakt.php" method="POST">
-			<label for="name">Name</label>
-			<input type="text" name="name" placeholer="Name" />
-         
-         <label for="email">E-Mail</label>
-			<input type="email" name="email" placeholder="E-Mail"/>
 
-			<label for="nachricht">Nachricht</label>
-			<textarea name="nachricht" placeholder="Nachricht"></textarea>      
-         
-			<input type="submit" value="absenden"/>
-			<!-- spam protection helpers -->
-			<input type="readonly" class="hidden visuallyhidden" name="antispam" value="" />			
-			<input type="hidden" name="csrftoken" value=""/>
-		</form></article>
-    </div></section>
-
-<section class="gallery">
-  <!-- Instagram-Bilder nachladen -->
-  <div id="instafeed"></div>
-</section>
-
-<footer class="footer">
-  <address class="vcard">
+    <div id="kontakt" class="hidden tab-blue">
+<article>		<h2>Impressum / Kontakt zur Stylistin und Modeberaterin Martina Klein</h2>
+		  <address class="vcard">
     <div>
       <h1 itemprop="name">Martina Klein</h1>
       <h2 itemprop="jobTitle">Stylistin und Modeberaterin</h2>
@@ -111,10 +88,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci ali
 
     </div>
 
-  </address>
-</footer>
+  </address></article>
+    </div>
+    <div id="media" class="hidden tab-red"><article>
+<h2>Impressionen, Eindrücke, Erfahrungen</h2> 
+Fotos statisch und von Instagram
+</article>
+    </div>    
+    </section>
 
-</div>
+<section class="gallery">
+  <!-- Instagram-Bilder nachladen -->
+  <div id="instafeed"></div>
+</section>
+
+<!-- <footer class="footer">
+
+</footer>-->
+
 <script type="text/javascript" src="js/instafeed.min.js"></script>
 <script type="text/javascript">
   var userFeed = new Instafeed({
