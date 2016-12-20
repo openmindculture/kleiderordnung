@@ -160,4 +160,5 @@ helper.event.ready(function(){
 			lis[i].addEventListener('click',helper.showTab);
 		}
 	}
+	/* TODO check location.hash and open according tab if necessary */
 });
