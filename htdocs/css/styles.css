@@ -46,11 +46,13 @@ html,body {
   text-align: center;
 }
 .content-wrapper {
-	width: 100%;
+	width: 66%;
+  max-width: 800px;
+  margin: 0 auto;
 	text-align: center;
 }
 ul.tablist {
-	height: 66px;
+	height: auto;
  	list-style: none;
  	margin: 1em 0 0 0;
  	overflow: visible;
@@ -63,16 +65,8 @@ ul.tablist li {
 }
 
 ul.tablist li  {
-  background-color: #fc2e3b;
-  background-position: .5em .5em;
-  background-repeat: no-repeat;
-  background-size: 40px 40px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  margin: 0 20px 0 20px;
-  padding: 0;
+  margin: 0 2% 0 2%;
+  width: 10%;
 }
 ul.tablist li:first-child {
 	margin-left: 0;
@@ -80,25 +74,34 @@ ul.tablist li:first-child {
 ul.tablist li:last-child {
 	margin-right: 0;
 }
-ul.tablist li.active{
+ul.tablist li a.active {
 	border-radius: 50% 50% 0 0;
-	margin-bottom: -1em;
-	padding: 0 0 1em 0;
+  margin-bottom: -10%;
+  padding: 50% 0 60% 0;
 }
 
-ul.tablist li:nth-child(even) {
+ul.tablist li:nth-child(even) a {
   background-color:#283583;
 }
 ul.tablist a {
 	display:block;
 	width:100%;
-	height:100%;
 	margin:0;
+  background-color: #fc2e3b;
+  background-position: 33% 33%;
+  background-repeat: no-repeat;
+  background-size: 66% 66%;
+  border-radius: 50%;
+
+  height: 0;
+  display: inline-block;
+  padding: 50% 0;
 }
 
 .link-ueber {
-	background-image: url(../img/icon-business-woman.svg);
+  background-image: url(../img/icon-business-woman.svg);
 }
+
 .link-b {
 	background-image:url(../img/icon-tie.svg);
 }
@@ -114,7 +117,8 @@ ul.tablist a {
 
 .tab {
 	padding: 1em;
-	width: 500px;
+  width: 100%;
+  /*width: 500px;*/
 	max-width: 88%;
 	margin: 0 auto;
 	border-radius: .5em;
@@ -135,6 +139,7 @@ ul.tablist a {
 }
 .tab-red {
   background-color: #fc2e3b;
+  color:#fff;
 }
 
 .tab-blue {
@@ -239,17 +244,14 @@ Georgia, Webfont), Serif
 }
 
 @media screen and (max-width:520px) {
-  .footer {
-    height: 9em;
-  }
   .clearfix-wrapper {
     padding-bottom: 9em;
   }
-  .footer .vcard h1, .footer .vcard h2 {
+  .vcard h1, .footer .vcard h2 {
     display: block;
   }
-  ul.tablist li {
-    margin: 0 10px 0 10px;
+  ul.tablist li a {
+    /* TODO fix media queries for responsive tablist */
   }
   ul.tablist li:first-child {
 	 margin-left: 0;
@@ -260,14 +262,7 @@ Georgia, Webfont), Serif
 }
 
 @media screen and (max-width:420px) {
-	ul.tablist {
-	  height:48px;
-	}
-   ul.tablist li {
-     width: 40px;
-     height: 40px;
-     background-size: 25px;
-  }
+  /* TODO fix media queries for responsive tablist */
 }
 
 /* todo even smaller screens, print, and any incapable client should fall back to a rollout version */
