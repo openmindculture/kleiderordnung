@@ -19,124 +19,129 @@
 </head>
 <body>
 <div class="clearfix-wrapper">
-<header class="header">
-  <div class="logo-container">
-    <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
-    <!-- TODO srcset; svg by ress
-
-    Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
-    Die weiteren Punkte als Bereiche eines One-Pagers.
-    -->
-  </div>
-  
-</header>
-<div class="content-wrapper">
- <ul class="tablist" id="tablist">
-    <li class="link-ueber"><!-- Kleid weiss auf rot -->
-      <a id="link-ueber" href="#ueber-mich" data-tab="ueber-mich" title="Über mich" tabindex="1"></a>
-    </li>
-    <li class="link-b"><!-- Krawatte weiss auf blau -->
-      <a id="link-b" href="#tab-b" data-tab="tab-b" title="B" tabindex="2"></a>
-    </li>
-    <li class="link-leistungen active" ><!-- Kleiderbügel weiss auf rot -->
-      <a id="link-leistungen" href="#leistungen" data-tab="leistungen" title="Leistungen" tabindex="3"></a>
-    </li>
-
-    <li class="link-kontakt"><!-- Pumps weiss auf rot -->
-      <a id="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt / Impressum" tabindex="5"></a>
-      
-    </li>
-     <li class="link-media" ><!-- Jackett (oder Hose oder Hemd) blau -->
-      <a id="link-media" href="#media" data-tab="media" title="Impressionen, Eindrücke" tabindex="5"></a>
-    </li>
-     </ul>
-</div>
-
-  <section class="tabs" id="tabcontainer">
-    <div id="ueber-mich" class="hidden tab-red">
-      <article>
-      <h2>Über mich</h2>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.
-    </article>
-    </div>
-
-    <div id="tab-b" class="hidden tab-blue">
- <article>     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci, id congue diam pretium ut.</article>
-    </div>
-    <div id="leistungen" class="tab-red"><article>
-		Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.</article>
-    </div>
-
-    <div id="kontakt" class="hidden tab-blue">
-<article>		<h2>Impressum / Kontakt zur Stylistin und Modeberaterin Martina Klein</h2>
-		  <address class="vcard">
-    <div>
-      <h1 itemprop="name">Martina Klein</h1>
-      <h2 itemprop="jobTitle">Stylistin und Modeberaterin</h2>
-    </div>
-
-    <div>
-      <a class="email" itemprop="email" href="mailto:modeberatung@web.de">modeberatung@web.de</a>
-      <a class="telephone" itemprop="telephone" href="tel:+491616823820">0161/6823820</a>
-
-      <!-- Instagram Badge -->
-      <!--
-      <a href="https://www.instagram.com/kleider.ordnung/?ref=badge" class="ig-b- ig-b-48">
-        <img src="http://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram" />
-      </a>
+  <header class="header">
+    <div class="logo-container">
+      <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
+      <!-- TODO srcset; svg by ress
+      Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
+      Die weiteren Punkte als Bereiche eines One-Pagers.
       -->
-
     </div>
+  </header>
+  <div class="content-wrapper">
+    <ul class="tablist" id="tablist">
+      <li class="link-ueber"><!-- Kleid weiss auf rot -->
+        <a id="link-ueber" href="#ueber-mich" data-tab="ueber-mich" title="Über mich" tabindex="1"></a>
+      </li>
+      <li class="link-b"><!-- Krawatte weiss auf blau -->
+        <a id="link-b" href="#tab-b" data-tab="tab-b" title="B" tabindex="2"></a>
+      </li>
+      <li class="link-leistungen active" ><!-- Kleiderbügel weiss auf rot -->
+        <a id="link-leistungen" href="#leistungen" data-tab="leistungen" title="Leistungen" tabindex="3"></a>
+      </li>
+      <li class="link-kontakt"><!-- Pumps weiss auf rot -->
+        <a id="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt / Impressum" tabindex="5"></a>
+      </li>
+      <li class="link-media" ><!-- Jackett (oder Hose oder Hemd) blau -->
+        <a id="link-media" href="#media" data-tab="media" title="Impressionen, Eindrücke" tabindex="5"></a>
+      </li>
+    </ul>
+    <section class="tabs" id="tabcontainer">
+      <div id="ueber-mich" class="hidden tab tab-red">
+        <article>
+          <h2>Über mich</h2>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem.
+          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor
+          sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in
+          porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci,
+          id congue diam pretium ut.
+        </article>
+      </div>
+      <div id="tab-b" class="hidden tab tab-blue">
+        <article>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar
+          lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo,
+          auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat
+          in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci,
+          id congue diam pretium ut.
+        </article>
+      </div>
+      <div id="leistungen" class="tab tab-red">
+        <article>
+          Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.
+        </article>
+      </div>
+      <div id="kontakt" class="hidden tab tab-blue">
+        <article>
+          <h2>
+            Impressum / Kontakt zur Stylistin und Modeberaterin Martina Klein
+          </h2>
+          <address class="vcard">
+            <div>
+              <h1 itemprop="name">Martina Klein</h1>
+              <h2 itemprop="jobTitle">Stylistin und Modeberaterin</h2>
+            </div>
+            <div>
+              <a class="email" itemprop="email" href="mailto:modeberatung@web.de">modeberatung@web.de</a>
+              <a class="telephone" itemprop="telephone" href="tel:+491616823820">0161/6823820</a>
+              <!-- Instagram Badge -->
+              <!--
+              <a href="https://www.instagram.com/kleider.ordnung/?ref=badge" class="ig-b- ig-b-48">
+                <img src="http://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram" />
+              </a>
+              -->
+            </div>
+          </address>
+        </article>
+      </div>
+      <div id="media" class="hidden tab tab-red">
+        <article>
+          <h2>Impressionen, Eindrücke, Erfahrungen</h2>
+          <div class="gallery">
+            <div class='square-box'>
+                <div class='square-content'>
+                    <img src="img/platzhalter1.jpg"/>
+                </div>
+            </div>
+            <div class='square-box'>
+                <div class='square-content'>
+                    <img src="img/platzhalter2.jpg"/>
+                </div>
+            </div>
+            <div class='square-box'>
+                <div class='square-content'>
+                    <img src="img/platzhalter3.jpg"/>
+                </div>
+            </div>
+                    <div class='square-box'>
+                <div class='square-content'>
+                    <img src="img/platzhalter1.jpg"/>
+                </div>
+            </div>
+            <div class='square-box'>
+                <div class='square-content'>
+                    <img src="img/platzhalter2.jpg"/>
+                </div>
+            </div>
+            <div class='square-box'>
+                <div class='square-content'>
+                    <img src="img/platzhalter3.jpg"/>
+                </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section><!-- /section.tabcontainer -->
 
-  </address></article>
-    </div>
-    <div id="media" class="hidden tab-red">
-    	<article>
-			<h2>Impressionen, Eindrücke, Erfahrungen</h2>
-			<div class="gallery">
-				<div class='square-box'>
-    				<div class='square-content'>
-        				<img src="img/platzhalter1.jpg"/>
-    				</div>
-				</div>
-				<div class='square-box'>
-    				<div class='square-content'>
-        				<img src="img/platzhalter2.jpg"/>
-    				</div>
-				</div>
-				<div class='square-box'>
-    				<div class='square-content'>
-        				<img src="img/platzhalter3.jpg"/>
-    				</div>
-				</div>
-								<div class='square-box'>
-    				<div class='square-content'>
-        				<img src="img/platzhalter1.jpg"/>
-    				</div>
-				</div>
-				<div class='square-box'>
-    				<div class='square-content'>
-        				<img src="img/platzhalter2.jpg"/>
-    				</div>
-				</div>
-				<div class='square-box'>
-    				<div class='square-content'>
-        				<img src="img/platzhalter3.jpg"/>
-    				</div>
-				</div>
-			</div>
-		</article>
-   </div>    
+    <section class="gallery">
+      <!-- Instagram-Bilder nachladen -->
+      <div id="instafeed"></div>
     </section>
 
-<section class="gallery">
-  <!-- Instagram-Bilder nachladen -->
-  <div id="instafeed"></div>
-</section>
-
-<!-- <footer class="footer">
-
-</footer>-->
+  </div><!-- /div.content-wrapper -->
+</div><!-- /div.clearfix-wrapper -->
 
 <script type="text/javascript" src="js/instafeed.min.js"></script>
 <script type="text/javascript">

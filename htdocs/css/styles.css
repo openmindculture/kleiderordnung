@@ -112,15 +112,16 @@ ul.tablist a {
 	background-image:url(../img/instagram-social-network-logo-of-photo-camera.svg);
 }
 
-.tabs > div {
+.tab {
 	padding: 1em;
 	width: 500px;
 	max-width: 88%;
 	margin: 0 auto;
 	border-radius: .5em;
+  text-align: left;
 	overflow: hidden;
 }
-.tabs > div article {
+.tab article {
 	display:block;
 	padding:0;
 	margin-left: 0;
@@ -128,7 +129,7 @@ ul.tablist a {
 	position: relative;
 	transition: all .5s ease;
 }
-.tabs > div.fadetext article {
+.tab.fadetext article {
 	margin-left: -500px;
 	margin-right: 500px;
 }
