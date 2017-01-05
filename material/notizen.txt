@@ -59,8 +59,18 @@ Provide Source Maps
 Backend
 FOR MULTI-PAGE-PROJECTS:
 - Include Partials: Header, Footer, Navigation (Param: active item)
+  (auch das sollte man nicht mit PHP machen sondern beim Devel Build)
 FOR ALL PROJECTS:
 - Simple RESS Library
+   (und diese sollte optional sein, so dass man statisches HTML schreiben kann)
+
+RESS by PHP
+muss optional bleiben, so dass man statisches HTML ohne störende Artefakte
+vorfindet, und dass man performant ohne DOM Parser optimieren kann, dann bietet
+sich Text-Filter-Syntax an, analog zu Conditional Comments.
+Recherchieren, ob es dazu einen Standard oder RFC gibt?
+<!-- ress-if-webp --><source type="image/webp" .../><!-- /ress-if-webp -->
+Jegliches RESS würde dann bloß das unpassende per Regex rausfiltern.
 
 Ansatz:
 - sehr einfach und übersichtlich
