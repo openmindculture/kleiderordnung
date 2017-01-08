@@ -47,15 +47,25 @@
 </head>
 <body>
 <div class="clearfix-wrapper">
-  <header class="header">
-    <div class="logo-container">
-      <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
-      <!-- TODO srcset; svg by ress
-      Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
-      Die weiteren Punkte als Bereiche eines One-Pagers.
-      -->
-    </div>
-  </header>
+	<header class="header">
+		
+	  <div class="aside-left">
+	  	<div class="decorator">
+	  	   <!-- muss ein IMG sein, um die nötige Höhe für Overflow-Y zu erzeugen.
+	  	        Nachteil gegenüber CSS-Background: es wird auch auf Clients geladen, wo man es gar nicht sieht -->
+	  		<!-- <img src="img/herz-hintergrund.png"/> -->
+	  	</div>
+	  </div>
+	  <div class="logo-container">
+	    <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
+	    <!-- TODO srcset; svg by ress
+	
+	    Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
+	    Die weiteren Punkte als Bereiche eines One-Pagers.
+	    -->
+	  </div>
+	  <div class="aside-right"></div>  
+	</header>
   <div class="content-wrapper">
     <ul class="tablist" id="tablist">
       <li><!-- Kleid weiss auf rot -->
