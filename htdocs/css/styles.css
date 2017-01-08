@@ -152,8 +152,9 @@ ul.tablist a {
 }
 .vcard h1 {
   font-family: 'Sacramento', Helvetica, sans-serif;
-  font-size:2.2em;
-  font-weight:normal;
+  font-size:2.5em;
+  font-weight:bold;
+  color:#fc2e3b;
 }
 .vcard h2 {
   font-weight:normal;
