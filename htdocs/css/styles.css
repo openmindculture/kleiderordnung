@@ -26,9 +26,11 @@ html,body {
   padding-bottom:6em;
 }
 
-.header,.footer {
+
+.header {
   text-align: center;
   width: 100%;
+  height: 231px;
 }
 
 .logo-container {
@@ -38,6 +40,30 @@ html,body {
   overflow:hidden;
   text-align: center;
   margin: 0 auto;
+  float:left;
+}
+/* todo hide backdrop-left and right by media query, and for unsupported browsers */
+.aside-left {
+  width: calc((100vw - 550px)/2); 
+  height:231px;
+  overflow-y:visible;
+  float:left;
+  position:relative;
+  /* temporary workaround against backdrop making left menu item unclickable */
+  z-index:-1;
+}
+.aside-left > .decorator{
+	position:relative;
+	right: -85px;
+   top: 110px;
+	overflow-x:hidden;
+	overflow-y:visible;
+	position:absolute;
+}
+.aside-right {
+	width: calc((100vw - 550px)/2); 
+	height:231px;
+	float:left;
 }
 
 .logo {
@@ -48,6 +74,7 @@ html,body {
 .content-wrapper {
 	width: 100%;
 	text-align: center;
+	clear:both;
 }
 ul.tablist {
 	height: 66px;
@@ -119,6 +146,9 @@ ul.tablist a {
 	margin: 0 auto;
 	border-radius: .5em;
 	overflow: hidden;
+}
+#kontakt {
+	text-align:center;
 }
 .tabs > div article {
 	display:block;
