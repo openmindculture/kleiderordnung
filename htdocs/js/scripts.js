@@ -122,14 +122,15 @@ helper.event = {
 
 };
 
-helper.showTab = function(e) {
+helper.showTab = function(e) { console.log("clicked");console.log(e);console.log(e.target);
 	var idtoshow = '';
-	if (e.target && e.target.dataset && e.target.dataset.tab) {
-	  idtoshow = e.target.dataset.tab;
+  var target = e.target || e.srcElement;
+	if (target && target.dataset && target.dataset.tab) {
+	  idtoshow = e.target.dataset.tab;console.log("to show: "+idtoshow);
 	} else {
 	  return;
 	}
-	var i=0, lis = document.getElementById('tablist').childNodes;
+	var i=0, lis = document.getElementById('tablist').getElementsByTagName('a');
 	for (i=0; i<lis.length; i++) {
 		if (lis[i].nodeType===1) {
 			helper.class.remove(lis[i],'active');
@@ -146,7 +147,7 @@ helper.showTab = function(e) {
   var eltoshow = document.getElementById(idtoshow)
   helper.class.remove(eltoshow,'hidden');
   window.setTimeout(function(){window.scrollTo(0,0);helper.class.remove(eltoshow,'fadetext')},5);
-  helper.class.add(e.target.parentElement,'active');
+  helper.class.add(target,'active');
   
 }
 
@@ -155,11 +156,14 @@ helper.showTab = function(e) {
    und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
 /* TODO Redundanzen beseitigen und häufig verwendete Elemente / IDs dauerhaft speichern */
 helper.event.ready(function(){
-	var i=0, lis = document.getElementById('tablist').childNodes;
+  /* delegation pattern sollte mit einem handler auskommen */
+  document.getElementById('tablist').addEventListener('click',helper.showTab);
+  /*
+	var i=0, lis = document.getElementById('tablist').getElementsByTagName('li');
 	for (i=0; i<lis.length; i++) {
 		if (lis[i].nodeType===1) {
 			lis[i].addEventListener('click',helper.showTab);
 		}
-	}
+	} */
 	/* TODO check location.hash and open according tab if necessary */
 });

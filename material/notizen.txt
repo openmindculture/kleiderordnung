@@ -43,3 +43,126 @@ Footer nicht fixed, sondern am Ende, erreichbar über Navi.
 Footer mit runden Logos für Facebook und Instagram weiß in roten Kreisen.
 
 Fotos in runden Kreisen. Externes Insta auch.
+
+
+
+RESS NOTES
+
+Frontend
+Use Image Sourcesets
+Use Robust JavaScript
+
+Build
+Minify CSS, JS
+Provide Source Maps
+
+Backend
+FOR MULTI-PAGE-PROJECTS:
+- Include Partials: Header, Footer, Navigation (Param: active item)
+  (auch das sollte man nicht mit PHP machen sondern beim Devel Build)
+FOR ALL PROJECTS:
+- Simple RESS Library
+   (und diese sollte optional sein, so dass man statisches HTML schreiben kann)
+
+RESS by PHP
+muss optional bleiben, so dass man statisches HTML ohne störende Artefakte
+vorfindet, und dass man performant ohne DOM Parser optimieren kann, dann bietet
+sich Text-Filter-Syntax an, analog zu Conditional Comments.
+Recherchieren, ob es dazu einen Standard oder RFC gibt?
+<!-- ress-if-webp --><source type="image/webp" .../><!-- /ress-if-webp -->
+Jegliches RESS würde dann bloß das unpassende per Regex rausfiltern.
+
+Ansatz:
+- sehr einfach und übersichtlich
+- sehr effizient und leichtgewichtig im Einsatz
+- Konzentration auf lohnende Optimierung (keine unnötig großen Dateien laden)
+- HTML Minifying nur dort, wo es
+  -- einfach machbar ist und
+  -- unnötige (bes. größere) Requests vermeidet.
+
+Request Header: Accept: contains image/webp
+Request Header: User-Agent: (check for Internet Explorer)
+Request Header: User-Agent: (check for Internet Explorer)
+DON'T Provide Image Format Helper
+Filter Source Set instead (simply dont' write type=image/webp if unsupported)
+
+SVG Support depends, SVG-as-Image is widely supported above IE8 * Gingerbread
+Although browser version detection is often discouraged, it would be possible.
+https://css-tricks.com/test-support-svg-img/
+
+Prepare Images:
+Create Image Variations manually / scripted:
+for each existing svg, create webp, png, hi-jpg, mid-jpg
+for each existing jpg, create webp,
+for each existing png, create webp,
+remove all images which are larger or only unsignifically smaller than original,
+next review all images manually and delete undesired quality images,
+scripted final step will choose the smallest file of each type for export,
+prepare markup for copy+paste to PHP/HTML:
+php function call providing alternate images to be choosen according to Accept.
+
+TODO: das ganze wäre uneffektiv, wenn man über srcset o.ä. selbigen Effekt nur
+mit relativ geringem zusätzlichen Datensatz + Rechenzeit beim Client erreichen
+könnte!
+Stattdessen 
+
+(Kann man auf die folgende Weise auch SVG mit Fallback anbieten?)
+
+https://responsivedesign.is/articles/adding-webp-images-progressively
+
+  <picture>
+    <source type="image/webp"
+            srcset="images/worlds-300.webp 300w,
+                    images/worlds-600.webp 600w,
+                    images/worlds-800.webp 800w,
+                    images/worlds.webp 1000w"
+             />
+    <source srcset="images/worlds-300.jpg 300w,
+                    images/worlds-600.jpg 600w,
+                    images/worlds-800.jpg 800w,
+                    images/worlds.jpg 1000w"
+            />
+    <img src="images/worlds-300.jpg"
+    alt="The Speed of Light and the Timing of Eclipses" />
+  </picture>
+
+The process of generating WebP images is a little difficult at the moment.
+The easiest way to test out the webp format is to upload an existing image 
+the Convert to Webp site.
+http://image.online-convert.com/convert-to-webp
+
+http://deanhume.com/home/blogpost/service-workers--dynamic-responsive-images-using-webp-images/10132
+
+<picture>
+    <!-- JPEG Images -->
+    <source
+        media="(min-width: 1024px)"
+        srcset="./images/brooklyn.jpg, ./images/brooklyn-2x.jpg 2x, ./images/brooklyn-3x.jpg 3x"
+        type="image/jpeg">
+    <source
+        media="(min-width: 320px)"
+        srcset="./images/brooklyn-small.jpg, ./images/brooklyn-small-2x.jpg 2x, ./images/brooklyn-small-3x.jpg 3x"
+        type="image/jpeg">
+    <!-- WebP Images -->
+    <source
+        media="(min-width: 1024px)"
+        srcset="./images/brooklyn.webp, ./images/brooklyn-2x.webp 2x, ./images/brooklyn-3x.webp 3x"
+        type="image/webp">
+    <source
+        media="(min-width: 320px)"
+        srcset="./images/brooklyn-small.webp, ./images/brooklyn-small-2x.webp 2x, ./images/brooklyn-small-3x.webp 3x"
+        type="image/webp">
+        <!-- The fallback image -->
+    <img
+        src="./images/brooklyn.jpg" alt="Brooklyn Bridge - New York">
+</picture>
+
+
+
+Use in Content:
+Provide Vary: User Agent, Accept (if using RESS images)
+Provide better caching headers (for better "score" in PSI/WPT)
+Write Conditional Comments only if Internet Explorer
+Write Apple Touch Icons only if Apple
+Provide Browser Class in Body Element
+In Picture Source Set only write type=image/webp if supported.

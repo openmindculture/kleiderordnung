@@ -1,0 +1,59 @@
+<html>
+
+<body>
+
+<h2>Test 1: Picture with source-type</h2>
+
+  <picture>
+    <!-- Versuch: kann man SVG mit Fallbacks anbieten? -->
+    <source type="image/webp"
+            srcset="images/worlds-300.webp 300w,
+                    images/worlds-600.webp 600w,
+                    images/worlds-800.webp 800w,
+                    images/worlds.webp 1000w"
+             />
+
+    <!-- ab hier aus getestetem Tutorial -->
+    <source type="image/webp"
+            srcset="images/worlds-300.webp 300w,
+                    images/worlds-600.webp 600w,
+                    images/worlds-800.webp 800w,
+                    images/worlds.webp 1000w"
+             />
+    <source srcset="images/worlds-300.jpg 300w,
+                    images/worlds-600.jpg 600w,
+                    images/worlds-800.jpg 800w,
+                    images/worlds.jpg 1000w"
+            />
+    <img src="images/worlds-300.jpg"
+    alt="The Speed of Light and the Timing of Eclipses" />
+  </picture>
+
+<h2>Test 1: Picture with Media-Queries and Density</h2>
+
+<picture>
+    <!-- JPEG Images -->
+    <source
+        media="(min-width: 1024px)"
+        srcset="./images/brooklyn.jpg, ./images/brooklyn-2x.jpg 2x, ./images/brooklyn-3x.jpg 3x"
+        type="image/jpeg">
+    <source
+        media="(min-width: 320px)"
+        srcset="./images/brooklyn-small.jpg, ./images/brooklyn-small-2x.jpg 2x, ./images/brooklyn-small-3x.jpg 3x"
+        type="image/jpeg">
+    <!-- WebP Images -->
+    <source
+        media="(min-width: 1024px)"
+        srcset="./images/brooklyn.webp, ./images/brooklyn-2x.webp 2x, ./images/brooklyn-3x.webp 3x"
+        type="image/webp">
+    <source
+        media="(min-width: 320px)"
+        srcset="./images/brooklyn-small.webp, ./images/brooklyn-small-2x.webp 2x, ./images/brooklyn-small-3x.webp 3x"
+        type="image/webp">
+        <!-- The fallback image -->
+    <img
+        src="./images/brooklyn.jpg" alt="Brooklyn Bridge - New York">
+</picture>
+
+</body>
+</html>
