@@ -129,19 +129,27 @@ ul.tablist a {
 
 .link-ueber {
   background-image: url(../img/icon-business-woman.svg);
+  background-position: 50% 33% !important;
+  background-size: 60% 60% !important;
 }
 
 .link-b {
 	background-image:url(../img/icon-tie.svg);
+  background-position: 50% 50% !important;
 }
 .link-leistungen{
 	background-image:url(../img/icon-clothing-hanger.svg);
+  background-size: 75% 75% !important;
 }
 .link-kontakt{
 	background-image:url(../img/icon-envelope.svg);
+  background-position: 50% 50% !important;
+  background-size: 55% 55% !important;
 }
 .link-media{
 	background-image:url(../img/instagram-social-network-logo-of-photo-camera.svg);
+  background-size: 55% 55% !important;
+  background-position: 50% 50% !important;
 }
 
 .tab {
@@ -153,6 +161,10 @@ ul.tablist a {
 	border-radius: .5em;
   text-align: left;
 	overflow: hidden;
+  min-height: 260px;
+  /* transition height kann mann über eine transition: background emulieren
+     vgl. http://codepen.io/LFeh/pen/ICkwe
+   */
 }
 #kontakt {
 	text-align:center;
@@ -164,6 +176,7 @@ ul.tablist a {
 	margin-right: 0;s
 	position: relative;
 	transition: all .5s ease;
+  font-size: 1.25em;
 }
 .tab.fadetext article {
 	margin-left: -500px;

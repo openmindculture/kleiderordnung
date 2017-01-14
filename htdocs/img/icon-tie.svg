@@ -1,6 +1,35 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 295.821 295.821" enable-background="new 0 0 295.821 295.821" width="512px" height="512px">
-  <g>
-    <path d="m204.465,53.944l8.701-27.842c1.74-5.22 0-12.181-3.48-17.401s-8.702-8.701-15.662-8.701h-90.486c-6.96,0-10.441,3.48-15.661,8.701s-5.22,12.181-3.48,17.401l8.701,27.842c4.124,13.764 15.905,24.135 29.234,27.929l-39.676,166.965c-1.74,3.48 0,6.96 3.48,8.701l55.684,36.543c1.74,1.74 3.48,1.74 5.22,1.74 1.74,0 3.48,0 5.22-1.74l55.684-36.543c3.48-1.74 3.48-5.22 3.48-8.701l-39.64-166.843c14.131-3.255 25.703-12.703 32.681-28.051zm-50.464,29.582l8.909,38.074-42.598,42.598 18.028-80.672h15.661zm-40.614,111.681c0.191-0.139 0.4-0.139 0.592-0.313l53.561-53.561 8.909,38.074-70.527,70.527-4.107-2.854 11.572-51.873zm33.654,83.212l-26.728-18.515 60.765-60.765 11.224,47.94-45.261,31.34zm43.503-257.537l-8.701,27.842c-1.74,10.441-12.181,17.401-22.621,17.401h-27.842c-10.441,0-19.141-6.96-22.621-17.401l-8.701-27.842c0,0 0,0 1.74-1.74h87.006c1.74,0 1.74,0 1.74,0l0,1.74z" fill="#FFFFFF"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 23.1 20.8" style="enable-background:new 0 0 23.1 20.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#312783;}
+	.st1{fill:#E73741;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#FDFDFD;}
+	.st4{fill:#283583;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-linecap:round;stroke-miterlimit:10;}
+	.st6{fill:#FFFFFF;stroke:#312783;stroke-width:0.25;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#E73741;stroke-width:0.25;stroke-miterlimit:10;}
+	.st8{fill:#27348B;}
+	.st9{fill:none;stroke:#27348B;stroke-width:0.1;stroke-miterlimit:10;}
+	.st10{fill:#FFFFFF;stroke:#27348B;stroke-width:0.1;stroke-miterlimit:10;}
+	.st11{fill:none;}
+	.st12{fill:#FFFFFF;stroke:#27348B;stroke-width:0.15;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#283583;stroke-width:0.15;stroke-miterlimit:10;}
+	.st14{fill:#283583;stroke:#FFFFFF;stroke-width:0.1;stroke-miterlimit:10;}
+</style>
+<g>
+	<polygon class="st2" points="10.8,2.9 8.3,0.4 15.1,0.4 12.5,2.9 12.8,3.6 10.2,6 10.4,4.3 11.3,3.5 11.1,3.2 10.7,3.6 	"/>
+	<polygon class="st6" points="9.7,7.9 9.7,6.8 12.8,4.1 12.8,5.2 	"/>
+	<polygon class="st6" points="9.4,9.8 9.4,8.7 13.1,5.4 13.2,6.2 	"/>
+	<polygon class="st6" points="8.8,10.7 13.2,6.6 13.4,7.6 8.8,11.9 	"/>
+	<polygon class="st6" points="8.3,12.8 13.5,7.9 13.8,9 8.3,14.1 	"/>
+	<polygon class="st6" points="13.9,9.3 14.1,10.3 8,16.1 8,14.9 	"/>
+	<polygon class="st6" points="14.3,10.4 14.6,11.4 8.7,17.2 8,16.5 	"/>
+	<polygon class="st6" points="14.7,11.9 14.8,12.8 9.6,18 8.9,17.3 	"/>
+	<polygon class="st6" points="15,13.1 15.2,14.1 10.4,18.9 9.8,18.2 	"/>
+	<polygon class="st6" points="15.2,14.5 15.7,15.4 11.3,19.8 10.5,19.1 	"/>
+	<polygon class="st6" points="15.7,16 16.1,16.6 12,20.4 11.5,19.9 	"/>
+</g>
 </svg>
