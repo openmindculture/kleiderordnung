@@ -1,6 +1,6 @@
 * {
   font-style:normal;
-  font-family: Georgia, serif;
+  font-family: 'Source Sans Pro', sans-serif;
   /* add webfont alternative
 
   Schriftarten:
@@ -30,11 +30,13 @@ html,body {
 .header {
   text-align: center;
   width: 100%;
-  height: 231px;
+  height: 210px;
 }
 
 .logo-container {
-  border-bottom: solid 2px #fc2e3b;
+  /* HR Strichstärke passend zu Faden im SVG
+     todo mit abgerundeten Ecken */
+  border-bottom: solid 4px #fc2e3b;
   width:500px;
   max-width:100%;
   overflow:hidden;
@@ -44,7 +46,7 @@ html,body {
 }
 /* todo hide backdrop-left and right by media query, and for unsupported browsers */
 .aside-left {
-  width: calc((100vw - 550px)/2); 
+  width: calc((100vw - 550px)/2);
   height:231px;
   overflow-y:visible;
   float:left;
@@ -54,14 +56,14 @@ html,body {
 }
 .aside-left > .decorator{
 	position:relative;
-	right: -85px;
-   top: 110px;
+	right: -500px;
+   top: 0;
 	overflow-x:hidden;
 	overflow-y:visible;
 	position:absolute;
 }
 .aside-right {
-	width: calc((100vw - 550px)/2); 
+	width: calc((100vw - 550px)/2);
 	height:231px;
 	float:left;
 }
@@ -185,16 +187,19 @@ ul.tablist a {
   display: inline;
   margin: 0 0.5em 0 0.5em;
 }
-.vcard h1 {
-  font-family: 'Sacramento', Helvetica, sans-serif;
+.vcard h1, .vcard .cap {
+  font-family: 'Sacramento', cursive, sans-serif;
   font-size:2.5em;
   font-weight:bold;
   color:#fc2e3b;
 }
+.vcard .cap {
+  font-size:1em;
+}
 .vcard h2 {
   font-weight:normal;
 }
-.vcard a {
+.vcard a, .jobtitle {
   font-size:1.5em;
 }
 .vcard a, .vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active{
@@ -206,7 +211,7 @@ ul.tablist a {
 }
 .gallery {
   text-align: center;
-  
+
 }
 .gallery .square-box {
 	width: 32%;

@@ -23,7 +23,8 @@
   <meta name="google-site-verification" content="google56e508471606aa4e">
   <!-- TODO minify final CSS -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link href="http://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Sacramento|Source+Sans+Pro:400,600" rel="stylesheet" type="text/css">
+  <!-- semibold überschrift = 600, text regular = 400 -->
     <!-- nonblocking scripts-->
   <script src="js/scripts.js" type="text/javascript"></script>
 
@@ -48,23 +49,30 @@
 <body>
 <div class="clearfix-wrapper">
 	<header class="header">
-		
+
 	  <div class="aside-left">
 	  	<div class="decorator">
 	  	   <!-- muss ein IMG sein, um die nötige Höhe für Overflow-Y zu erzeugen.
 	  	        Nachteil gegenüber CSS-Background: es wird auch auf Clients geladen, wo man es gar nicht sieht -->
-	  		<img src="img/herz-hintergrund.png"/> 
+        <!-- 1000 x 725 -->
+	  		<img src="img/herz-kleider-ordnung.svg" width="1280" height="928" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
+        <!-- TODO breakpoint:
+             mobile bis einschließlich Tablet quer mit Bildvariante die nur den Faden links rausführt (Datei folgt...)
+             erst ab Desktop (breiter als iPad Pro Landscape 1366px) kommt die o.g. Version mit Herz
+             img/herz-kleider-ordnung.svg 1280 928
+          -->
 	  	</div>
 	  </div>
-	  <div class="logo-container">
-	    <img class="logo" src="img/kleider-ordnung-logo.png" width="397" height="231" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
+	  <div class="logo-container" style="height:198px;">
+      <!-- img/kleider-ordnung-logo.png 397 231 -->
+	    <!--<img class="logo" src="img/ordnung-logo.png" width="340" height="198" />-->
 	    <!-- TODO srcset; svg by ress
-	
+
 	    Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
 	    Die weiteren Punkte als Bereiche eines One-Pagers.
 	    -->
 	  </div>
-	  <div class="aside-right"></div>  
+	  <div class="aside-right"></div>
 	</header>
   <div class="content-wrapper">
     <ul class="tablist" id="tablist">
@@ -124,11 +132,14 @@
           <address class="vcard">
             <div>
               <h1 itemprop="name">Martina Klein</h1>
-              <h2 itemprop="jobTitle">Modeberaterin und Stylistin</h2>
-            </div>
-            <div>
-              <a class="email" itemprop="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
+              <!-- TODO Text auch als SVG, ggf. im Header preloaden damit es vor den späteren Galeriebildern geladen wird -->
+              <div class="jobtitle" itemprop="jobTitle">Modeberaterin und Stylistin</div>
+              <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
+              <br>
               <a class="telephone" itemprop="telephone" href="tel:+491616823820">0161/6823820</a>
+              <br>
+              <a itemscope="url" href="http://www.kleiderordnung-duesseldorf.de//">www.kleiderordnung-duesseldorf.de</a>
+              <br>
               <!-- Instagram Badge -->
               <!--
               <a href="https://www.instagram.com/kleider.ordnung/?ref=badge" class="ig-b- ig-b-48">
@@ -186,6 +197,7 @@
   </div><!-- /div.content-wrapper -->
 </div><!-- /div.clearfix-wrapper -->
 
+<!--
 <script type="text/javascript" src="js/instafeed.min.js"></script>
 <script type="text/javascript">
   var userFeed = new Instafeed({
@@ -201,6 +213,6 @@
     links: false
   });
   // userFeed.run();
-</script>
+</script> -->
 </body>
 </html>
