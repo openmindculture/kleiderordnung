@@ -45,8 +45,9 @@ html,body {
   float:left;
 }
 /* todo hide backdrop-left and right by media query, and for unsupported browsers */
-.aside-left {
-  width: calc((100vw - 550px)/2);
+.left-half {
+  /* width: calc((100vw - 550px)/2); */
+  width: 50%;
   height:231px;
   overflow-y:visible;
   float:left;
@@ -54,14 +55,15 @@ html,body {
   /* temporary workaround against backdrop making left menu item unclickable */
   z-index:-1;
 }
-.aside-left > .decorator{
+.left-half > .decorator{
 	position:relative;
-	right: -500px;
-   top: 0;
+	right: -245px;
+  top: 0;
 	overflow-x:hidden;
 	overflow-y:visible;
 	position:absolute;
 }
+
 .aside-right {
 	width: calc((100vw - 550px)/2);
 	height:231px;
@@ -290,6 +292,17 @@ Georgia, Webfont), Serif
 
 .hidden {
   display: none;
+}
+
+.herz-und-faden {
+  width:770px;
+  height:928px;
+}
+@media screen and (min-width:1400px) {
+  .herz-und-faden, .herz-und-faden > img {
+    width:1280px;
+    height:928px;
+  }
 }
 
 @media screen and (max-width:520px) {

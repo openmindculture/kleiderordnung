@@ -49,33 +49,24 @@
 <body>
 <div class="clearfix-wrapper">
 	<header class="header">
-
-	  <div class="aside-left">
+	  <div class="left-half">
 	  	<div class="decorator">
-	  	   <!-- muss ein IMG sein, um die nötige Höhe für Overflow-Y zu erzeugen.
-	  	        Nachteil gegenüber CSS-Background: es wird auch auf Clients geladen, wo man es gar nicht sieht -->
-        <!-- 1000 x 725 -->
-        <!-- srcset mit breakpoint -->
-	  		<img src="img/herz-kleider-ordnung.svg" width="1280" height="928" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/>
-        <!-- <img src="img/herz-kleider-ordnung.svg" width="770" height="928" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"/> -->
-        <!-- TODO breakpoint:
-             mobile bis einschließlich Tablet quer mit Bildvariante die nur den Faden links rausführt (Datei folgt...)
-             erst ab Desktop (breiter als iPad Pro Landscape 1366px) kommt die o.g. Version mit Herz
-             img/herz-kleider-ordnung.svg 1280 928
-             img/faden-kleider-ordnung.svg 770 928
-          -->
+        <picture class="herz-und-faden">
+          <source
+            media="(min-width: 1400px)"
+            srcset="img/herz-kleider-ordnung.svg"
+            type="image/svg+xml"><!-- 1280 x 928 -->
+          <source
+            srcset="img/faden-kleider-ordnung.svg"
+            type="image/svg+xml"><!-- 770 x 928 -->
+          <!-- fallback image as PNG (TODO) -->
+          <img src="img/faden-kleider-ordnung.png"
+               width="770" height="928"
+               alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"
+          >
+        </picture>
 	  	</div>
 	  </div>
-	  <div class="logo-container" style="height:198px;">
-      <!-- img/kleider-ordnung-logo.png 397 231 -->
-	    <!--<img class="logo" src="img/ordnung-logo.png" width="340" height="198" />-->
-	    <!-- TODO srcset; svg by ress
-
-	    Startseite Logo mit Kreisen + Navigation, ansonsten nichts dort.
-	    Die weiteren Punkte als Bereiche eines One-Pagers.
-	    -->
-	  </div>
-	  <div class="aside-right"></div>
 	</header>
   <div class="content-wrapper">
     <ul class="tablist" id="tablist">
@@ -139,7 +130,8 @@
               <div class="jobtitle" itemprop="jobTitle">Modeberaterin und Stylistin</div>
               <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
               <br>
-              <a class="telephone" itemprop="telephone" href="tel:+491616823820">0161/6823820</a>
+              <a class="telephone" itemprop="telephone" href="tel:+491616823820">0 151.56 028 820</a>
+              <!-- todo keine fünfstellige vorwahl, dahinter 8 Ziffern -->
               <br>
               <a itemscope="url" href="http://www.kleiderordnung-duesseldorf.de//">www.kleiderordnung-duesseldorf.de</a>
               <br>
