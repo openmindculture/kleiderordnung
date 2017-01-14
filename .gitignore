@@ -43,3 +43,7 @@ npm-debug.log
 # SASS #
 .sass-cache
 *.css.map
+
+# Materialordner
+material
+
