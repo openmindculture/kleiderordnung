@@ -130,25 +130,29 @@ helper.showTab = function(e) { console.log("clicked");console.log(e);console.log
 	} else {
 	  return;
 	}
-	var i=0, lis = document.getElementById('tablist').getElementsByTagName('a');
-	for (i=0; i<lis.length; i++) {
-		if (lis[i].nodeType===1) {
-			helper.class.remove(lis[i],'active');
-		}
-	}
-	
-	var tabs = document.getElementById('tabcontainer').childNodes;
-	for (i=0; i<tabs.length; i++) {
-		if(tabs[i].nodeType===1){
-			helper.class.add(tabs[i],'hidden');
-			helper.class.add(tabs[i],'fadetext');
-		}	
-	}
+
+  helper.showNamedTab(idtoshow,target);
+}
+
+helper.showNamedTab = function(idtoshow,target) {
+  var i=0, lis = document.getElementById('tablist').getElementsByTagName('a');
+  for (i=0; i<lis.length; i++) {
+    if (lis[i].nodeType===1) {
+      helper.class.remove(lis[i],'active');
+    }
+  }
+
+  var tabs = document.getElementById('tabcontainer').childNodes;
+  for (i=0; i<tabs.length; i++) {
+    if(tabs[i].nodeType===1){
+      helper.class.add(tabs[i],'hidden');
+      helper.class.add(tabs[i],'fadetext');
+    }
+  }
   var eltoshow = document.getElementById(idtoshow)
   helper.class.remove(eltoshow,'hidden');
   window.setTimeout(function(){window.scrollTo(0,0);helper.class.remove(eltoshow,'fadetext')},5);
   helper.class.add(target,'active');
-  
 }
 
 /* attach link handlers for nice tab navigation effect */
@@ -156,14 +160,14 @@ helper.showTab = function(e) { console.log("clicked");console.log(e);console.log
    und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
 /* TODO Redundanzen beseitigen und häufig verwendete Elemente / IDs dauerhaft speichern */
 helper.event.ready(function(){
-  /* delegation pattern sollte mit einem handler auskommen */
+  /* Ankernavigation berücksichtigen d.h. z.B. /#kontakt muss Reiter Kontakt öffnen */
+  if (location.hash && location.hash!=""){
+    console.log("evaluate location.hash "+location.hash);
+    var tab = location.hash.substr(1);
+    var target = document.getElementById("link-"+tab);
+    if (target) {
+      helper.showNamedTab(tab,target);
+    }
+  }
   document.getElementById('tablist').addEventListener('click',helper.showTab);
-  /*
-	var i=0, lis = document.getElementById('tablist').getElementsByTagName('li');
-	for (i=0; i<lis.length; i++) {
-		if (lis[i].nodeType===1) {
-			lis[i].addEventListener('click',helper.showTab);
-		}
-	} */
-	/* TODO check location.hash and open according tab if necessary */
 });
