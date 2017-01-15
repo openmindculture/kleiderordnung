@@ -119,39 +119,30 @@ ul.tablist a {
 	width:100%;
 	margin:0;
   background-color: #fc2e3b;
-  background-position: 33% 33%;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: 66% 66%;
+  background-size: 62% 62%;
   border-radius: 50%;
-
   height: 0;
   display: inline-block;
   padding: 50% 0;
 }
 
 .link-ueber {
-  background-image: url(../img/icon-business-woman.svg);
-  background-position: 50% 33% !important;
-  background-size: 60% 60% !important;
+  background-image: url(../img/icon-ueber-mich.svg);
 }
 
 .link-b {
-	background-image:url(../img/icon-tie.svg);
-  background-position: 50% 50% !important;
+	background-image:url(../img/icon-krawatte.svg);
 }
 .link-leistungen{
-	background-image:url(../img/icon-clothing-hanger.svg);
-  background-size: 75% 75% !important;
+	background-image:url(../img/icon-kleiderbuegel.svg);
 }
 .link-kontakt{
-	background-image:url(../img/icon-envelope.svg);
-  background-position: 50% 50% !important;
-  background-size: 55% 55% !important;
+	background-image:url(../img/icon-kontakt.svg);
 }
 .link-media{
-	background-image:url(../img/instagram-social-network-logo-of-photo-camera.svg);
-  background-size: 55% 55% !important;
-  background-position: 50% 50% !important;
+	background-image:url(../img/icon-impressionen.svg);
 }
 
 .tab {
@@ -195,7 +186,7 @@ ul.tablist a {
 }
 
 .vcard {
-  margin: 1em auto 0 auto;
+  margin: -1.5em auto 0 auto;
   padding: 0 0 2.5% 0;
 }
 .vcard h1, .footer .vcard h2, .footer .vcard a {
