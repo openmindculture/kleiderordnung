@@ -122,7 +122,7 @@ helper.event = {
 
 };
 
-helper.showTab = function(e) { console.log("clicked");console.log(e);console.log(e.target);
+helper.showTab = function(e) {
 	var idtoshow = '';
   var target = e.target || e.srcElement;
 	if (target && target.dataset && target.dataset.tab) {
