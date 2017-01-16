@@ -34,9 +34,7 @@ html,body {
 }
 
 .logo-container {
-  /* HR Strichstärke passend zu Faden im SVG
-     todo mit abgerundeten Ecken */
-  border-bottom: solid 4px #fc2e3b;
+  /* todo obsolete elemente enfernen */
   width:500px;
   max-width:100%;
   overflow:hidden;
@@ -44,7 +42,15 @@ html,body {
   margin: 0 auto;
   float:left;
 }
-/* todo hide backdrop-left and right by media query, and for unsupported browsers */
+.content-wrapper:before{
+  content:" ";
+  width:100%;
+  height:4px;
+  border-radius: 1em 1em 1em 1em;
+  background-color:#fc2e3b;
+  display: block;
+}
+/* todo tablist wieder breiter */
 .left-half {
   /* width: calc((100vw - 550px)/2); */
   width: 50%;
