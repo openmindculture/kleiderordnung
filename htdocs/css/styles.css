@@ -82,7 +82,6 @@ html,body {
   text-align: center;
 }
 .content-wrapper {
-	width: 66%;
   max-width: 800px;
   margin: 0 auto;
 	text-align: center;
@@ -204,6 +203,10 @@ ul.tablist a {
   font-size:2.5em;
   font-weight:bold;
   color:#fc2e3b;
+}
+.vcard h1 img {
+	/* Name als Grafik wegen Schriftart */
+	max-width: 100%;
 }
 .vcard .cap {
   font-size:1em;
