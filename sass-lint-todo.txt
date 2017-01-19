@@ -10,6 +10,13 @@ auch die in native SASS-Implementation,
 aber auf grunt kann man verzichten,
 und Java (s.u.) ist auch zu schwergewichtig für so ein kleines Projekt.
 
+Nachdem aber auch node immer noch furchtbar ist und sich node-sass
+nicht problemlos überall installieren lässt, kann man auch die nativen packages
+mit ordentlichen Package managern wie apt installieren und der UNIX-Tradition
+folgen.
+Dementsprechend muss man die Dependencies dokumentieren.
+
+
 Die package.json kann man von node erstellen lassen
 und dann ggf. nachbearbeiten (vereinfachen/lockern). 
 
