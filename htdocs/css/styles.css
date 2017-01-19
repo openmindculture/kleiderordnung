@@ -174,7 +174,7 @@ ul.tablist a {
 	margin-right: 0;
 	position: relative;
 	transition: all .5s ease;
-  font-size: 1.25em;
+  font-size: 1.025em;
 }
 .tab.fadetext article {
 	margin-left: -500px;
