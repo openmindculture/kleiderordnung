@@ -70,6 +70,21 @@ html,body {
 	position:absolute;
 }
 
+.kontaktlinks {
+  float: right;
+}
+.kontaktlinks a:active,.kontaktlinks a:visited,.kontaktlinks a:hover{
+  color:#fff;
+}
+
+.tab .tos {
+  position:absolute;
+  margin-top:3em;
+  color:#283583;
+  background-color:#fff;
+  text-align:left;
+}
+
 .aside-right {
 	width: calc((100vw - 550px)/2);
 	height:231px;
