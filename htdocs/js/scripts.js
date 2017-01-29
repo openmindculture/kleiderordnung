@@ -126,11 +126,10 @@ helper.showTab = function(e) {
 	var idtoshow = '';
   var target = e.target || e.srcElement;
 	if (target && target.dataset && target.dataset.tab) {
-	  idtoshow = e.target.dataset.tab;console.log("to show: "+idtoshow);
+	  idtoshow = e.target.dataset.tab;
 	} else {
 	  return;
 	}
-
   helper.showNamedTab(idtoshow,target);
 }
 
@@ -150,9 +149,12 @@ helper.showNamedTab = function(idtoshow,target) {
     }
   }
   var eltoshow = document.getElementById(idtoshow)
+  console.log("remove hidden class from el");
+  console.log(eltoshow);
   helper.class.remove(eltoshow,'hidden');
   window.setTimeout(function(){window.scrollTo(0,0);helper.class.remove(eltoshow,'fadetext')},5);
   helper.class.add(target,'active');
+  console.log("end");
 }
 
 /* attach link handlers for nice tab navigation effect */
@@ -162,7 +164,6 @@ helper.showNamedTab = function(idtoshow,target) {
 helper.event.ready(function(){
   /* Ankernavigation berücksichtigen d.h. z.B. /#kontakt muss Reiter Kontakt öffnen */
   if (location.hash && location.hash!=""){
-    console.log("evaluate location.hash "+location.hash);
     var tab = location.hash.substr(1);
     var target = document.getElementById("link-"+tab);
     if (target) {
@@ -170,6 +171,14 @@ helper.event.ready(function(){
     }
   }
   document.getElementById('tablist').addEventListener('click',helper.showTab);
+  document.getElementById('showcontact').addEventListener('click',function(){
+  		console.log("showcontact clicked");
+	    var target = document.getElementById("link-kontakt");
+	    if (target) {
+	      helper.showNamedTab("kontakt",target);
+	    }
+  	}
+  );
   /* TODO make available offline as a progressive web app
   	https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
   	*/
