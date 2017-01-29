@@ -365,10 +365,11 @@ Georgia, Webfont), Serif
   ul.tablist li:last-child {
 	margin-right: 0;
   }
-}
-
-@media screen and (max-width:420px) {
-  /* TODO fix media queries for responsive tablist */
+	.kontaktlinks{
+		float: none;
+    text-align: right;
+    margin-bottom: 1em;
+	}
 }
 
 /* todo even smaller screens, and any incapable client should fall back to a rollout version like media print */
