@@ -116,9 +116,10 @@ Des Weiteren arbeite ich seit 15 Jahren im Verlagswesen, wo ich täglich Mensche
       </div>
       <div id="leistungen" class="tab tab-red">
         <article>
-          <div class="kontaktlinks">
+          <div id="showcontact" class="kontaktlinks">
             <!-- id 'showcontact' adds click handler for tab change -->
-            <a href="#kontakt" id="showcontact">Impressum/AGB</a>
+            <a href="#kontakt">Impressum</a>/
+            <a href="#agb">AGB</a>
           </div>
        		<h2>Sie wollen Ihren Stil verändern
        		<br>
@@ -164,9 +165,11 @@ Des Weiteren arbeite ich seit 15 Jahren im Verlagswesen, wo ich täglich Mensche
             </div>
           </address>
         </article>
-        <aside class="tos">
+        <aside id="agb" class="tos">
           <h2>Allgemeine Geschäftsbedingungen</h2>
           <p>AGB in Kürze hier</p>
+          <!-- top link back to top of same tab -->
+          <a href="#kontakt" onclick="window.scrollTo(0,0);">^ nach oben</a>
         </aside>
       </div>
       <div id="media" class="hidden tab tab-red">

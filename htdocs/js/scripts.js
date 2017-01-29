@@ -130,10 +130,10 @@ helper.showTab = function(e) {
 	} else {
 	  return;
 	}
-  helper.showNamedTab(idtoshow,target);
+  helper.showNamedTab(idtoshow,target,true);
 }
 
-helper.showNamedTab = function(idtoshow,target) {
+helper.showNamedTab = function(idtoshow,target,scrollto) {
   var i=0, lis = document.getElementById('tablist').getElementsByTagName('a');
   for (i=0; i<lis.length; i++) {
     if (lis[i].nodeType===1) {
@@ -149,12 +149,11 @@ helper.showNamedTab = function(idtoshow,target) {
     }
   }
   var eltoshow = document.getElementById(idtoshow)
-  console.log("remove hidden class from el");
-  console.log(eltoshow);
   helper.class.remove(eltoshow,'hidden');
-  window.setTimeout(function(){window.scrollTo(0,0);helper.class.remove(eltoshow,'fadetext')},5);
-  helper.class.add(target,'active');
-  console.log("end");
+  window.setTimeout(function(){
+  	if (scrollto) {window.scrollTo(0,0);}  	
+  	helper.class.remove(eltoshow,'fadetext')},5);
+  	helper.class.add(target,'active');
 }
 
 /* attach link handlers for nice tab navigation effect */
@@ -164,18 +163,24 @@ helper.showNamedTab = function(idtoshow,target) {
 helper.event.ready(function(){
   /* Ankernavigation berücksichtigen d.h. z.B. /#kontakt muss Reiter Kontakt öffnen */
   if (location.hash && location.hash!=""){
+  	var scrollto = true;
     var tab = location.hash.substr(1);
+    /* AGB befinden sich auch im Reiter Kontakt */
+    if (tab==='agb'){tab='kontakt';scollto=false;}
     var target = document.getElementById("link-"+tab);
     if (target) {
-      helper.showNamedTab(tab,target);
+      helper.showNamedTab(tab,target,scrollto);
     }
   }
   document.getElementById('tablist').addEventListener('click',helper.showTab);
-  document.getElementById('showcontact').addEventListener('click',function(){
-  		console.log("showcontact clicked");
+  /* Handler für Links zu Impressum / Kontakt / AGB außerhalb der Tablinks */
+  document.getElementById('showcontact').addEventListener('click',function(e){
+  		var scrollto = true;
+  		var caller = e.target || e.srcElement;
+  		if (caller && caller.getAttribute('href')==='#agb') {scrollto=false;}
 	    var target = document.getElementById("link-kontakt");
 	    if (target) {
-	      helper.showNamedTab("kontakt",target);
+	      helper.showNamedTab("kontakt",target,scrollto);
 	    }
   	}
   );

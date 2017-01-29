@@ -73,7 +73,7 @@ html,body {
 .kontaktlinks {
   float: right;
 }
-.kontaktlinks a:active,.kontaktlinks a:visited,.kontaktlinks a:hover{
+.kontaktlinks a:link,.kontaktlinks a:active,.kontaktlinks a:visited,.kontaktlinks a:hover{
   color:#fff;
 }
 
