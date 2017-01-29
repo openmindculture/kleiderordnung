@@ -170,4 +170,7 @@ helper.event.ready(function(){
     }
   }
   document.getElementById('tablist').addEventListener('click',helper.showTab);
+  /* TODO make available offline as a progressive web app
+  	https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
+  	*/
 });
