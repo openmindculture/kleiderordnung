@@ -6,7 +6,7 @@
   Schriftarten:
 
   Sacramento (Schreibschrift)
-  Kozuka mincho pr6N ("ORDNUNG")
+  Kozuka mincho pr6N ("ORDNUNG") => webfont Average
   Georgia, (Webfont), Serif (nicht Cambria) (Fließtext)
   Georgia gilt als klassischer "web safe" font und braucht keinen Webfont Fallback!
   */
@@ -105,7 +105,9 @@ html,body {
 ul.tablist {
 	height: auto;
  	list-style: none;
- 	margin: 1em 0 0 0;
+ 	/* -1px as workaround for unwanted whitespace above tab 
+ 	   due to -10% below tablink not enough on some small screen sizes */
+ 	margin: 1em 0 -1px 0;
  	overflow: visible;
 	padding:0;
 }
@@ -369,4 +371,38 @@ Georgia, Webfont), Serif
   /* TODO fix media queries for responsive tablist */
 }
 
-/* todo even smaller screens, print, and any incapable client should fall back to a rollout version */
+/* todo even smaller screens, and any incapable client should fall back to a rollout version like media print */
+
+@media print {
+	.hidden {
+		display:block!important;
+	}
+	.tab.fadetext article{
+		margin-left:0!important;
+		margin-right:0!important;
+	}
+	.tab{
+		color:#000!important;
+		background-color:#fff!important;
+	}
+	ul.tablist li a.active {
+		border-radius: 50%!important;
+    margin-bottom: 0!important;
+    padding: 50% 0 50% 0!important;
+    background-position: 50% 50%!important;
+	}
+	#kontakt h2, .kontaktlinks, .toplink {
+		display:none!important;	
+	}
+	.vcard, .vcard a {
+		text-align:left;
+		font-size:1.125em;
+	}
+	.vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active {
+		color:#000!important;
+	}
+	#agb {
+		position:relative!important;
+		color:#000!important;	
+	}
+}
