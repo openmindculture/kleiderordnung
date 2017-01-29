@@ -183,6 +183,12 @@ ul.tablist a {
 #kontakt {
 	text-align:center;
 }
+.tab h2 {
+	font-family: Average,serif;
+	font-weight: normal;
+	margin-bottom:.25em;
+	font-size: 1.3em;
+}
 .tab article {
 	display:block;
 	padding:0;
