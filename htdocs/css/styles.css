@@ -314,7 +314,9 @@ Fotos in runden Kreisen. Externes Insta auch.
 Georgia, Webfont), Serif
 (nicht Cambria)
 */
-
+.float{
+	float:left;
+}
 .floatcircle {
 	  float: left;
     margin-right: 1em;
