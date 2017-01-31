@@ -123,14 +123,24 @@ helper.event = {
 };
 
 helper.showTab = function(e) {
+	var scrolltotop = true;
 	var idtoshow = '';
   var target = e.target || e.srcElement;
-	if (target && target.dataset && target.dataset.tab) {
-	  idtoshow = e.target.dataset.tab;
-	} else {
-	  return;
-	}
-  helper.showNamedTab(idtoshow,target,true);
+  if (target) {
+  	if (target.href) {
+  		e.preventDefault();
+  		history.replaceState({}, '', target.href);
+  		scrolltotop = false;
+		}
+  	if (target.dataset && target.dataset.tab) {
+	  	idtoshow = e.target.dataset.tab;
+		} else {
+	  	return;
+		}
+  }
+
+  helper.showNamedTab(idtoshow,target,scrolltotop);
+
 }
 
 helper.showNamedTab = function(idtoshow,target,scrollto) {
