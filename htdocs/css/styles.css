@@ -58,12 +58,6 @@ html,body {
   text-align:left;
 }
 
-.aside-right {
-	width: calc((100vw - 550px)/2);
-	height:231px;
-	float:left;
-}
-
 .logo {
   margin: 0 auto;
   max-width: 100%;
@@ -197,12 +191,6 @@ ul.tablist a {
 .vcard h1, .footer .vcard h2, .footer .vcard a {
   display: inline;
   margin: 0 0.5em 0 0.5em;
-}
-.vcard h1, .vcard .cap {
-  font-family: 'Sacramento', cursive, sans-serif;
-  font-size:2.5em;
-  font-weight:bold;
-  color:#e73640;
 }
 .vcard h1 img {
 	/* Name als Grafik wegen Schriftart */
