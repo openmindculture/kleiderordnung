@@ -86,12 +86,10 @@ helper.event = {
     if (!element) {
       return;
     }
-
     if (element.addEventListener) {
       element.addEventListener(event, handler, false);
       return;
     }
-
     element.attachEvent('on' + event, handler);
   },
 
@@ -99,12 +97,10 @@ helper.event = {
     if (!element) {
       return;
     }
-
     if (element.removeEventListener) {
       element.removeEventListener(event, handler, false);
       return;
     }
-
     element.detachEvent('on' + event, handler);
   },
 
@@ -119,51 +115,51 @@ helper.event = {
       });
     }
   }
-
 };
 
-helper.showTab = function(e) {
-	var scrolltotop = true;
-	var idtoshow = '';
-  var target = e.target || e.srcElement;
-  if (target) {
-  	if (target.href) {
-  		e.preventDefault();
-  		history.replaceState({}, '', target.href);
-  		scrolltotop = false;
-		}
-  	if (target.dataset && target.dataset.tab) {
-	  	idtoshow = e.target.dataset.tab;
-		} else {
-	  	return;
-		}
-  }
-
-  helper.showNamedTab(idtoshow,target,scrolltotop);
-
-}
-
-helper.showNamedTab = function(idtoshow,target,scrollto) {
-  var i=0, lis = document.getElementById('tablist').getElementsByTagName('a');
-  for (i=0; i<lis.length; i++) {
-    if (lis[i].nodeType===1) {
-      helper.class.remove(lis[i],'active');
+helper.tab = {
+  show : function(e) {
+    var scrolltotop = true,
+        idtoshow = '',
+        target = e.target || e.srcElement;
+    if (target) {
+      if (target.href) {
+        e.preventDefault();
+        history.replaceState({}, '', target.href);
+        scrolltotop = false;
+      }
+      if (target.dataset && target.dataset.tab) {
+        idtoshow = e.target.dataset.tab;
+      } else {
+        return;
+      }
     }
-  }
+    helper.tab.showByName(idtoshow,target,scrolltotop);
+  },
 
-  var tabs = document.getElementById('tabcontainer').childNodes;
-  for (i=0; i<tabs.length; i++) {
-    if(tabs[i].nodeType===1){
-      helper.class.add(tabs[i],'hidden');
-      helper.class.add(tabs[i],'fadetext');
+  showByName : function(idtoshow,target,scrollto) {
+    var i=0,
+      lis = document.getElementById('tablist').getElementsByTagName('a'),
+      tabs = document.getElementById('tabcontainer').childNodes,
+      eltoshow = document.getElementById(idtoshow);
+    for (i=0; i<lis.length; i++) {
+      if (lis[i].nodeType===1) {
+        helper.class.remove(lis[i],'active');
+      }
     }
+    for (i=0; i<tabs.length; i++) {
+      if(tabs[i].nodeType===1){
+        helper.class.add(tabs[i],'hidden');
+        helper.class.add(tabs[i],'fadetext');
+      }
+    }
+    helper.class.remove(eltoshow,'hidden');
+    window.setTimeout(function(){
+      if (scrollto) {window.scrollTo(0,0);}
+      helper.class.remove(eltoshow,'fadetext')
+    },5);
+    helper.class.add(target,'active');
   }
-  var eltoshow = document.getElementById(idtoshow)
-  helper.class.remove(eltoshow,'hidden');
-  window.setTimeout(function(){
-  	if (scrollto) {window.scrollTo(0,0);}  	
-  	helper.class.remove(eltoshow,'fadetext')},5);
-  	helper.class.add(target,'active');
 }
 
 /* attach link handlers for nice tab navigation effect */
@@ -179,18 +175,18 @@ helper.event.ready(function(){
     if (tab==='agb'){tab='kontakt';scollto=false;}
     var target = document.getElementById("link-"+tab);
     if (target) {
-      helper.showNamedTab(tab,target,scrollto);
+      helper.tab.showByName(tab,target,scrollto);
     }
   }
-  document.getElementById('tablist').addEventListener('click',helper.showTab);
+  helper.event.addListener(document.getElementById('tablist'),'click',helper.tab.show);
   /* Handler für Links zu Impressum / Kontakt / AGB außerhalb der Tablinks */
-  document.getElementById('showcontact').addEventListener('click',function(e){
+  helper.event.addListener(document.getElementById('showcontact'),'click',function(e){
   		var scrollto = true;
   		var caller = e.target || e.srcElement;
   		if (caller && caller.getAttribute('href')==='#agb') {scrollto=false;}
 	    var target = document.getElementById("link-kontakt");
 	    if (target) {
-	      helper.showNamedTab("kontakt",target,scrollto);
+        helper.tab.showByName("kontakt",target,scrollto);
 	    }
   	}
   );
