@@ -1,15 +1,6 @@
 * {
   font-style:normal;
   font-family: 'Source Sans Pro', sans-serif;
-  /* add webfont alternative
-
-  Schriftarten:
-
-  Sacramento (Schreibschrift)
-  Kozuka mincho pr6N ("ORDNUNG") => webfont Average
-  Georgia, (Webfont), Serif (nicht Cambria) (Fließtext)
-  Georgia gilt als klassischer "web safe" font und braucht keinen Webfont Fallback!
-  */
   text-decoration:none;
   margin:0;
   padding:0;
@@ -19,28 +10,11 @@ html,body {
   padding:0;
 }
 
-.clearfix-wrapper{
-  min-height:100%;
-  margin:0;
-  padding:0;
-  padding-bottom:6em;
-}
-
-
 .header {
   text-align: center;
   width: 100%;
 }
 
-.logo-container {
-  /* todo obsolete elemente enfernen */
-  width:500px;
-  max-width:100%;
-  overflow:hidden;
-  text-align: center;
-  margin: 0 auto;
-  float:left;
-}
 .content-wrapper:before{
   content:" ";
   width:91%;
@@ -50,9 +24,8 @@ html,body {
   background-color:#e73640;
   display: block;
 }
-/* todo tablist wieder breiter */
+
 .left-half {
-  /* width: calc((100vw - 550px)/2); */
   width: 50%;
   height:190px;
   overflow-y:visible;
@@ -105,7 +78,7 @@ html,body {
 ul.tablist {
 	height: auto;
  	list-style: none;
- 	/* -1px as workaround for unwanted whitespace above tab 
+ 	/* -1px as workaround for unwanted whitespace above tab
  	   due to -10% below tablink not enough on some small screen sizes */
  	margin: 1em 0 -1px 0;
  	overflow: visible;
@@ -256,9 +229,9 @@ ul.tablist a {
 
 }
 .gallery .square-circle {
-	
+
     background-color: #fff;
-   
+
    border-radius:50%;
 }
 .gallery img {
@@ -393,7 +366,7 @@ Georgia, Webfont), Serif
     background-position: 50% 50%!important;
 	}
 	#kontakt h2, .kontaktlinks, .toplink {
-		display:none!important;	
+		display:none!important;
 	}
 	.vcard, .vcard a {
 		text-align:left;
@@ -404,6 +377,6 @@ Georgia, Webfont), Serif
 	}
 	#agb {
 		position:relative!important;
-		color:#000!important;	
+		color:#000!important;
 	}
 }
