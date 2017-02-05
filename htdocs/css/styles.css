@@ -10,6 +10,10 @@ html,body {
   padding:0;
 }
 
+a:focus,a:active{
+	outline:0;
+}
+
 .header {
   text-align: center;
   width: 100%;
