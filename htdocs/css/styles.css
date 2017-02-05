@@ -218,6 +218,8 @@ ul.tablist a {
 }
 .gallery {
   text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
 }
 .gallery .square-circle {
   background-color: #fff;
@@ -225,7 +227,16 @@ ul.tablist a {
 }
 .gallery img {
 	/* pragmatisch quadratisch: mehr als 100% erlauben und den Rest mit Overflow abschneiden */
-	max-width: 120%;
+	width: 30%;
+	height: auto;
+	margin-right: 2%;
+	margin-left: 2%;
+}
+.gallery img:first-child {
+	margin-left:0;
+}
+.gallery img:last-child {
+	margin-right:0;
 }
 #instafeed img {
   max-width: 32%;
