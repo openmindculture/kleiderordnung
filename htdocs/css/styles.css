@@ -314,6 +314,25 @@ Georgia, Webfont), Serif
     height:928px;
   }
 }
+
+
+/* Header Logo: IE11,IE10 fallback weil responsive img srcset nicht supported
+   + relativer Pfad funktioniert im IE nicht!
+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .decorator {
+    background-image: url(/img/herz-kleider-ordnung.svg);
+    background-size: 1280px 928px;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+  }
+
+  .herz-und-faden {
+    visibility: hidden;
+  }
+}
+
 @media screen and (min-width:660px) {
 	/* die buttons nicht zu riesig werden lassen */
 	ul.tablist li {
@@ -321,6 +340,7 @@ Georgia, Webfont), Serif
 		margin: 0 4.25% 0 4.25%;
 	}
 }
+
 
 @media screen and (max-width:520px) {
   .clearfix-wrapper {
@@ -344,6 +364,7 @@ Georgia, Webfont), Serif
     margin-bottom: 1em;
 	}
 }
+
 
 /* todo even smaller screens, and any incapable client should fall back to a rollout version like media print */
 
