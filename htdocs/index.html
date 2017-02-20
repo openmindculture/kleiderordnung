@@ -48,25 +48,14 @@
   <header class="header">
     <div class="left-half">
       <div class="decorator">
-        <!-- TODO IE displays small image scaled to large dimensions
-          maybe related to this? SVG in <img> tags not scaling in IE9, IE10, IE11
-              https://gist.github.com/larrybotha/7881691
-          or just picks the wrong source?
-          -->
-        <picture class="herz-und-faden">
-          <source
-            media="(min-width: 1400px)"
-            srcset="img/herz-kleider-ordnung.svg"
-            type="image/svg+xml"><!-- 1280 x 928 -->
-          <source
-            srcset="img/faden-kleider-ordnung.svg"
-            type="image/svg+xml"><!-- 770 x 928 -->
-          <!-- fallback image as PNG (TODO) -->
-          <img src="img/faden-kleider-ordnung.png"
-               width="770" height="928"
-               alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"
-          >
-        </picture>
+
+        <img class="herz-und-faden" srcset="img/herz-kleider-ordnung.svg 1280w,
+             img/faden-kleider-ordnung.svg 770w"
+             sizes="(min-width: 1400px) 1280px,
+                    (min-width: 1px) 770px,
+                    770px" width="770" height="928"
+             src="img/faden-kleider-ordnung.png" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil">
+
       </div>
     </div>
   </header>
