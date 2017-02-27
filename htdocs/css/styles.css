@@ -144,7 +144,7 @@ ul.tablist a {
   width: 100%;
   /*width: 500px;*/
 	max-width: 88%;
-	margin: 0 auto;
+	margin: -.125em auto 0 auto;
 	border-radius: .5em;
   text-align: left;
 	overflow: hidden;
