@@ -308,12 +308,7 @@ Georgia, Webfont), Serif
   width:1280px;
   height:928px;
 }
-@media screen and (min-width:1400px) {
-  .herz-und-faden, .herz-und-faden > img {
-    width:1280px;
-    height:928px;
-  }
-}
+
 
 
 /* Header Logo: IE11,IE10 fallback weil responsive img srcset nicht supported
