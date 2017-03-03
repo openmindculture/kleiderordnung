@@ -169,12 +169,14 @@ ul.tablist a {
 	transition: all .5s ease;
   font-size: 1.025em;
   /* use 3d to handle transform by GPU acceleration */
+  -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
 .tab article p {
 	margin-bottom: 1em;
 }
 .tab.fadetext article {
+  -webkit-transform: translate3d(-500px,0,0);
   transform: translate3d(-500px,0,0);
 }
 .tab-red {
