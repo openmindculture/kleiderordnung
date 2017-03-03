@@ -348,8 +348,9 @@ Georgia, Webfont), Serif
        due to -10% below tablink not enough on some small screen sizes */
     margin: 1em 0 -1px 0;
   }
-  ul.tablist li a {
-    /* TODO fix media queries for responsive tablist */
+  ul.tablist li {
+    margin: 0 2% 0 2%;
+    width: 14%;
   }
   ul.tablist li:first-child {
 	 margin-left: 0;
