@@ -76,9 +76,7 @@ a:focus,a:active{
 ul.tablist {
 	height: auto;
  	list-style: none;
- 	/* -1px as workaround for unwanted whitespace above tab
- 	   due to -10% below tablink not enough on some small screen sizes */
- 	margin: 1em 0 -1px 0;
+ 	margin: 1em 0 .125em 0;
  	overflow: visible;
 	padding:0;
 }
@@ -343,6 +341,11 @@ Georgia, Webfont), Serif
   }
   .vcard h1, .footer .vcard h2 {
     display: block;
+  }
+  ul.tablist {
+    /* -1px as workaround for unwanted whitespace above tab
+       due to -10% below tablink not enough on some small screen sizes */
+    margin: 1em 0 -1px 0;
   }
   ul.tablist li a {
     /* TODO fix media queries for responsive tablist */
