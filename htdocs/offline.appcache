@@ -1,4 +1,6 @@
 CACHE MANIFEST
+# v1 (change this file after any change in html content)
+
 # Pages that associate with a manifest become part of it.
 css/styles.css
 js/scripts.js
@@ -15,6 +17,11 @@ img/Martina-Klein.svg
 img/Martina-Klein-Kleiderordnung.png
 img/Martinapuppchen2.png
 
-# Prefer online version if available
+# Allow loading anything else
 NETWORK:
 *
+
+# Prefer online version if available
+SETTINGS:
+prefer-online
+
