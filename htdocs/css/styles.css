@@ -343,6 +343,17 @@ Georgia, Webfont), Serif
   .vcard h1, .footer .vcard h2 {
     display: block;
   }
+  /* Logo kleiner */
+  .left-half {
+    height: 166px;
+  }
+  .left-half > .decorator {
+    right: -215px;
+  }
+  .herz-und-faden {
+    width: 1100px;
+    height: 797px;
+  }
   ul.tablist {
     /* -1px as workaround for unwanted whitespace above tab
        due to -10% below tablink not enough on some small screen sizes */
