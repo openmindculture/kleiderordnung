@@ -168,6 +168,8 @@ ul.tablist a {
 	position: relative;
 	transition: all .5s ease;
   font-size: 1.025em;
+  /* enable 3d to handle transform by GPU acceleration */
+  transform: translateZ(0);
 }
 .tab article p {
 	margin-bottom: 1em;
