@@ -207,6 +207,8 @@ ul.tablist a {
 .vcard h1 img {
 	/* Name als Grafik wegen Schriftart */
 	max-width: 100%;
+  width: 350px;
+  height: 95px;
 }
 .vcard .cap {
   font-size:1em;
@@ -214,8 +216,14 @@ ul.tablist a {
 .vcard h2 {
   font-weight:normal;
 }
+.jobtitle{
+  margin-bottom: 1em;
+}
 .vcard a, .jobtitle {
-  font-size:1.5em;
+  font-size:1.375em;
+}
+.vcard a, .jobtitle, .email, .telephone {
+  font-family: Average,serif;
 }
 .vcard a, .vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active{
   color:#fff;
@@ -386,6 +394,9 @@ Georgia, Webfont), Serif
     text-align: right;
     margin-bottom: 1em;
 	}
+  .jobtitle{
+    margin-bottom:0;
+  }
 }
 
 
