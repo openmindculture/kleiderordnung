@@ -374,6 +374,10 @@ Georgia, Webfont), Serif
     width: 1100px;
     height: 797px;
   }
+  .floatcircle {
+    width:50%;
+    height:50%;
+  }
   ul.tablist {
     /* -1px as workaround for unwanted whitespace above tab
        due to -10% below tablink not enough on some small screen sizes */
