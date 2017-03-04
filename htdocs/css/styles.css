@@ -340,6 +340,13 @@ Georgia, Webfont), Serif
   }
 }
 
+@media screen and (max-width:520px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .decorator {
+    background-image: url(/img/herz-kleider-ordnung.svg);
+    background-size: 1100px 797px;
+  }
+}
+
 
 ul.tablist li {
   width:9%;
