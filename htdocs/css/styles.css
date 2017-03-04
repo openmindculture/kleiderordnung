@@ -150,6 +150,8 @@ ul.tablist a {
   /* transition height kann mann über eine transition: background emulieren
      vgl. http://codepen.io/LFeh/pen/ICkwe
    */
+  /* iOS fixes that make no difference: */
+  position:relative; z-index:1000;display:block;
 }
 #kontakt {
 	text-align:center;
@@ -161,14 +163,17 @@ ul.tablist a {
 	font-size: 1.3em;
 }
 .tab article {
+  font-size: 1.025em;
 	display:block;
 	padding:0;
 	margin-left: 0;
 	margin-right: 0;
 	position: relative;
 	transition: transform .5s ease;
-  font-size: 1.025em;
-  /* use 3d to handle transform by GPU acceleration */
+  left:0;
+  /* use 3d to handle transform by GPU acceleration
+     and left to make it work on iPhone
+   */
   transform: translate3d(0,0,0);
   -webkit-transform: translate3d(0,0,0);
   webkit-backface-visibility: hidden;
@@ -177,8 +182,9 @@ ul.tablist a {
 	margin-bottom: 1em;
 }
 .tab.fadetext article {
-  transform: translate3d(-500px,0,0);
-  -webkit-transform: translate3d(-500px,0,0);
+  left:-100%;
+  transform: translate3d(-100%,0,0);
+  -webkit-transform: translate3d(-100%,0,0);
 }
 .tab-red {
   background-color: #e73640;
@@ -332,6 +338,7 @@ Georgia, Webfont), Serif
 
 @media screen and (min-width:660px) {
 	/* die buttons nicht zu riesig werden lassen */
+  /* TODO brauchen wir wirklich diesen zusätzlichen Breakpoint? */
 	ul.tablist li {
 		width:9%;
 		margin: 0 4.25% 0 4.25%;
@@ -365,8 +372,8 @@ Georgia, Webfont), Serif
     margin: 1em 0 -1px 0;
   }
   ul.tablist li {
-    margin: 0 2% 0 2%;
-    width: 14%;
+    margin: 0 1% 0 1%;
+    width: 16%;
   }
   ul.tablist li:first-child {
 	 margin-left: 0;
