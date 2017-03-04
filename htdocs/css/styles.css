@@ -85,10 +85,7 @@ ul.tablist li {
   display: inline-block;
 }
 
-ul.tablist li  {
-  margin: 0 4% 0 4%;
-  width: 10%;
-}
+
 ul.tablist li:first-child {
 	margin-left: 0;
 }
@@ -343,15 +340,18 @@ Georgia, Webfont), Serif
   }
 }
 
-@media screen and (min-width:660px) {
-	/* die buttons nicht zu riesig werden lassen */
-  /* TODO brauchen wir wirklich diesen zusätzlichen Breakpoint? */
-	ul.tablist li {
-		width:9%;
-		margin: 0 4.25% 0 4.25%;
-	}
+
+ul.tablist li {
+  width:9%;
+  margin: 0 4.25% 0 4.25%;
 }
 
+@media screen and (max-width:660px) {
+	ul.tablist li {
+    width:12%;
+    margin: 0 3% 0 3%;
+	}
+}
 
 @media screen and (max-width:520px) {
   .clearfix-wrapper {
@@ -383,8 +383,8 @@ Georgia, Webfont), Serif
     margin: 1em 0 -1px 0;
   }
   ul.tablist li {
-    margin: 0 1% 0 1%;
-    width: 16%;
+    margin: 0 2% 0 2%;
+    width: 14%;
   }
   ul.tablist li:first-child {
 	 margin-left: 0;
@@ -401,9 +401,14 @@ Georgia, Webfont), Serif
     font-size: 1.25em;
   }
 }
+
 @media screen and (max-width:360px) {
   .vcard a, .jobtitle {
     font-size: 1.125em;
+  }
+  ul.tablist li {
+    margin: 0 1% 0 1%;
+    width: 16%;
   }
 }
 
