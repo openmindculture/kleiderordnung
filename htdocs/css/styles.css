@@ -56,7 +56,7 @@ a:focus,a:active{
 
 .tab .tos {
   position:absolute;
-  margin-top:3em;
+  margin-top:4em;
   color:#283583;
   background-color:#fff;
   text-align:left;
@@ -145,7 +145,6 @@ ul.tablist a {
 	margin: -.125em auto 0 auto;
 	border-radius: .5em;
   text-align: left;
-	overflow: hidden;
   min-height: 260px;
   /* transition height kann mann über eine transition: background emulieren
      vgl. http://codepen.io/LFeh/pen/ICkwe
