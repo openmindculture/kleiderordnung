@@ -54,12 +54,11 @@ a:focus,a:active{
   color:#fff;
 }
 
-.tab .tos {
-  position:absolute;
-  margin-top:4em;
+.tos {
   color:#283583;
   background-color:#fff;
   text-align:left;
+  padding: 1em;
 }
 
 .logo {

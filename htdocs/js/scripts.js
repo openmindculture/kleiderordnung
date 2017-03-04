@@ -159,6 +159,12 @@ helper.tab = {
       helper.class.remove(eltoshow,'fadetext')
     },5);
     helper.class.add(target,'active');
+    /* Sonderfall Kontakt/AGB */
+    if (idtoshow==='kontakt'){
+      helper.class.remove(document.getElementById('agb'),'hidden');
+    } else {
+      helper.class.add(document.getElementById('agb'),'hidden');
+    }
   }
 }
 
@@ -190,6 +196,7 @@ helper.event.ready(function(){
 	    }
   	}
   );
+
   /* TODO make available offline as a progressive web app
   	https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
   	*/
