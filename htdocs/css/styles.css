@@ -166,18 +166,19 @@ ul.tablist a {
 	margin-left: 0;
 	margin-right: 0;
 	position: relative;
-	transition: all .5s ease;
+	transition: transform .5s ease;
   font-size: 1.025em;
   /* use 3d to handle transform by GPU acceleration */
-  -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  webkit-backface-visibility: hidden;
 }
 .tab article p {
 	margin-bottom: 1em;
 }
 .tab.fadetext article {
-  -webkit-transform: translate3d(-500px,0,0);
   transform: translate3d(-500px,0,0);
+  -webkit-transform: translate3d(-500px,0,0);
 }
 .tab-red {
   background-color: #e73640;
@@ -341,6 +342,8 @@ Georgia, Webfont), Serif
 @media screen and (max-width:520px) {
   .clearfix-wrapper {
     padding-bottom: 9em;
+    max-width: 100%;
+    overflow: hidden;
   }
   .vcard h1, .footer .vcard h2 {
     display: block;
