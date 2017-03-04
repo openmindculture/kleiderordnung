@@ -146,6 +146,7 @@ ul.tablist a {
 	border-radius: .5em;
   text-align: left;
   min-height: 260px;
+  overflow: hidden;
   /* transition height kann mann über eine transition: background emulieren
      vgl. http://codepen.io/LFeh/pen/ICkwe
    */
