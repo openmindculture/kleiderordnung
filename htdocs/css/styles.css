@@ -397,11 +397,15 @@ Georgia, Webfont), Serif
     text-align: right;
     margin-bottom: 1em;
 	}
-  .jobtitle{
-    margin-bottom:0;
+  .vcard a, .jobtitle {
+    font-size: 1.25em;
   }
 }
-
+@media screen and (max-width:360px) {
+  .vcard a, .jobtitle {
+    font-size: 1.125em;
+  }
+}
 
 /* todo even smaller screens, and any incapable client should fall back to a rollout version like media print */
 
