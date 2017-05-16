@@ -86,12 +86,10 @@ helper.event = {
     if (!element) {
       return;
     }
-
     if (element.addEventListener) {
       element.addEventListener(event, handler, false);
       return;
     }
-
     element.attachEvent('on' + event, handler);
   },
 
@@ -99,12 +97,10 @@ helper.event = {
     if (!element) {
       return;
     }
-
     if (element.removeEventListener) {
       element.removeEventListener(event, handler, false);
       return;
     }
-
     element.detachEvent('on' + event, handler);
   },
 
@@ -119,55 +115,96 @@ helper.event = {
       });
     }
   }
-
 };
 
-helper.showTab = function(e) {
-	var idtoshow = '';
-  var target = e.target || e.srcElement;
-	if (target && target.dataset && target.dataset.tab) {
-	  idtoshow = e.target.dataset.tab;console.log("to show: "+idtoshow);
-	} else {
-	  return;
-	}
+helper.tab = {
+  show : function(e) {
+    var scrolltotop = true,
+      idtoshow = '',
+      target = e.target || e.srcElement;
+    if (target) {
+      if (target.href) {
+        e.preventDefault();
+        history.replaceState({}, '', target.href);
+        scrolltotop = false;
+      }
+      if (target.dataset && target.dataset.tab) {
+        idtoshow = e.target.dataset.tab;
+      } else {
+        return;
+      }
+    }
+    helper.tab.showByName(idtoshow,target,scrolltotop);
+  },
 
-  helper.showNamedTab(idtoshow,target);
+  showByName : function(idtoshow,target,scrollto) {
+    var i=0,
+      lis = document.getElementById('tablist').getElementsByTagName('a'),
+      tabs = document.getElementById('tabcontainer').childNodes,
+      eltoshow = document.getElementById(idtoshow);
+    for (i=0; i<lis.length; i++) {
+      if (lis[i].nodeType===1) {
+        helper.class.remove(lis[i],'active');
+      }
+    }
+    for (i=0; i<tabs.length; i++) {
+      if(tabs[i].nodeType===1){
+        helper.class.add(tabs[i],'hidden');
+        helper.class.add(tabs[i],'fadetext');
+      }
+    }
+    helper.class.remove(eltoshow,'hidden');
+    window.setTimeout(function(){
+      if (scrollto) {window.scrollTo(0,0);}
+      helper.class.remove(eltoshow,'fadetext')
+    },5);
+    helper.class.add(target,'active');
+    /* Sonderfall Kontakt/AGB */
+    if (idtoshow==='kontakt'){
+      helper.class.remove(document.getElementById('agb'),'hidden');
+    } else {
+      helper.class.add(document.getElementById('agb'),'hidden');
+    }
+  }
 }
 
-helper.showNamedTab = function(idtoshow,target) {
-  var i=0, lis = document.getElementById('tablist').getElementsByTagName('a');
-  for (i=0; i<lis.length; i++) {
-    if (lis[i].nodeType===1) {
-      helper.class.remove(lis[i],'active');
-    }
+helper.form = {
+  validate : function(e) {
+    /* TODO assure required fields or return false */
+    return true;
   }
-
-  var tabs = document.getElementById('tabcontainer').childNodes;
-  for (i=0; i<tabs.length; i++) {
-    if(tabs[i].nodeType===1){
-      helper.class.add(tabs[i],'hidden');
-      helper.class.add(tabs[i],'fadetext');
-    }
-  }
-  var eltoshow = document.getElementById(idtoshow)
-  helper.class.remove(eltoshow,'hidden');
-  window.setTimeout(function(){window.scrollTo(0,0);helper.class.remove(eltoshow,'fadetext')},5);
-  helper.class.add(target,'active');
 }
 
 /* attach link handlers for nice tab navigation effect */
 /* TODO wirklich barrierefrei sollte der Tabbereich initial ausgeklappt sein
-   und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
+ und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
 /* TODO Redundanzen beseitigen und häufig verwendete Elemente / IDs dauerhaft speichern */
 helper.event.ready(function(){
   /* Ankernavigation berücksichtigen d.h. z.B. /#kontakt muss Reiter Kontakt öffnen */
   if (location.hash && location.hash!=""){
-    console.log("evaluate location.hash "+location.hash);
+    var scrollto = true;
     var tab = location.hash.substr(1);
+    /* AGB befinden sich auch im Reiter Kontakt */
+    if (tab==='agb'){tab='kontakt';scollto=false;}
     var target = document.getElementById("link-"+tab);
     if (target) {
-      helper.showNamedTab(tab,target);
+      helper.tab.showByName(tab,target,scrollto);
     }
   }
-  document.getElementById('tablist').addEventListener('click',helper.showTab);
+  helper.event.addListener(document.getElementById('tablist'),'click',helper.tab.show);
+  /* Handler für Links zu Impressum / Kontakt / AGB außerhalb der Tablinks */
+  helper.event.addListener(document.getElementById('showcontact'),'click',function(e){
+      var scrollto = true;
+      var caller = e.target || e.srcElement;
+      if (caller && caller.getAttribute('href')==='#agb') {scrollto=false;}
+      var target = document.getElementById("link-kontakt");
+      if (target) {
+        helper.tab.showByName("kontakt",target,scrollto);
+      }
+    }
+  );
+
+  /* TODO make available offline as a progressive web app
+   https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
+   */
 });

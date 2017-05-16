@@ -162,26 +162,48 @@
       </div>
     </section><!-- /section.tabcontainer -->
 
+    <form action="/contact/send" id="contactform" class="contactform" method="POST" onsubmit="return helper.form.validate(this)" onfocus="helper.class.remove(this,'invalid');">
+
+      <label for="Name">
+        <input type=text required name="Name" id="Name" placeholder="Mein Name" label="Name" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
+      </label>
+
+      <label for="E-Mail">
+        <input type=email name="E-Mail" id="E-Mail" placeholder="Meine E-Mail-Adresse" label="E-Mail" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
+      </label>
+
+      <label for="Telefon">
+        <input type=tel name="Telefon" id="Telefon" placeholder="Meine Telefonnummer" label="Telefon" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
+      </label>
+
+      <label for="Nachricht">
+        <textarea name="Nachricht" id="Nachricht" placeholder="Meine Nachricht an Martina Klein" label="Meine Nachricht an Martina Klein"></textarea>
+      </label>
+
+      <input type="submit" class="submit" value="absenden">
+      <div id=captcha><input type="text" name="recipient" value="" class="captcha"></div>
+    </form>
+
     <aside id="agb" class="tos hidden">
       <h2>Allgemeine Geschäftsbedingungen</h2>
-	<br>
+
 	<p>
 	<h4>§ 1 Geltungsbereich</h4>
 	<p>1. Für das Vertragsverhältnis zwischen der Modeberatung „Kleiderordnung Düsseldorf“, vertreten durch Frau Martina Klein (nachfolgend „Kleiderordnung“) und Verbrauchern (nachfolgend „Kunden“) sowie sämtliche weitere von Kleiderordnung angebotenen Leistungen gelten die nachfolgenden Allgemeinen Geschäftsbedingungen.</p>
 	<p>2. Davon abweichende Bedingungen haben nur Gültigkeit, wenn sie durch Kleiderordnung schriftlich bestätigt werden.</p>
 	<p>3. Soweit in den individuellen Verträgen mit den Kunden schriftliche Bestimmungen enthalten sind, die von den nachfolgenden AGB abweichen, gehen diese Regelungen vor.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 2 Leistungsumfang und Preis</h4>
 	<p>1. Der Leistungsumfang richtet sich nach der schriftlich festgehaltenen Absprache mit dem Kunden.</p>
 	<p>2. Es gilt der jeweilige im Kundenangebot festgehaltene Preis. Dieser angegebene Preis ist verbindlich und versteht sich als Endpreis.</p>
 	<p>3. Aufgrund des Kleinunternehmerstatus gemäß § 19 UstG erhebt Kleiderordnung keine Umsatzsteuer und weist diese daher auch nicht aus.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 3 Zustandekommen des Vertrages</h4>
 	<p>1. Die Angebote auf der Webseite www.kleiderordnung-duesseldorf.de oder über andere Fernkommunikationsmittel wie Telefon, E-Mail oder Brief stellen eine unverbindliche Aufforderung dar, die Dienstleistungen von Kleiderordnung in Anspruch zu nehmen. Erst mit einer telefonischen, schriftlichen, oder per E-Mail erklärten Buchung gibt der Kunde ein verbindliches Angebot auf Abschluss eines Vertrages ab.</p>
 	<p>2. Die Annahme des Angebots durch Kleiderordnung erfolgt durch ein Bestätigungsschreiben. In diesem Bestätigungsschreiben werden alle Leistungsbestandteile sowie die Preisangaben aufgeführt.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 4 Widerrufsrecht</h4>
 	<br>
@@ -195,56 +217,57 @@
 	<br>
 	<b>Besondere Hinweise</b>
 	<br>
-	<p>Das Widerrufsrecht ist ausgeschlossen, sofern Sie ausdrücklich verlangt haben, dass bereits vor Ablauf der Widerrufsfrist die Dienstleistung beginnen soll.</p> 
+	<p>Das Widerrufsrecht ist ausgeschlossen, sofern Sie ausdrücklich verlangt haben, dass bereits vor Ablauf der Widerrufsfrist die Dienstleistung beginnen soll.</p>
 	<br>
 	<b>Muster-Widerrufsformular</b>
 <pre>
 Hiermit wiederrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die Erbringung der folgenden Dienstleistungen<br> (*) ............................................................................................................................<br>
 Bestellt am (*) .................... bestätigt am ............................<br>
 (Ihr Name)....................................................................<br>
-(Straße, Hausnummer)..........................................................<br> 
+(Straße, Hausnummer)..........................................................<br>
 (PLZ, Ort)....................................................................<br>
-(Datum).......................................................................<br> 
+(Datum).......................................................................<br>
 Ihre Unterschrift (nur bei Mitteilung auf Papier)<br>
 ..............................................................................<br>
 (*) Unzutreffendes streichen<br>
 </pre>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 5 Zahlungsbedingungen</h4>
 	<p>1. Die Zahlung der gebuchten Leistung erfolgt entweder als Vorauszahlung per Überweisung innerhalb von 14 Tagen nach Erhalt der Rechnung oder per Barzahlung direkt beim Termin. Eine Zahlung per Kreditkarte oder EC-Karte ist ausgeschlossen.</p>
 	<p>2. Die Zurückhaltung von Zahlungen oder die Aufrechnung mit Gegenansprüchen des Kunden ist ausgeschlossen, sofern diese nicht unbestritten oder rechtskräftig festgestellt sind.</p>
 	<p>3. Für den Fall eines Zahlungsverzuges des Kunden ist Kleiderordnung berechtigt, Verzugszinsen in Höhe von fünf Prozentpunkten über dem Basiszinssatz zu fordern.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 6 Gutscheine</h4>
 	<p>1. Kleiderordnung bietet Geschenkgutscheine über die angebotenen Leistungen an. Geschenkgutscheine sind nach Rechnungstellung innerhalb von 14 Tagen zu überweisen oder bar zu bezahlen.</p>
 	<p>2. Eine Barauszahlung eines Geschenkgutscheins ist nicht möglich. Geschenkgutscheine sind innerhalb von drei Jahren einzulösen. Rückzahlungen aus Gutscheinen sind ausgeschlossen.</p>
 	<p>3. Für den Fall einer Geschäftsaufgabe verliert der Geschenkgutschein seine Gültigkeit.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 7 Absage von Terminen</h4>
 	<p>1. Termine und Fristen sind nur dann verbindlich, wenn sie verbindlich vereinbart sind oder im jeweiligen Angebot vorgegeben sind.</p>
 	<p>2. Ist eine Absage oder Verschiebung des Termins seitens des Kunden erforderlich, so muss diese Absage rechtzeitig, mindestens jedoch 7 Kalendertage vor dem Termin, mitgeteilt werden. Kleiderordnung ist ansonsten berechtigt, dem Kunden den entstehenden Verdienstausfall mit 25 % der Kosten der vereinbarten Dienstleistung in Rechnung stellen.</p>
 	<p>3. Erscheint der Kunde ohne Absage nicht zu einem vereinbarten Termin bzw. ist an einem vereinbarten Termin nicht anzutreffen, so gilt die Dienstleistung als erbracht und kann seitens Kleiderordnung vollständig in Rechnung gestellt werden. Dies gilt zudem für angefallene Fahrtkosten.</p>
 	<p>4. Für den Fall einer Terminabsage aufgrund höherer Gewalt oder außergewöhnlichen und unvorhersehbaren Ereignissen wie Krankheit, Unfall, Streik hat die Terminabsage unverzüglich schriftlich oder telefonisch zu erfolgen. Es besteht die Möglichkeit einen Ersatztermin zu vereinbaren.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 8 Haftung</h4>
 	<p>1. Die jeweilige Beratung wird nach dem derzeitig aktuellen Wissenstand sorgfältig vorbereitet und durchgeführt. Für die Erfahrungen, Kenntnisse und Ergebnisse der Beratung oder Veranstaltung sowie deren Auswirkungen wird keine Haftung übernommen.</p>
 	<p>2. Die Inhalte der Webseite sowie des gedruckten Informationsmaterials werden mit größtmöglicher Sorgfalt erstellt. Kleiderordnung übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte.</p>
-	</p><br>
+	</p>
 	<p>
 	<h4>§ 9 Urheberrecht</h4>
 	<p>1. Soweit die Beratungsleistungen von Kleiderordnung urheberrechtsfähig sind, ist Kleiderordnung Urheber.</p>
 	<p>2. Beratungsunterlagen sowie Teile daraus dürfen ohne Genehmigung weder vervielfältigt, noch nachgedruckt, noch übersetzt oder an Dritte weitergegeben werden.</p>
 	</p>
-	<br>
+
 	<p>
 	<h4>§ 10 Schlussbestimmungen</h4>
 	<p>1. Es gilt das Recht der Bundesrepublik Deutschland.</p>
 	<p>2. Gerichtsstand für beide Parteien ist soweit zulässig Düsseldorf.</p>
 	</p>
+      <br>
       <a href="#kontakt" onclick="window.scrollTo(0,0);" class="toplink">^ nach oben</a>
 
     </aside><!-- Ende der AGB -->
