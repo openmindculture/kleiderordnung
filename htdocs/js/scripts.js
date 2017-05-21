@@ -19,7 +19,7 @@ if(target.dataset&&target.dataset.tab){idtoshow=e.target.dataset.tab;}else{retur
 helper.tab.showByName(idtoshow,target,scrolltotop);},showByName:function(idtoshow,target,scrollto){var i=0,lis=document.getElementById('tablist').getElementsByTagName('a'),tabs=document.getElementById('tabcontainer').childNodes,eltoshow=document.getElementById(idtoshow);for(i=0;i<lis.length;i++){if(lis[i].nodeType===1){helper.class.remove(lis[i],'active');}}
 for(i=0;i<tabs.length;i++){if(tabs[i].nodeType===1){helper.class.add(tabs[i],'hidden');helper.class.add(tabs[i],'fadetext');}}
 helper.class.remove(eltoshow,'hidden');window.setTimeout(function(){if(scrollto){window.scrollTo(0,0);}
-helper.class.remove(eltoshow,'fadetext')},5);helper.class.add(target,'active');if(idtoshow==='kontakt'){helper.class.remove(document.getElementById('agb'),'hidden');}else{helper.class.add(document.getElementById('agb'),'hidden');}}}
+helper.class.remove(eltoshow,'fadetext')},5);helper.class.add(target,'active');if(idtoshow==='kontakt'){helper.class.remove(document.getElementById('agb'),'hidden');helper.class.remove(document.getElementById('kontaktformular'),'hidden');}else{helper.class.add(document.getElementById('agb'),'hidden');helper.class.add(document.getElementById('kontaktformular'),'hidden');}}}
 helper.form={validate:function(e){return true;}}
 helper.event.ready(function(){if(location.hash&&location.hash!=""){var scrollto=true;var tab=location.hash.substr(1);if(tab==='agb'){tab='kontakt';scollto=false;}
 var target=document.getElementById("link-"+tab);if(target){helper.tab.showByName(tab,target,scrollto);}}

@@ -162,8 +162,10 @@ helper.tab = {
     /* Sonderfall Kontakt/AGB */
     if (idtoshow==='kontakt'){
       helper.class.remove(document.getElementById('agb'),'hidden');
+      helper.class.remove(document.getElementById('kontaktformular'),'hidden');
     } else {
       helper.class.add(document.getElementById('agb'),'hidden');
+      helper.class.add(document.getElementById('kontaktformular'),'hidden');
     }
   }
 }
