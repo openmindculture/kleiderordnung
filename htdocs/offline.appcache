@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# v2 (change this file after any change in html content)
+# v3 (change this file after any change in html content)
 
 # Pages that associate with a manifest become part of it.
-css/styles.css
-js/scripts.js
+css/styles.css?v=3
+js/scripts.js?v=3
 img/faden-kleider-ordnung.png
 img/faden-kleider-ordnung.svg
 img/herz-kleider-ordnung.svg

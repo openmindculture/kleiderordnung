@@ -187,7 +187,7 @@ helper.form = {
       '&Telefon='+encodeURIComponent(document.getElementById('Telefon').value)+
       '&Nachricht='+encodeURIComponent(document.getElementById('Nachricht').value)+
       '&captcha='+encodeURIComponent(document.getElementById('captchafield').value);
-    if(document.referrer){param+='Referrer='+encodeURIComponent(document.referrer)}
+    if(document.referrer){params+='Referrer='+encodeURIComponent(document.referrer)}
     xhr.open("POST", url);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -231,7 +231,6 @@ helper.event.ready(function(){
   );
 
   var contactform = document.getElementById('kontaktformular');
-  console.log('contactform:');console.log(contactform);
   /* submit by AJAX - TODO just leave default for elderly browsers */
   contactform.onsubmit = function(e) {
     e.preventDefault();

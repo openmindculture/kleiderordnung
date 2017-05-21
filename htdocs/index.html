@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="de" manifest="offline.appcache"><!-- change manifest content after html content change -->
+<html lang="de" manifest="offline.appcache?v=3"><!-- change manifest content after html content change -->
 <head>
   <meta charset="utf-8">
   <title>Kleiderordnung - Ihr roter Faden zum eigenen Stil -
   meine Modeberaterin und Stylistin Martina Klein in Düsseldorf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Average:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css?v=3">
   <link rel="canonical" href="http://www.kleiderordnung-duesseldorf.de/">
   <!-- nonblocking scripts-->
-  <script src="js/scripts.js" type="text/javascript"></script>
+  <script src="js/scripts.js?v=3" type="text/javascript"></script>
   <!-- other meta information -->
   <meta name="description" content="Stilberatung, Shoppingbegleitung und Kleiderschrank-Check in Düsseldorf und Umgebung">
   <meta name="keywords" content="Stilberatung,Stil,Beratung,Mode,Shopping,einkaufen,kombinieren,aussehen,aufräumen,aussortieren,Kleiderschrank,Check,Begleitung,Düsseldorf,Niederrhein,Bergisches,Land,Ruhrgebiet,Preise,Frauen,Männer,Damen,Herren">
@@ -159,7 +159,7 @@
       </div>
     </section><!-- /section.tabcontainer -->
 
-    <form action="http://www.kleiderordnung-duesseldorf.de/contact/send/" id="kontaktformular" class="contactform" method="POST" onsubmit="return helper.form.validate(this)" onfocus="helper.class.remove(this,'invalid');">
+    <form action="http://www.kleiderordnung-duesseldorf.de/contact/send/" id="kontaktformular" class="contactform hidden" method="POST" onsubmit="return helper.form.validate(this)" onfocus="helper.class.remove(this,'invalid');">
       <fieldset id="formularfelder">
       <label for="Name">
         <input type=text required name="Name" id="Name" placeholder="Mein Name" label="Name" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
