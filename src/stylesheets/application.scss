@@ -56,7 +56,9 @@ a:focus,a:active{
 .kontaktlinks a:link,.kontaktlinks a:active,.kontaktlinks a:visited,.kontaktlinks a:hover{
   color:#fff;
 }
-
+fieldset {
+  border: none;
+}
 .tos {
   color:#283583;
   background-color:#fff;
@@ -234,7 +236,17 @@ ul.tablist a {
   font-size:1.375em;
 }
 .vcard a, .jobtitle, .email, .telephone {
+  display: block;
   font-family: Average,serif;
+}
+.telephone {
+  padding: .25em .25em .5em .25em
+}
+.sent {
+  font-size: 1.5em;
+  font-family: Average,serif;
+  padding: 1em;
+  text-align: center;
 }
 .vcard a, .vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active{
   color:#fff;

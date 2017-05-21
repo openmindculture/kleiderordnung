@@ -1,4 +1,5 @@
 /* common helper functions */
+/* TODO check for minimum "modern browser" */
 
 var helper = {};
 
@@ -174,6 +175,29 @@ helper.form = {
   validate : function(e) {
     /* TODO assure required fields or return false */
     return true;
+  },
+  ajaxPost : function(form, callback) {
+    var url = form.action,
+      xhr = new XMLHttpRequest();
+
+    /* only allow known form fields */
+    var params=''+
+      'Name='+encodeURIComponent(document.getElementById('Name').value)+
+      '&E-Mail='+encodeURIComponent(document.getElementById('E-Mail').value)+
+      '&Telefon='+encodeURIComponent(document.getElementById('Telefon').value)+
+      '&Nachricht='+encodeURIComponent(document.getElementById('Nachricht').value)+
+      '&captcha='+encodeURIComponent(document.getElementById('captchafield').value);
+    if(document.referrer){param+='Referrer='+encodeURIComponent(document.referrer)}
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("X-Requested-With", "xmlhttprequest");
+
+    //.bind ensures that this inside of the function is the XHR object.
+    xhr.onload = callback.bind(xhr);
+
+    //All preperations are clear, send the request!
+    xhr.send(params);
   }
 }
 
@@ -205,6 +229,20 @@ helper.event.ready(function(){
       }
     }
   );
+
+  var contactform = document.getElementById('kontaktformular');
+  console.log('contactform:');console.log(contactform);
+  /* submit by AJAX - TODO just leave default for elderly browsers */
+  contactform.onsubmit = function(e) {
+    e.preventDefault();
+    helper.form.ajaxPost(contactform,function(xhr){
+        if (xhr) {/* TODO properly check success */
+          helper.class.remove(document.getElementById('formularversandt'), 'hidden');
+          helper.class.add(document.getElementById('formularfelder'), 'hidden');
+        }
+      }
+    );
+  };
 
   /* TODO make available offline as a progressive web app
    https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/

@@ -142,12 +142,9 @@
             <div>
               <h1 class="fn" itemprop="name"><img src="img/Martina-Klein.svg" alt="Martina Klein" width="438" height="119"></h1>
               <div class="jobtitle" itemprop="jobTitle">Modeberaterin und Stylistin</div>
-              <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
-              <br>
               <a class="telephone" itemprop="telephone" href="tel:+491625445028">0 162 . 54 450 28</a>
-              <br>
+              <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
               <a itemscope="url" href="http://www.kleiderordnung-duesseldorf.de/">www.kleiderordnung-duesseldorf.de</a>
-              <br>
             </div>
           </address>
         </article>
@@ -162,8 +159,8 @@
       </div>
     </section><!-- /section.tabcontainer -->
 
-    <form action="/contact/send" id="kontaktformular" class="contactform" method="POST" onsubmit="return helper.form.validate(this)" onfocus="helper.class.remove(this,'invalid');">
-
+    <form action="http://www.kleiderordnung-duesseldorf.de/contact/send/" id="kontaktformular" class="contactform" method="POST" onsubmit="return helper.form.validate(this)" onfocus="helper.class.remove(this,'invalid');">
+      <fieldset id="formularfelder">
       <label for="Name">
         <input type=text required name="Name" id="Name" placeholder="Mein Name" label="Name" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
       </label>
@@ -181,7 +178,13 @@
       </label>
 
       <input type="submit" class="submit" value="absenden">
-      <div id=captcha><input type="text" name="recipient" value="" class="captcha"></div>
+      <div id=captcha><input type="text" name="recipient" value="" class="captcha" id="captchafield"></div>
+      </fieldset>
+      <div id="formularversandt" class="hidden sent">
+        <aside>
+          Vielen Dank für Ihre Nachricht!
+        </aside>
+      </div>
     </form>
 
     <aside id="agb" class="tos hidden">

@@ -20,8 +20,51 @@ helper.tab.showByName(idtoshow,target,scrolltotop);},showByName:function(idtosho
 for(i=0;i<tabs.length;i++){if(tabs[i].nodeType===1){helper.class.add(tabs[i],'hidden');helper.class.add(tabs[i],'fadetext');}}
 helper.class.remove(eltoshow,'hidden');window.setTimeout(function(){if(scrollto){window.scrollTo(0,0);}
 helper.class.remove(eltoshow,'fadetext')},5);helper.class.add(target,'active');if(idtoshow==='kontakt'){helper.class.remove(document.getElementById('agb'),'hidden');helper.class.remove(document.getElementById('kontaktformular'),'hidden');}else{helper.class.add(document.getElementById('agb'),'hidden');helper.class.add(document.getElementById('kontaktformular'),'hidden');}}}
-helper.form={validate:function(e){return true;}}
+
+helper.form = {
+  validate : function(e) {
+    /* TODO assure required fields or return false */
+    return true;
+  },
+  ajaxPost : function(form, callback) {
+    var url = form.action,
+      xhr = new XMLHttpRequest();
+
+    /* only allow known form fields */
+    var params=''+
+      'Name='+encodeURIComponent(document.getElementById('Name').value)+
+      '&E-Mail='+encodeURIComponent(document.getElementById('E-Mail').value)+
+      '&Telefon='+encodeURIComponent(document.getElementById('Telefon').value)+
+      '&Nachricht='+encodeURIComponent(document.getElementById('Nachricht').value)+
+      '&captcha='+encodeURIComponent(document.getElementById('captchafield').value);
+    if(document.referrer){param+='Referrer='+encodeURIComponent(document.referrer)}
+    xhr.open("POST", url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("X-Requested-With", "xmlhttprequest");
+    xhr.onload = callback.bind(xhr);
+    xhr.send(params);
+  }
+}
+
 helper.event.ready(function(){if(location.hash&&location.hash!=""){var scrollto=true;var tab=location.hash.substr(1);if(tab==='agb'){tab='kontakt';scollto=false;}
 var target=document.getElementById("link-"+tab);if(target){helper.tab.showByName(tab,target,scrollto);}}
 helper.event.addListener(document.getElementById('tablist'),'click',helper.tab.show);helper.event.addListener(document.getElementById('showcontact'),'click',function(e){var scrollto=true;var caller=e.target||e.srcElement;if(caller&&caller.getAttribute('href')==='#agb'){scrollto=false;}
-var target=document.getElementById("link-kontakt");if(target){helper.tab.showByName("kontakt",target,scrollto);}});});
+var target=document.getElementById("link-kontakt");if(target){helper.tab.showByName("kontakt",target,scrollto);
+    }});
+
+  var contactform = document.getElementById('kontaktformular');
+  console.log('contactform:');console.log(contactform);
+  /* submit by AJAX - TODO just leave default for elderly browsers */
+  contactform.onsubmit = function(e) {
+    e.preventDefault();
+    helper.form.ajaxPost(contactform,function(xhr){
+        if (xhr) {
+          helper.class.remove(document.getElementById('formularversandt'), 'hidden');
+          helper.class.add(document.getElementById('formularfelder'), 'hidden');
+        }
+      }
+    );
+  };
+
+    });
