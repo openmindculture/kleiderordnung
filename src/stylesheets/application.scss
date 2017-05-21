@@ -63,6 +63,18 @@ a:focus,a:active{
   text-align:left;
   padding: 1em;
 }
+.tos p {
+  padding-bottom:.325em;
+}
+.widerruf {
+  border: none;
+  padding: 0;
+}
+.widerruf td {
+  white-space: nowrap;
+  border:none;
+  padding:0 .125em .5em 0
+}
 
 .logo {
   margin: 0 auto;
