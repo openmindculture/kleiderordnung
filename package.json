@@ -23,5 +23,8 @@
       "standard",
       "promise"
     ]
+  },
+  "jest": {
+    "verbose": true
   }
 }
