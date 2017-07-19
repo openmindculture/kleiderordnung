@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" manifest="offline.appcache?v=4"><!-- change manifest content after html content change -->
 <head>
   <meta charset="utf-8">
-  <title>Kleiderordnung - Ihr roter Faden zum eigenen Stil - meine Modeberaterin und Stylistin Martina Klein in Düsseldorf</title>
-  <meta name="viewport" content="width=device-width">
-  <!-- TODO minify final CSS -->
-  <link href="http://fonts.googleapis.com/css?family=Sacramento|Source+Sans+Pro:400,600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="canonical" href="http://www.stilberatung-duesseldorf.de/">
-  <!-- semibold überschrift = 600, text regular = 400 -->
-  <!-- nonblocking scripts-->
-  <script src="js/scripts.js" type="text/javascript"></script>
+  <title>Kleiderordnung - Ihr roter Faden zum eigenen Stil -
+  meine Modeberaterin und Stylistin Martina Klein in Düsseldorf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Average:400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css?v=4">
+  <link rel="canonical" href="http://www.kleiderordnung-duesseldorf.de/">
+  <script src="js/scripts.js?v=4" type="text/javascript"></script>
   <!-- other meta information -->
   <meta name="description" content="Stilberatung, Shoppingbegleitung und Kleiderschrank-Check in Düsseldorf und Umgebung">
   <meta name="keywords" content="Stilberatung,Stil,Beratung,Mode,Shopping,einkaufen,kombinieren,aussehen,aufräumen,aussortieren,Kleiderschrank,Check,Begleitung,Düsseldorf,Niederrhein,Bergisches,Land,Ruhrgebiet,Preise,Frauen,Männer,Damen,Herren">
-  <meta name="author" content="Ingo Steinke (Web Development), Vivien Kruggel (Grafik), Martina Klein">
+  <meta name="author" content="ingo" >
   <meta name="google-site-verification" content="google56e508471606aa4e">
   <meta name="robots" content="index,follow">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,104 +36,114 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
-  <!-- Wenn wir schon Schriften als Grafik setzen, dann sollen sie vorrangig geladen werden -->
-  <link rel="preload" as="image" href="img/faden-kleider-ordnung.png" media="(max-width: 1399px)">
-  <link rel="preload" as="image" href="img/faden-kleider-ordnung.png">
 </head>
 <body>
 <div class="clearfix-wrapper">
   <header class="header">
     <div class="left-half">
       <div class="decorator">
-        <picture class="herz-und-faden">
-          <source
-            media="(min-width: 1400px)"
-            srcset="img/herz-kleider-ordnung.svg"
-            type="image/svg+xml"><!-- 1280 x 928 -->
-          <source
-            srcset="img/faden-kleider-ordnung.svg"
-            type="image/svg+xml"><!-- 770 x 928 -->
-          <!-- fallback image as PNG (TODO) -->
-          <img src="img/faden-kleider-ordnung.png"
-               width="770" height="928"
-               alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil"
-          >
-        </picture>
+
+        <img class="herz-und-faden" srcset="img/herz-kleider-ordnung.svg 1280w,
+             img/faden-kleider-ordnung.svg 1w"
+             width="1280" height="928"
+             src="img/faden-kleider-ordnung.png" alt="Kleiderordnung - Ihr roter Faden zum eigenen Stil">
+
       </div>
     </div>
   </header>
   <div class="content-wrapper">
     <ul class="tablist" id="tablist">
-      <li><!-- Kleid weiss auf rot -->
-        <a id="link-ueber-mich" class="link-ueber" href="#ueber-mich" data-tab="ueber-mich" title="Über mich" tabindex="1">
+      <li><!-- Persona weiss auf rot -->
+        <a id="link-ueber-mich" class="link-ueber" href="#ueber-mich" data-tab="ueber-mich" title="Über mich">
         </a>
       </li>
       <li><!-- Krawatte weiss auf blau -->
-        <a id="link-tab-b" class="link-b" href="#tab-b" data-tab="tab-b" title="B" tabindex="2">
+        <a id="link-business" class="link-b" href="#business" data-tab="business" title="Stil für den Job, Ordnung im Kleiderschrank">
         </a>
       </li>
       <li><!-- Kleiderbügel weiss auf rot -->
-        <a id="link-leistungen" class="link-leistungen active" href="#leistungen" data-tab="leistungen" title="Leistungen" tabindex="3">
+        <a id="link-leistungen" class="link-leistungen active" href="#leistungen" data-tab="leistungen" title="Leistungen">
         </a>
       </li>
-      <li><!-- Pumps weiss auf rot -->
-        <a id="link-kontakt" class="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt / Impressum" tabindex="5">
+      <li><!-- Briefumschlag weiss auf blau -->
+        <a id="link-kontakt" class="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt / Impressum / AGB">
         </a>
       </li>
-      <li ><!-- Jackett (oder Hose oder Hemd) blau -->
-        <a id="link-media" class="link-media" href="#media" data-tab="media" title="Impressionen, Eindrücke" tabindex="5">
+      <li ><!-- Bildsymbol weiss auf rot -->
+        <a id="link-media" class="link-media" href="#media" data-tab="media" title="Impressionen, Eindrücke">
         </a>
       </li>
     </ul>
     <section class="tabs" id="tabcontainer">
       <div id="ueber-mich" class="hidden tab tab-red">
         <article>
+          <img class="floatcircle" src="img/Martina-Klein-Kleiderordnung.png" width="198" height="198" alt="Martina Klein (Foto)"><!-- 198 x2 =396 -->
           <h2>Über mich</h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar lorem.
-          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo, auctor
-          sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat in
-          porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci,
-          id congue diam pretium ut.
+          <p>
+          Mein Herz schlägt für Mode und die Herausforderung individueller Stilfindung mit natürlicher Ausstrahlung.
+          </p>
+          <p>
+          Ich bringe eine große Begeisterung für Mode und Kombination von Mode und Stilen mit. Ich habe selbst einen starken Stil
+            und einen sehr guten Blick für andere Menschen und deren Wirkung. Ich habe in Paris und Sevilla gelebt, war auf Messen tätig,
+            bereise Metropolen und pflege einen weit gefächerten Freundeskreis.
+            Des Weiteren arbeite ich seit 15 Jahren im Verlagswesen,
+            wo ich täglich Menschen aus den unterschiedlichen Businessbereichen antreffe:
+            Redakteure, Grafiker und Web-Entwickler ebenso wie Verwaltungsangestellte und Assistenten der Geschäftsführung.
+					</p>
         </article>
       </div>
-      <div id="tab-b" class="hidden tab tab-blue">
+      <div id="business" class="hidden tab tab-blue">
         <article>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis orci aliquam, volutpat eros et, pulvinar
-          lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ligula leo,
-          auctor sed porttitor lobortis, gravida a turpis. Pellentesque porttitor venenatis maximus. In nisi nunc, consequat
-          in porttitor egestas, interdum id libero. Nam auctor erat lorem, ac imperdiet quam fermentum hendrerit. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur venenatis enim orci,
-          id congue diam pretium ut.
+          <h2>Professioneller &amp; individueller Stil für den Job? </h2>
+          <p>Sie wünschen sich eine professionelle aber ebenso individuelle Garderobe für den Job? Ich finde für Sie einen unkomplizierten Look,
+            der Sie morgens nicht stresst, jederzeit gut und passend aussehen lässt und dennoch ihre ganz individuelle Note aufweist.</p>
+          <h2>Sie haben Sehnsucht nach ORDNUNG im Kleiderschrank?</h2>
+          <p>Gemeinsam finden wir heraus, welche Anzahl an Kleidungsstücken für Sie genau richtig ist und Ihnen wirklich am Herzen liegen.
+            Ziel ist es, dass Sie mit jedem Teil in ihrem Schrank 100%-ig glücklich sind. Es wird Ihnen zukünftig leicht fallen,
+            diese Herzensstücke perfekt in ORDNUNG zu halten!</p>
+
         </article>
       </div>
       <div id="leistungen" class="tab tab-red">
         <article>
-          Mode- und Stilberatung, Kleiderschrank-Check, Einkaufsbegleitung und -beratung sowie Ordnungstipps zählen zu meinen Leistungen.
+          <div id="showcontact" class="kontaktlinks">
+            <!-- id 'showcontact' adds click handler for tab change -->
+            <a href="#kontakt">Impressum</a>/
+            <a href="#agb">AGB</a>
+          </div>
+       		<h2>Sie wollen Ihren Stil verändern
+       		<br>
+       		 oder mehr Individualität in Ihren Look bringen?</h2>
+       		<p>Alles neu kaufen? Niemals! Das Hinzufügen von Accessoires und etwas Mut zu ungewöhnlichen Kombinationen führt
+            zu tollen Ergebnissen mit ganz neuer Wirkung und Ausstrahlung, ohne viel  Zeit und Geld zu investieren!
+          <br>
+            Ihr eigener Kleiderschrank wird zur Lieblingsboutique und Sie brauchen sich um aktuelle Mode und
+            vermeintliche Trends keine Gedanken mehr zu machen!</p>
+				<p>Sollten Ergänzungen für Ihre Garderobe sinnvoll sein, dann begleite ich Sie gerne in Ihre Lieblingsläden, Boutiquen
+          oder Modeausstatter oder ich plane auf Wunsch die geeignete Einkaufstour für Sie!</p>
+				<h2>Sie blicken einem besonderen Anlass entgegen? Und natürlich wollen Sie dabei den allerbesten Eindruck hinterlassen!</h2>
+				<p>Ob es die Hochzeit Ihrer besten Freundin ist, für die Sie ein Kleid benötigen, oder gar ihr eigener großer Tag?
+          Das Vorstellungsgespräch zu Ihrem Traumjob? Eine Vernissage oder großes Geburtstagsfest - wir finden gemeinsam das richtige Outfit!</p>
+				<h2>Vorbesprechung und Kalkulation</h2>
+				<p>Mein Ziel ist es, dass Sie mit meiner Beratung rundum zufrieden sind!
+          In einem Vorgespräch lernen wir uns persönlich kennen und ich erfahre Ihre konkreten Wünsche und Erwartungen.
+          Diese ersten Eindrücke, Kenntnisse und Notizen nehme ich als Grundlage, Ihnen den zeitlichen und preislichen
+          Umfang meiner Beratung zu nennen und mich vor allem optimal auf unseren Termin vorzubereiten. </p>
+				<h2>Ich freue mich auf Ihren Auftrag.</h2>
         </article>
       </div>
       <div id="kontakt" class="hidden tab tab-blue">
         <article>
-          <h3>
-            Kontakt/Impressum
-          </h3>
+          <h2>
+            Kontakt, Impressum, AGB
+          </h2>
           <address class="vcard">
             <div>
-              <h1 itemprop="name"><img src="img/Martina-Klein.svg" alt="Martina Klein" width="438" height="119"></h1>
+              <h1 class="fn" itemprop="name"><img src="img/Martina-Klein.svg" alt="Martina Klein" width="438" height="119"></h1>
               <div class="jobtitle" itemprop="jobTitle">Modeberaterin und Stylistin</div>
+              <a class="telephone" itemprop="telephone" href="tel:+491625445028">0 162 . 54 450 28</a>
               <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
-              <br>
-              <a class="telephone" itemprop="telephone" href="tel:+491616823820">0 151.56 028 820</a>
-              <!-- todo keine fünfstellige vorwahl, dahinter 8 Ziffern -->
-              <br>
               <a itemscope="url" href="http://www.kleiderordnung-duesseldorf.de/">www.kleiderordnung-duesseldorf.de</a>
-              <br>
-              <!-- Instagram Badge -->
-              <!--
-              <a href="https://www.instagram.com/kleider.ordnung/?ref=badge" class="ig-b- ig-b-48">
-                <img src="http://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram" />
-              </a>
-              -->
             </div>
           </address>
         </article>
@@ -144,65 +152,135 @@
         <article>
           <h2>Impressionen, Eindrücke, Erfahrungen</h2>
           <div class="gallery">
-            <div class='square-box'>
-              <div class='square-content'>
-                <img src="img/platzhalter1.jpg"/>
-              </div>
-            </div>
-            <div class='square-box'>
-              <div class='square-content'>
-                <img src="img/platzhalter2.jpg"/>
-              </div>
-            </div>
-            <div class='square-box'>
-              <div class='square-content'>
-                <img src="img/platzhalter3.jpg"/>
-              </div>
-            </div>
-            <div class='square-box'>
-              <div class='square-content'>
-                <img src="img/platzhalter1.jpg"/>
-              </div>
-            </div>
-            <div class='square-box'>
-              <div class='square-content'>
-                <img src="img/platzhalter2.jpg"/>
-              </div>
-            </div>
-            <div class='square-box'>
-              <div class='square-content'>
-                <img src="img/platzhalter3.jpg"/>
-              </div>
-            </div>
+           <img src="img/Martina-Klein-Kleiderordnung.png" class="float" width="198" height="198" alt="Foto">
           </div>
         </article>
       </div>
     </section><!-- /section.tabcontainer -->
 
-    <section class="gallery">
-      <!-- Instagram-Bilder nachladen -->
-      <div id="instafeed"></div>
-    </section>
+    <form action="http://www.kleiderordnung-duesseldorf.de/contact/send/" id="kontaktformular" class="contactform hidden" method="POST" onsubmit="return helper.form.validate(this)" onfocus="helper.class.remove(this,'invalid');">
+      <fieldset id="formularfelder">
+      <label for="Name">
+        <input type=text required name="Name" id="Name" placeholder="Mein Name" label="Name" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
+      </label>
+
+      <label for="E-Mail">
+        <input type=email name="E-Mail" id="E-Mail" placeholder="Meine E-Mail-Adresse" label="E-Mail" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
+      </label>
+
+      <label for="Telefon">
+        <input type=tel name="Telefon" id="Telefon" placeholder="Meine Telefonnummer" label="Telefon" onfocus="helper.class.remove(this,'invalid'); helper.class.remove(this.previousSibling,'invalid')">
+      </label>
+
+      <label for="Nachricht">
+        <textarea name="Nachricht" id="Nachricht" placeholder="Meine Nachricht an Martina Klein" label="Meine Nachricht an Martina Klein"></textarea>
+      </label>
+
+      <input type="submit" class="submit" value="absenden">
+      <div id=captcha><input type="text" name="recipient" value="" class="captcha" id="captchafield"></div>
+      </fieldset>
+      <div id="formularversandt" class="hidden sent">
+        <aside>
+          Vielen Dank für Ihre Nachricht!
+        </aside>
+      </div>
+    </form>
+
+    <aside id="agb" class="tos hidden">
+      <h2>Allgemeine Geschäftsbedingungen</h2>
+
+	<p>
+	<h4>§ 1 Geltungsbereich</h4>
+	<p>1. Für das Vertragsverhältnis zwischen der Modeberatung „Kleiderordnung Düsseldorf“, vertreten durch Frau Martina Klein (nachfolgend „Kleiderordnung“) und Verbrauchern (nachfolgend „Kunden“) sowie sämtliche weitere von Kleiderordnung angebotenen Leistungen gelten die nachfolgenden Allgemeinen Geschäftsbedingungen.</p>
+	<p>2. Davon abweichende Bedingungen haben nur Gültigkeit, wenn sie durch Kleiderordnung schriftlich bestätigt werden.</p>
+	<p>3. Soweit in den individuellen Verträgen mit den Kunden schriftliche Bestimmungen enthalten sind, die von den nachfolgenden AGB abweichen, gehen diese Regelungen vor.</p>
+	</p>
+	<p>
+	<h4>§ 2 Leistungsumfang und Preis</h4>
+	<p>1. Der Leistungsumfang richtet sich nach der schriftlich festgehaltenen Absprache mit dem Kunden.</p>
+	<p>2. Es gilt der jeweilige im Kundenangebot festgehaltene Preis. Dieser angegebene Preis ist verbindlich und versteht sich als Endpreis.</p>
+	<p>3. Aufgrund des Kleinunternehmerstatus gemäß § 19 UstG erhebt Kleiderordnung keine Umsatzsteuer und weist diese daher auch nicht aus.</p>
+	</p>
+	<p>
+	<h4>§ 3 Zustandekommen des Vertrages</h4>
+	<p>1. Die Angebote auf der Webseite www.kleiderordnung-duesseldorf.de oder über andere Fernkommunikationsmittel wie Telefon, E-Mail oder Brief stellen eine unverbindliche Aufforderung dar, die Dienstleistungen von Kleiderordnung in Anspruch zu nehmen. Erst mit einer telefonischen, schriftlichen, oder per E-Mail erklärten Buchung gibt der Kunde ein verbindliches Angebot auf Abschluss eines Vertrages ab.</p>
+	<p>2. Die Annahme des Angebots durch Kleiderordnung erfolgt durch ein Bestätigungsschreiben. In diesem Bestätigungsschreiben werden alle Leistungsbestandteile sowie die Preisangaben aufgeführt.</p>
+	</p>
+	<p>
+	<h4>§ 4 Widerrufsrecht</h4>
+	<br>
+	<b>Widerrufsbelehrung</b>
+	<br>
+	<p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt 14 Tage ab Vertragsschluss. Um Ihr Widerrufsrecht auszuüben, müssen Sie  mir (Kleiderordnung Düsseldorf, Frau Martina Klein, Neunzigstraße 6a, 40625 Düsseldorf, mklein@meine-modeberaterin.de) mittels einer eindeutigen Erklärung (z.B. einem mit der Post versandten Brief, einer E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das unten stehende Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist oder eine andere eindeutige Erklärung übermitteln. Machen Sie von dieser Möglichkeit Gebrauch, so werden wir Ihnen unverzüglich eine Bestätigung über den Eingang des Widerrufs übermitteln. Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+	<br>
+	<b>Folgen des Widerrufs</b>
+	<br>
+	<p>Wenn Sie diesen Vertrag widerrufen, habe ich Ihnen alle Zahlungen, die ich von Ihnen erhalten habe unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei mir eingegangen ist. Für diese Rückzahlung verwende ich dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
+	<br>
+	<b>Besondere Hinweise</b>
+	<br>
+	<p>Das Widerrufsrecht ist ausgeschlossen, sofern Sie ausdrücklich verlangt haben, dass bereits vor Ablauf der Widerrufsfrist die Dienstleistung beginnen soll.</p>
+	<br>
+	<b>Muster-Widerrufsformular</b>
+  <table border=0 class=widerruf>
+    <tr><td colspan=2>Hiermit wiederrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über die Erbringung <br>
+      der folgenden Dienstleistungen (*)</td></tr>
+    <tr><td colspan=2>..........................................................................................................................................................</td></tr>
+    <tr>
+      <td width="25%">Bestellt am (*)</td>
+      <td width="75%">......................... &nbsp;&nbsp; bestätigt am ...............................................................</td>
+    </tr>
+    <tr><td>(Ihr Name)</td><td>.................................................................................................................</td></tr>
+    <tr><td>(Straße, Hausnummer)</td><td>.................................................................................................................</td></tr>
+    <tr><td>(PLZ, Ort)</td><td>.................................................................................................................</td></tr>
+    <tr><td>(Datum)</td><td>.................................................................................................................</td></tr>
+    <tr><td colspan=2>Ihre Unterschrift (nur bei Mitteilung auf Papier) (*)</td></tr>
+    <tr><td colspan=2>...........................................................................................................................................................</td></tr>
+    <tr><td colspan=2>(*) Unzutreffendes streichen</td></tr>
+  </table>
+	</p>
+	<p>
+	<h4>§ 5 Zahlungsbedingungen</h4>
+	<p>1. Die Zahlung der gebuchten Leistung erfolgt entweder als Vorauszahlung per Überweisung innerhalb von 14 Tagen nach Erhalt der Rechnung oder per Barzahlung direkt beim Termin. Eine Zahlung per Kreditkarte oder EC-Karte ist ausgeschlossen.</p>
+	<p>2. Die Zurückhaltung von Zahlungen oder die Aufrechnung mit Gegenansprüchen des Kunden ist ausgeschlossen, sofern diese nicht unbestritten oder rechtskräftig festgestellt sind.</p>
+	<p>3. Für den Fall eines Zahlungsverzuges des Kunden ist Kleiderordnung berechtigt, Verzugszinsen in Höhe von fünf Prozentpunkten über dem Basiszinssatz zu fordern.</p>
+	</p>
+	<p>
+	<h4>§ 6 Gutscheine</h4>
+	<p>1. Kleiderordnung bietet Geschenkgutscheine über die angebotenen Leistungen an. Geschenkgutscheine sind nach Rechnungstellung innerhalb von 14 Tagen zu überweisen oder bar zu bezahlen.</p>
+	<p>2. Eine Barauszahlung eines Geschenkgutscheins ist nicht möglich. Geschenkgutscheine sind innerhalb von drei Jahren einzulösen. Rückzahlungen aus Gutscheinen sind ausgeschlossen.</p>
+	<p>3. Für den Fall einer Geschäftsaufgabe verliert der Geschenkgutschein seine Gültigkeit.</p>
+	</p>
+	<p>
+	<h4>§ 7 Absage von Terminen</h4>
+	<p>1. Termine und Fristen sind nur dann verbindlich, wenn sie verbindlich vereinbart sind oder im jeweiligen Angebot vorgegeben sind.</p>
+	<p>2. Ist eine Absage oder Verschiebung des Termins seitens des Kunden erforderlich, so muss diese Absage rechtzeitig, mindestens jedoch 7 Kalendertage vor dem Termin, mitgeteilt werden. Kleiderordnung ist ansonsten berechtigt, dem Kunden den entstehenden Verdienstausfall mit 25 % der Kosten der vereinbarten Dienstleistung in Rechnung stellen.</p>
+	<p>3. Erscheint der Kunde ohne Absage nicht zu einem vereinbarten Termin bzw. ist an einem vereinbarten Termin nicht anzutreffen, so gilt die Dienstleistung als erbracht und kann seitens Kleiderordnung vollständig in Rechnung gestellt werden. Dies gilt zudem für angefallene Fahrtkosten.</p>
+	<p>4. Für den Fall einer Terminabsage aufgrund höherer Gewalt oder außergewöhnlichen und unvorhersehbaren Ereignissen wie Krankheit, Unfall, Streik hat die Terminabsage unverzüglich schriftlich oder telefonisch zu erfolgen. Es besteht die Möglichkeit einen Ersatztermin zu vereinbaren.</p>
+	</p>
+	<p>
+	<h4>§ 8 Haftung</h4>
+	<p>1. Die jeweilige Beratung wird nach dem derzeitig aktuellen Wissenstand sorgfältig vorbereitet und durchgeführt. Für die Erfahrungen, Kenntnisse und Ergebnisse der Beratung oder Veranstaltung sowie deren Auswirkungen wird keine Haftung übernommen.</p>
+	<p>2. Die Inhalte der Webseite sowie des gedruckten Informationsmaterials werden mit größtmöglicher Sorgfalt erstellt. Kleiderordnung übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte.</p>
+	</p>
+	<p>
+	<h4>§ 9 Urheberrecht</h4>
+	<p>1. Soweit die Beratungsleistungen von Kleiderordnung urheberrechtsfähig sind, ist Kleiderordnung Urheber.</p>
+	<p>2. Beratungsunterlagen sowie Teile daraus dürfen ohne Genehmigung weder vervielfältigt, noch nachgedruckt, noch übersetzt oder an Dritte weitergegeben werden.</p>
+	</p>
+
+	<p>
+	<h4>§ 10 Schlussbestimmungen</h4>
+	<p>1. Es gilt das Recht der Bundesrepublik Deutschland.</p>
+	<p>2. Gerichtsstand für beide Parteien ist soweit zulässig Düsseldorf.</p>
+	</p>
+      <br>
+      <a href="#kontakt" onclick="window.scrollTo(0,0);" class="toplink">^ nach oben</a>
+
+    </aside><!-- Ende der AGB -->
 
   </div><!-- /div.content-wrapper -->
 </div><!-- /div.clearfix-wrapper -->
 
-<!--
-<script type="text/javascript" src="js/instafeed.min.js"></script>
-<script type="text/javascript">
-  var userFeed = new Instafeed({
-    get: 'user',
-    userId: '4261608683',
-    todoReplaceExampleValues:'',
-    clientId: '02b47e1b98ce4f04adc271ffbd26611d',
-    accessToken: '623597756.02b47e1.3dbf3cb6dc3f4dccbc5b1b5ae8c74a72',
-    resolution: 'standard_resolution',
-    template: '<a href="{{link}}" target="_blank" id="{{id}}"><img src="{{image}}" /></a>',
-    sortBy: 'most-recent',
-    limit: 9,
-    links: false
-  });
-  // userFeed.run();
-</script> -->
 </body>
 </html>

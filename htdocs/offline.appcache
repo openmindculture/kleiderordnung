@@ -1,0 +1,26 @@
+CACHE MANIFEST
+# v3 (change this file after any change in html content)
+
+# Pages that associate with a manifest become part of it.
+css/styles.css?v=4
+js/scripts.js?v=4
+img/faden-kleider-ordnung.png
+img/faden-kleider-ordnung.svg
+img/herz-kleider-ordnung.svg
+img/icon-impressionen.svg
+img/icon-kleiderbuegel.svg
+img/icon-kontakt.svg
+img/icon-krawatte.svg
+img/icon-ueber-mich.svg
+img/kleider-ordnung-logo.png
+img/Martina-Klein.svg
+img/Martina-Klein-Kleiderordnung.png
+
+# Allow loading anything else
+NETWORK:
+*
+
+# Prefer online version if available
+SETTINGS:
+prefer-online
+
