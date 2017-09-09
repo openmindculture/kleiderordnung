@@ -46,7 +46,7 @@ $headers = 'MIME-Version: 1.0' . "\r\n".
            'Content-Type: text/plain; charset=UTF-8' . "\r\n".
            'From: Kleiderordnung-Kontaktformular<mklein@kleiderordnung-duesseldorf.de>' . "\r\n" .
            'Reply-To: ' . $post_email . "\r\n" .
-           'Bcc: ingosteinke@ingosteinke.de'. "\r\n".
+           'Bcc: spamtrap@open-mind-culture.org'. "\r\n".
            'Remote-Address: ' .   $_SERVER['REMOTE_ADDR'] . "\r\n".
            'User-Agent: ' .       $_SERVER['HTTP_USER_AGENT'] . "\r\n".
            'Referer: ' .          $post_ref . "\r\n".
