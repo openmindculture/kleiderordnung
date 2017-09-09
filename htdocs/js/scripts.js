@@ -57,6 +57,7 @@ var target=document.getElementById("link-kontakt");if(target){helper.tab.showByN
   /* submit by AJAX - TODO just leave default for elderly browsers */
   contactform.onsubmit = function(e) {
     e.preventDefault();
+    document.getElementById('form-referrer').value=document.referrer;
     helper.form.ajaxPost(contactform,function(xhr){
         if (xhr) {
           helper.class.remove(document.getElementById('formularversandt'), 'hidden');
