@@ -234,6 +234,7 @@ helper.event.ready(function(){
   /* submit by AJAX - TODO just leave default for elderly browsers */
   contactform.onsubmit = function(e) {
     e.preventDefault();
+    document.getElementById('form-referrer').value=document.referrer;
     helper.form.ajaxPost(contactform,function(xhr){
         if (xhr) {/* TODO properly check success */
           helper.class.remove(document.getElementById('formularversandt'), 'hidden');
