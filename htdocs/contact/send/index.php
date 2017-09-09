@@ -20,17 +20,23 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
   echo '</body></html>';
 }
 
-/* TODO require post, require spamtrap 'captcha' be empty, require msg not empty, count tries by IP, etc */
-/* TODO on error only send error msg to webmaster, otherwise send to owner */
-
 $post_name  = filter_var($_REQUEST['Name'],      FILTER_SANITIZE_STRING);
 $post_email = filter_var($_REQUEST['E-Mail'],    FILTER_SANITIZE_EMAIL);
 $post_tel   = filter_var($_REQUEST['Telefon'],   FILTER_SANITIZE_STRING);
 $post_msg   = filter_var($_REQUEST['Nachricht'], FILTER_SANITIZE_STRING);
 $post_ref   = filter_var($_REQUEST['Referrer'],  FILTER_SANITIZE_STRING);
+$spamtrap   = filter_var($_REQUEST['recipient'],FILTER_SANITIZE_STRING);
 
 $to      = 'mklein@meine-modeberaterin.de';
 $subject = 'Anfrage ueber kleiderordnung-duesseldorf.de';
+
+/* require spamtrap 'captcha' be empty, require msg not empty         */
+/* on error only send error msg to webmaster, otherwise send to owner */
+if (!empty($spamtrap) || empty($post_msg)  ){
+  $to      = 'spamtrap@open-mind-culture.org';
+  $subject.= ' [Spamverdacht]';
+}
+
 $message = 'Name: ' .    $post_name .  "\r\n".
            'E-Mail: ' .  $post_email . "\r\n".
            'Telefon: ' . $post_tel .   "\r\n\r\n".
@@ -45,6 +51,7 @@ $headers = 'MIME-Version: 1.0' . "\r\n".
            'User-Agent: ' .       $_SERVER['HTTP_USER_AGENT'] . "\r\n".
            'Referer: ' .          $post_ref . "\r\n".
            'X-Requested-With: ' . $_SERVER['HTTP_X_REQUESTED_WITH'] . "\r\n".
+           'X-Request-Method:'  . $_SERVER['REQUEST_METHOD'] . "\r\n".
            'X-Mailer: Kleiderordnung';
 
 mail($to, $subject, $message, $headers);
