@@ -21,3 +21,9 @@ Piwik analytics (local install on piwik subdomain)
 ## DEPENDENCIES
 
 tdb.
+
+## BUILD TARGETS
+
+* **npm lint** run all syntax checks
+* **npm lint-scripts** check script syntax only (JavaScript / ES6)
+* **npm lint-styles**  check styles syntax only (CSS 3 / SASS)
