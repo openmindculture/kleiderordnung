@@ -1,13 +1,13 @@
 {
   "name": "kleiderordnung",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "website www.kleiderordnung-duesseldorf.de",
   "main": "index.js",
-  "repository": "git@gitlab.com:IngoSteinke/kleiderordnung.git",
-  "author": "Ingo Steinke",
+  "repository": "git@github.com:openmindculture/kleiderordnung.git",
+  "author": "Ingo Steinke <ingosteinke@ingosteinke.de>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "eslint": "^4.0.0",
+    "eslint": "^4.7.2",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-node": "^5.0.0",
