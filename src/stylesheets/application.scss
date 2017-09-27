@@ -2,19 +2,22 @@ $red : #e73640;
 $blue : #283583;
 
 * {
-  font-style:normal;
+  font-style: normal;
   font-family: 'Source Sans Pro', sans-serif;
-  text-decoration:none;
-  margin:0;
-  padding:0;
-}
-html,body {
-  margin:0;
-  padding:0;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
-a:focus,a:active{
-  outline:0;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a:focus,
+a:active {
+  outline: 0;
 }
 
 .header {
@@ -22,60 +25,69 @@ a:focus,a:active{
   width: 100%;
 }
 
-.content-wrapper:before{
-  content:" ";
-  width:91%;
+.content-wrapper::before {
+  content: " ";
+  width: 91%;
   margin: 0 auto;
-  height:4px;
-  border-radius: 1em 1em 1em 1em;
-  background-color:#e73640;
+  height: 4px;
+  border-radius: 1em;
+  background-color: #e73640;
   display: block;
 }
 
 .left-half {
   width: 50%;
-  height:190px;
-  overflow-y:visible;
-  float:left;
-  position:relative;
+  height: 190px;
+  overflow-y: visible;
+  float: left;
+  position: relative;
   /* temporary workaround against backdrop making left menu item unclickable */
-  z-index:-1;
+  z-index: -1;
 }
-.left-half > .decorator{
-  position:relative;
+
+.left-half > .decorator {
   right: -245px;
   top: 0;
-  overflow-x:hidden;
-  overflow-y:visible;
-  position:absolute;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: absolute;
 }
 
 .kontaktlinks {
   float: right;
 }
-.kontaktlinks a:link,.kontaktlinks a:active,.kontaktlinks a:visited,.kontaktlinks a:hover{
-  color:#fff;
+
+.kontaktlinks a:link,
+.kontaktlinks a:active,
+.kontaktlinks a:visited,
+.kontaktlinks a:hover {
+  color: #fff;
 }
+
 fieldset {
   border: none;
 }
+
 .tos {
-  color:#283583;
-  background-color:#fff;
-  text-align:left;
+  color: #283583;
+  background-color: #fff;
+  text-align: left;
   padding: 1em;
 }
+
 .tos p {
-  padding-bottom:.325em;
+  padding-bottom: .325em;
 }
+
 .widerruf {
   border: none;
   padding: 0;
 }
+
 .widerruf td {
   white-space: nowrap;
-  border:none;
-  padding:0 .125em .5em 0
+  border: none;
+  padding: 0 .125em .5em 0;
 }
 
 .logo {
@@ -83,18 +95,20 @@ fieldset {
   max-width: 100%;
   text-align: center;
 }
+
 .content-wrapper {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  clear:both;
+  clear: both;
 }
+
 ul.tablist {
   height: auto;
   list-style: none;
   margin: 1em 0 .125em 0;
   overflow: visible;
-  padding:0;
+  padding: 0;
 }
 
 ul.tablist li {
@@ -106,9 +120,11 @@ ul.tablist li {
 ul.tablist li:first-child {
   margin-left: 0;
 }
+
 ul.tablist li:last-child {
   margin-right: 0;
 }
+
 ul.tablist li a.active {
   border-radius: 50% 50% 0 0;
   margin-bottom: -10%;
@@ -117,12 +133,12 @@ ul.tablist li a.active {
 }
 
 ul.tablist li:nth-child(even) a {
-  background-color:#283583;
+  background-color: #283583;
 }
+
 ul.tablist a {
-  display:block;
-  width:100%;
-  margin:0;
+  width: 100%;
+  margin: 0;
   background-color: #e73640;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -138,22 +154,24 @@ ul.tablist a {
 }
 
 .link-b {
-  background-image:url(../img/icon-krawatte.svg);
+  background-image: url(../img/icon-krawatte.svg);
 }
-.link-leistungen{
-  background-image:url(../img/icon-kleiderbuegel.svg);
+
+.link-leistungen {
+  background-image: url(../img/icon-kleiderbuegel.svg);
 }
-.link-kontakt{
-  background-image:url(../img/icon-kontakt.svg);
+
+.link-kontakt {
+  background-image: url(../img/icon-kontakt.svg);
 }
-.link-media{
-  background-image:url(../img/icon-impressionen.svg);
+
+.link-media {
+  background-image: url(../img/icon-impressionen.svg);
 }
 
 .tab {
   padding: 1em;
   width: 100%;
-  /*width: 500px;*/
   max-width: 88%;
   margin: -.125em auto 0 auto;
   border-radius: .5em;
@@ -164,106 +182,138 @@ ul.tablist a {
      vgl. http://codepen.io/LFeh/pen/ICkwe
    */
   /* iOS fixes that make no difference: */
-  position:relative; z-index:1000;display:block;
+  position: relative;
+  z-index: 1000;
+  display: block;
 }
+
 #kontakt {
-  text-align:center;
+  text-align: center;
 }
+
 .tab h2 {
-	font-size: 1.25em;
+  font-size: 1.25em;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom:.25em;
+  margin-bottom: .25em;
 }
+
 .tab article {
   font-size: 1.025em;
-  display:block;
-  padding:0;
+  display: block;
+  padding: 0;
   margin-left: 0;
   margin-right: 0;
   position: relative;
   transition: transform .5s ease;
-  left:0;
+  left: 0;
   /* use 3d to handle transform by GPU acceleration
      and left to make it work on iPhone
    */
-  transform: translate3d(0,0,0);
-  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
   webkit-backface-visibility: hidden;
 }
+
 .tab article p {
   margin-bottom: 1em;
 }
+
 .tab.fadetext article {
-  left:-100%;
-  transform: translate3d(-100%,0,0);
-  -webkit-transform: translate3d(-100%,0,0);
+  left: -100%;
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
 }
+
 .tab-red {
   background-color: #e73640;
-  color:#fff;
+  color: #fff;
 }
 
 .tab-blue {
   background-color: #283583;
-  color:#fff;
+  color: #fff;
 }
 
 .vcard {
   margin: -1.5em auto 0 auto;
   padding: 0 0 2.5% 0;
 }
-.vcard h1, .footer .vcard h2, .footer .vcard a {
+
+.vcard h1,
+.footer .vcard h2,
+.footer .vcard a {
   display: inline;
   margin: 0 0.5em 0 0.5em;
 }
+
 .vcard h1 img {
   /* Name als Grafik wegen Schriftart */
   max-width: 100%;
   width: 350px;
   height: 95px;
 }
+
 .vcard .cap {
-  font-size:1em;
+  font-size: 1em;
 }
+
 .vcard h2 {
-  font-weight:normal;
+  font-weight: normal;
 }
-.jobtitle{
+
+.jobtitle {
   margin-bottom: 1em;
 }
-.vcard a, .jobtitle {
-  font-size:1.375em;
+
+.vcard a,
+.jobtitle {
+  font-size: 1.375em;
 }
-.vcard a, .jobtitle, .email, .telephone {
-  display: block;
-  font-family: Average,serif;
-}
+
+.vcard a,
+.jobtitle,
+.email,
 .telephone {
-  padding: .25em .25em .5em .25em
+  display: block;
+  font-family: Average, serif;
 }
+
+.telephone {
+  padding: .25em .25em .5em .25em;
+}
+
 .sent {
   font-size: 1.5em;
-  font-family: Average,serif;
+  font-family: Average, serif;
   padding: 1em;
   text-align: center;
 }
-.vcard a, .vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active{
-  color:#fff;
-  text-decoration:none;
+
+.vcard a,
+.vcard a:link,
+.vcard a:visited,
+.vcard a:hover,
+.vcard a:active {
+  color: #fff;
+  text-decoration: none;
 }
+
 #instafeed {
-  text-align:center;
+  text-align: center;
 }
+
 .gallery {
   text-align: center;
   margin: 0 auto;
   overflow: hidden;
 }
+
 .gallery .square-circle {
   background-color: #fff;
-  border-radius:50%;
+  border-radius: 50%;
 }
+
 .gallery img {
   /* pragmatisch quadratisch: mehr als 100% erlauben und den Rest mit Overflow abschneiden */
   width: 30%;
@@ -271,39 +321,47 @@ ul.tablist a {
   margin-right: 2%;
   margin-left: 2%;
 }
+
 .gallery img:first-child {
-  margin-left:0;
+  margin-left: 0;
 }
+
 .gallery img:last-child {
-  margin-right:0;
+  margin-right: 0;
 }
+
 #instafeed img {
   max-width: 32%;
   margin-bottom: 0.25em;
 }
+
 #instafeed a {
-  margin-right:1%;
+  margin-right: 1%;
   border-radius: 50%;
 }
-#instafeed a:nth-child(3n), .gallery > div:nth-child(3n){
-  margin-right:0;
+
+#instafeed a:nth-child(3n),
+.gallery > div:nth-child(3n) {
+  margin-right: 0;
 }
 
 /* square box for responsive containers guaranteed to be square size */
-.square-box{
+.square-box {
   position: relative;
   width: 32%;
-  margin-right:1%;
+  margin-right: 1%;
   display: inline-block;
   overflow: hidden;
 }
-.square-box:before{
+
+.square-box::before {
   content: "";
   display: block;
   padding-top: 100%;
 }
-.square-content{
-  position:  absolute;
+
+.square-content {
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -314,11 +372,11 @@ ul.tablist a {
 
 /* vars */
 .rot {
-  color: #e73640
+  color: #e73640;
 }
 
 .blau {
-  color: #283583
+  color: #283583;
 }
 /* vars end*/
 
@@ -328,9 +386,10 @@ Fotos in runden Kreisen. Externes Insta auch.
 Georgia, Webfont), Serif
 (nicht Cambria)
 */
-.float{
-  float:left;
+.float {
+  float: left;
 }
+
 .floatcircle {
   float: left;
   margin-right: 1em;
@@ -344,8 +403,8 @@ Georgia, Webfont), Serif
 }
 
 .herz-und-faden {
-  width:1280px;
-  height:928px;
+  width: 1280px;
+  height: 928px;
 }
 
 
@@ -367,7 +426,7 @@ Georgia, Webfont), Serif
   }
 }
 
-@media screen and (max-width:520px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media screen and (max-width: 520px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .decorator {
     background-image: url(/img/herz-kleider-ordnung.svg);
     background-size: 1100px 797px;
@@ -376,7 +435,7 @@ Georgia, Webfont), Serif
 
 
 ul.tablist li {
-  width:9%;
+  width: 9%;
   margin: 0 4.25% 0 4.25%;
 }
 
@@ -387,21 +446,23 @@ ul.tablist li {
 .contactform {
   margin: .5em auto 1em auto;
   width: 88%;
-  text-align:center;
+  text-align: center;
 }
 
 .contactform label {
   display: block;
-  width:100%;
+  width: 100%;
 }
 
-.contactform input, .contactform textarea, .submit {
+.contactform input,
+.contactform textarea,
+.submit {
   border: solid 1px silver;
   border-radius: .5em;
-  font-size:1.25em;
+  font-size: 1.25em;
   padding: .25em .5em .25em .5em;
   margin: 0 0 .25em -.5em;
-  width:100%;
+  width: 100%;
 }
 
 .contactform textarea {
@@ -416,69 +477,84 @@ ul.tablist li {
 }
 
 .contactform .captcha {
-  display:none;
+  display: none;
 }
 
-@media screen and (max-width:660px) {
+@media screen and (max-width: 660px) {
   ul.tablist li {
-    width:12%;
+    width: 12%;
     margin: 0 3% 0 3%;
   }
 }
 
-@media screen and (max-width:520px) {
+@media screen and (max-width: 520px) {
   .clearfix-wrapper {
     padding-bottom: 9em;
     max-width: 100%;
     overflow: hidden;
   }
-  .vcard h1, .footer .vcard h2 {
+
+  .vcard h1,
+  .footer .vcard h2 {
     display: block;
   }
+
   /* Logo kleiner */
   .left-half {
     height: 166px;
   }
+
   .left-half > .decorator {
     right: -215px;
   }
+
   .herz-und-faden {
     width: 1100px;
     height: 797px;
   }
+
   .floatcircle {
-    width:50%;
-    height:50%;
+    width: 50%;
+    height: 50%;
   }
+
   ul.tablist {
     /* -1px as workaround for unwanted whitespace above tab
        due to -10% below tablink not enough on some small screen sizes */
     margin: 1em 0 -1px 0;
   }
+
   ul.tablist li {
     margin: 0 2% 0 2%;
     width: 14%;
   }
+
   ul.tablist li:first-child {
     margin-left: 0;
   }
+
   ul.tablist li:last-child {
     margin-right: 0;
   }
-  .kontaktlinks{
+
+  .kontaktlinks {
     float: none;
     text-align: right;
     margin-bottom: 1em;
   }
-  .vcard a, .jobtitle {
+
+  .vcard a,
+  .jobtitle {
     font-size: 1.25em;
   }
 }
 
-@media screen and (max-width:360px) {
-  .vcard a, .jobtitle {
+@media screen and (max-width: 360px) {
+  .vcard a,
+  .jobtitle {
     font-size: 1.125em;
   }
+
   ul.tablist li {
     margin: 0 1% 0 1%;
     width: 16%;
@@ -489,34 +565,47 @@ ul.tablist li {
 
 @media print {
   .hidden {
-    display:block!important;
+    display: block !important;
   }
-  .tab.fadetext article{
-    margin-left:0!important;
-    margin-right:0!important;
+
+  .tab.fadetext article {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-  .tab{
-    color:#000!important;
-    background-color:#fff!important;
+
+  .tab {
+    color: #000 !important;
+    background-color: #fff !important;
   }
+
   ul.tablist li a.active {
-    border-radius: 50%!important;
-    margin-bottom: 0!important;
-    padding: 50% 0 50% 0!important;
-    background-position: 50% 50%!important;
+    border-radius: 50% !important;
+    margin-bottom: 0 !important;
+    padding: 50% 0 50% 0 !important;
+    background-position: 50% 50% !important;
   }
-  #kontakt h2, .kontaktlinks, .toplink {
-    display:none!important;
+
+  #kontakt h2,
+  .kontaktlinks,
+  .toplink {
+    display: none !important;
   }
-  .vcard, .vcard a {
-    text-align:left;
-    font-size:1.125em;
+
+  .vcard,
+  .vcard a {
+    text-align: left;
+    font-size: 1.125em;
   }
-  .vcard a:link, .vcard a:visited, .vcard a:hover, .vcard a:active {
-    color:#000!important;
+
+  .vcard a:link,
+  .vcard a:visited,
+  .vcard a:hover,
+  .vcard a:active {
+    color: #000 !important;
   }
+
   #agb {
-    position:relative!important;
-    color:#000!important;
+    position: relative !important;
+    color: #000 !important;
   }
 }
