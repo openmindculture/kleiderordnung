@@ -14,13 +14,16 @@ Web development by Ingo Steinke.
 
 `http://piwik.kleiderordnung-duesseldorf.de/` (statistics)
 
-## STATISTICS
-
-Piwik analytics (local install on piwik subdomain)
-
 ## DEPENDENCIES
 
-tdb.
+### Development
+* npm (yarn) to build project
+
+### Production
+* Apache webserver (HTTP header settings in .htaccess)
+* PHP (with email service, to send contact form)
+* Piwik analytics installed at piwik.kleiderordnung-duesseldorf.de
+
 
 ## BUILD TARGETS
 
