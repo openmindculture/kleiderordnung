@@ -1,18 +1,23 @@
-http://www.kleiderordnung-duesseldorf.de/
+# Kleiderordnung-Duesseldorf.de
+
+
 
 Small business website as a responsive single page application.
 Images and original CI by Vivien Kruggel.
 Web development by Ingo Steinke.
 
-Local sources in /src are compiled and minified.
-Source maps will be generated.
-Tests can be run using casperjs.
+## DOMAINS
 
-No npm, node, grunt required.
-On UNIX-like systems, run
-./install.sh
+`http://www.kleiderordnung-duesseldorf.de/` (production: master branch)
 
-Supported package managers are apt, yum, brew, port and ?
+`http://qa.kleiderordnung-duesseldorf.de/` (preview: dev branch)
 
-DEPENDENCIES
-sass
+`http://piwik.kleiderordnung-duesseldorf.de/` (statistics)
+
+## STATISTICS
+
+Piwik analytics (local install on piwik subdomain)
+
+## DEPENDENCIES
+
+tdb.

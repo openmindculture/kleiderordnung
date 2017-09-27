@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="de" manifest="offline.appcache?v=3"><!-- change manifest content after html content change -->
+<html lang="de" manifest="offline.appcache?v=6"><!-- change manifest content after html content change -->
 <head>
   <meta charset="utf-8">
   <title>Kleiderordnung - Ihr roter Faden zum eigenen Stil -
   meine Modeberaterin und Stylistin Martina Klein in Düsseldorf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Average:400" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css?v=3">
+  <link rel="stylesheet" type="text/css" href="css/styles.css?v=6">
   <link rel="canonical" href="http://www.kleiderordnung-duesseldorf.de/">
-  <!-- nonblocking scripts-->
-  <script src="js/scripts.js?v=3" type="text/javascript"></script>
+  <script src="js/scripts.js?v=6" type="text/javascript"></script>
   <!-- other meta information -->
   <meta name="description" content="Stilberatung, Shoppingbegleitung und Kleiderschrank-Check in Düsseldorf und Umgebung">
   <meta name="keywords" content="Stilberatung,Stil,Beratung,Mode,Shopping,einkaufen,kombinieren,aussehen,aufräumen,aussortieren,Kleiderschrank,Check,Begleitung,Düsseldorf,Niederrhein,Bergisches,Land,Ruhrgebiet,Preise,Frauen,Männer,Damen,Herren">
@@ -81,7 +80,7 @@
           <img class="floatcircle" src="img/Martina-Klein-Kleiderordnung.png" width="198" height="198" alt="Martina Klein (Foto)"><!-- 198 x2 =396 -->
           <h2>Über mich</h2>
           <p>
-          Mein Herz schlägt für Mode und die Herausforderung individueller Stilfindung mit natürlicher Ausstrahlung.
+          Mein Herz schlägt für Mode und eine individuelle Stilfindung.
           </p>
           <p>
           Ich bringe eine große Begeisterung für Mode und Kombination von Mode und Stilen mit. Ich habe selbst einen starken Stil
@@ -96,7 +95,7 @@
       <div id="business" class="hidden tab tab-blue">
         <article>
           <h2>Professioneller &amp; individueller Stil für den Job? </h2>
-          <p>Sie wünschen sich eine professionelle aber ebenso individuelle Garderobe für den Job? Ich finde für Sie einen unkomplizierten Look,
+          <p>Sie wünschen sich eine professionelle aber ebenso individuelle Garderobe für den Job? Wir finden für Sie einen unkomplizierten Look,
             der Sie morgens nicht stresst, jederzeit gut und passend aussehen lässt und dennoch ihre ganz individuelle Note aufweist.</p>
           <h2>Sie haben Sehnsucht nach ORDNUNG im Kleiderschrank?</h2>
           <p>Gemeinsam finden wir heraus, welche Anzahl an Kleidungsstücken für Sie genau richtig ist und Ihnen wirklich am Herzen liegen.
@@ -122,7 +121,7 @@
             vermeintliche Trends keine Gedanken mehr zu machen!</p>
 				<p>Sollten Ergänzungen für Ihre Garderobe sinnvoll sein, dann begleite ich Sie gerne in Ihre Lieblingsläden, Boutiquen
           oder Modeausstatter oder ich plane auf Wunsch die geeignete Einkaufstour für Sie!</p>
-				<h2>Sie blicken einem besonderen Anlass entgegen? Und natürlich wollen Sie dabei den allerbesten Eindruck hinterlassen!</h2>
+				<h2>Sie wollen den allerbesten Eindruck hinterlassen?</h2>
 				<p>Ob es die Hochzeit Ihrer besten Freundin ist, für die Sie ein Kleid benötigen, oder gar ihr eigener großer Tag?
           Das Vorstellungsgespräch zu Ihrem Traumjob? Eine Vernissage oder großes Geburtstagsfest - wir finden gemeinsam das richtige Outfit!</p>
 				<h2>Vorbesprechung und Kalkulation</h2>
@@ -176,7 +175,7 @@
       <label for="Nachricht">
         <textarea name="Nachricht" id="Nachricht" placeholder="Meine Nachricht an Martina Klein" label="Meine Nachricht an Martina Klein"></textarea>
       </label>
-
+      <input type="hidden" name="Referrer" id="form-referrer">
       <input type="submit" class="submit" value="absenden">
       <div id=captcha><input type="text" name="recipient" value="" class="captcha" id="captchafield"></div>
       </fieldset>
@@ -282,6 +281,22 @@
 
   </div><!-- /div.content-wrapper -->
 </div><!-- /div.clearfix-wrapper -->
+
+<aside id="piwik-analytics">
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//piwik.kleiderordnung-duesseldorf.de/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</aside>
 
 </body>
 </html>
