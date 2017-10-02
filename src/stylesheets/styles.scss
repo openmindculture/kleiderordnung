@@ -31,7 +31,7 @@ a:active {
   margin: 0 auto;
   height: 4px;
   border-radius: 1em;
-  background-color: #e73640;
+  background-color: $red;
   display: block;
 }
 
@@ -43,25 +43,25 @@ a:active {
   position: relative;
   /* temporary workaround against backdrop making left menu item unclickable */
   z-index: -1;
-}
 
-.left-half > .decorator {
-  right: -245px;
-  top: 0;
-  overflow-x: hidden;
-  overflow-y: visible;
-  position: absolute;
+  & > .decorator {
+    right: -245px;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: absolute;
+  }
 }
 
 .kontaktlinks {
   float: right;
-}
 
-.kontaktlinks a:link,
-.kontaktlinks a:active,
-.kontaktlinks a:visited,
-.kontaktlinks a:hover {
-  color: #fff;
+  & a:link,
+  & a:active,
+  & a:visited,
+  & a:hover {
+    color: #fff;
+  }
 }
 
 fieldset {
@@ -69,7 +69,7 @@ fieldset {
 }
 
 .tos {
-  color: #283583;
+  color: $blue;
   background-color: #fff;
   text-align: left;
   padding: 1em;
@@ -82,12 +82,12 @@ fieldset {
 .widerruf {
   border: none;
   padding: 0;
-}
 
-.widerruf td {
-  white-space: nowrap;
-  border: none;
-  padding: 0 .125em .5em 0;
+  & td {
+    white-space: nowrap;
+    border: none;
+    padding: 0 .125em .5em 0;
+  }
 }
 
 .logo {
@@ -109,44 +109,45 @@ ul.tablist {
   margin: 1em 0 .125em 0;
   overflow: visible;
   padding: 0;
-}
 
-ul.tablist li {
-  list-style: none;
-  display: inline-block;
-}
+  & li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 4.25% 0 4.25%;
+    width: 9%;
 
+    &:first-child {
+      margin-left: 0;
+    }
 
-ul.tablist li:first-child {
-  margin-left: 0;
-}
+    &:last-child {
+      margin-right: 0;
+    }
 
-ul.tablist li:last-child {
-  margin-right: 0;
-}
+    & a.active {
+      border-radius: 50% 50% 0 0;
+      margin-bottom: -10%;
+      padding: 50% 0 60% 0;
+      background-position: 50% 40%;
+    }
 
-ul.tablist li a.active {
-  border-radius: 50% 50% 0 0;
-  margin-bottom: -10%;
-  padding: 50% 0 60% 0;
-  background-position: 50% 40%;
-}
+    &:nth-child(even) a {
+      background-color: $blue;
+    }
+  }
 
-ul.tablist li:nth-child(even) a {
-  background-color: #283583;
-}
-
-ul.tablist a {
-  width: 100%;
-  margin: 0;
-  background-color: #e73640;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 62% 62%;
-  border-radius: 50%;
-  height: 0;
-  display: inline-block;
-  padding: 50% 0;
+  & a {
+    width: 100%;
+    margin: 0;
+    background-color: $red;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 62% 62%;
+    border-radius: 50%;
+    height: 0;
+    display: inline-block;
+    padding: 50% 0;
+  }
 }
 
 .link-ueber {
@@ -185,38 +186,34 @@ ul.tablist a {
   position: relative;
   z-index: 1000;
   display: block;
-}
 
-#kontakt {
-  text-align: center;
-}
+  & h2 {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: .25em;
+  }
 
-.tab h2 {
-  font-size: 1.25em;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: .25em;
-}
+  & article {
+    font-size: 1.025em;
+    display: block;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    transition: transform .5s ease;
+    left: 0;
+    /* use 3d to handle transform by GPU acceleration
+       and left to make it work on iPhone
+     */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    webkit-backface-visibility: hidden;
 
-.tab article {
-  font-size: 1.025em;
-  display: block;
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
-  position: relative;
-  transition: transform .5s ease;
-  left: 0;
-  /* use 3d to handle transform by GPU acceleration
-     and left to make it work on iPhone
-   */
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  webkit-backface-visibility: hidden;
-}
-
-.tab article p {
-  margin-bottom: 1em;
+    & p {
+      margin-bottom: 1em;
+    }
+  }
 }
 
 .tab.fadetext article {
@@ -226,57 +223,70 @@ ul.tablist a {
 }
 
 .tab-red {
-  background-color: #e73640;
+  background-color: $red;
   color: #fff;
 }
 
 .tab-blue {
-  background-color: #283583;
+  background-color: $blue;
   color: #fff;
+}
+
+#kontakt {
+  text-align: center;
 }
 
 .vcard {
   margin: -1.5em auto 0 auto;
   padding: 0 0 2.5% 0;
-}
 
-.vcard h1,
-.footer .vcard h2,
-.footer .vcard a {
-  display: inline;
-  margin: 0 0.5em 0 0.5em;
-}
+  & h1,
+  .footer .vcard h2,
+  .footer .vcard a {
+    display: inline;
+    margin: 0 0.5em 0 0.5em;
+  }
 
-.vcard h1 img {
-  /* Name als Grafik wegen Schriftart */
-  max-width: 100%;
-  width: 350px;
-  height: 95px;
-}
+  & h1 img {
+    /* Name als Grafik wegen Schriftart */
+    max-width: 100%;
+    width: 350px;
+    height: 95px;
+  }
 
-.vcard .cap {
-  font-size: 1em;
-}
+  & .cap {
+    font-size: 1em;
+  }
 
-.vcard h2 {
-  font-weight: normal;
+  & h2 {
+    font-weight: normal;
+  }
+
+  & a,
+  .jobtitle {
+    font-size: 1.375em;
+  }
+
+  & a,
+  .jobtitle,
+  .email,
+  .telephone {
+    display: block;
+    font-family: Average, serif;
+  }
+
+  & a,
+  & a:link,
+  & a:visited,
+  & a:hover,
+  & a:active {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .jobtitle {
   margin-bottom: 1em;
-}
-
-.vcard a,
-.jobtitle {
-  font-size: 1.375em;
-}
-
-.vcard a,
-.jobtitle,
-.email,
-.telephone {
-  display: block;
-  font-family: Average, serif;
 }
 
 .telephone {
@@ -290,59 +300,50 @@ ul.tablist a {
   text-align: center;
 }
 
-.vcard a,
-.vcard a:link,
-.vcard a:visited,
-.vcard a:hover,
-.vcard a:active {
-  color: #fff;
-  text-decoration: none;
-}
-
-#instafeed {
-  text-align: center;
-}
-
 .gallery {
   text-align: center;
   margin: 0 auto;
   overflow: hidden;
+
+  & .square-circle {
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  & img {
+    /* pragmatisch quadratisch: mehr als 100% erlauben und den Rest mit Overflow abschneiden */
+    width: 30%;
+    height: auto;
+    margin-right: 2%;
+    margin-left: 2%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
-.gallery .square-circle {
-  background-color: #fff;
-  border-radius: 50%;
-}
+#instafeed {
+  text-align: center;
 
-.gallery img {
-  /* pragmatisch quadratisch: mehr als 100% erlauben und den Rest mit Overflow abschneiden */
-  width: 30%;
-  height: auto;
-  margin-right: 2%;
-  margin-left: 2%;
-}
+  & img {
+    max-width: 32%;
+    margin-bottom: 0.25em;
+  }
 
-.gallery img:first-child {
-  margin-left: 0;
-}
+  #instafeed a {
+    margin-right: 1%;
+    border-radius: 50%;
 
-.gallery img:last-child {
-  margin-right: 0;
-}
-
-#instafeed img {
-  max-width: 32%;
-  margin-bottom: 0.25em;
-}
-
-#instafeed a {
-  margin-right: 1%;
-  border-radius: 50%;
-}
-
-#instafeed a:nth-child(3n),
-.gallery > div:nth-child(3n) {
-  margin-right: 0;
+    &:nth-child(3n),
+    .gallery > div:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
 }
 
 /* square box for responsive containers guaranteed to be square size */
@@ -352,12 +353,12 @@ ul.tablist a {
   margin-right: 1%;
   display: inline-block;
   overflow: hidden;
-}
 
-.square-box::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
 }
 
 .square-content {
@@ -370,22 +371,6 @@ ul.tablist a {
   text-align: center;
 }
 
-/* vars */
-.rot {
-  color: #e73640;
-}
-
-.blau {
-  color: #283583;
-}
-/* vars end*/
-
-/*
-Fotos in runden Kreisen. Externes Insta auch.
-
-Georgia, Webfont), Serif
-(nicht Cambria)
-*/
 .float {
   float: left;
 }
@@ -407,7 +392,48 @@ Georgia, Webfont), Serif
   height: 928px;
 }
 
+#agb h4 {
+  margin: 1em 0 0.5em 0;
+}
 
+.contactform {
+  margin: .5em auto 1em auto;
+  width: 88%;
+  text-align: center;
+
+  & label {
+    display: block;
+    width: 100%;
+  }
+
+  & textarea {
+    height: 5em;
+  }
+
+  & input,
+  & textarea,
+  .submit {
+    border: solid 1px silver;
+    border-radius: .5em;
+    font-size: 1.25em;
+    padding: .25em .5em .25em .5em;
+    margin: 0 0 .25em -.5em;
+    width: 100%;
+  }
+
+  & .submit {
+    background-color: $blue;
+    border: none;
+    color: #fff;
+    padding: .5em;
+  }
+
+  & .captcha {
+    display: none;
+  }
+}
+
+/* media queries */
 
 /* Header Logo: IE11,IE10 fallback weil responsive img srcset nicht supported
    + relativer Pfad funktioniert im IE nicht!
@@ -431,53 +457,6 @@ Georgia, Webfont), Serif
     background-image: url(/img/herz-kleider-ordnung.svg);
     background-size: 1100px 797px;
   }
-}
-
-
-ul.tablist li {
-  width: 9%;
-  margin: 0 4.25% 0 4.25%;
-}
-
-#agb h4 {
-  margin: 1em 0 0.5em 0;
-}
-
-.contactform {
-  margin: .5em auto 1em auto;
-  width: 88%;
-  text-align: center;
-}
-
-.contactform label {
-  display: block;
-  width: 100%;
-}
-
-.contactform input,
-.contactform textarea,
-.submit {
-  border: solid 1px silver;
-  border-radius: .5em;
-  font-size: 1.25em;
-  padding: .25em .5em .25em .5em;
-  margin: 0 0 .25em -.5em;
-  width: 100%;
-}
-
-.contactform textarea {
-  height: 5em;
-}
-
-.contactform .submit {
-  background-color: #283583;
-  border: none;
-  color: #fff;
-  padding: .5em;
-}
-
-.contactform .captcha {
-  display: none;
 }
 
 @media screen and (max-width: 660px) {
@@ -522,19 +501,19 @@ ul.tablist li {
     /* -1px as workaround for unwanted whitespace above tab
        due to -10% below tablink not enough on some small screen sizes */
     margin: 1em 0 -1px 0;
-  }
 
-  ul.tablist li {
-    margin: 0 2% 0 2%;
-    width: 14%;
-  }
+    & li {
+      margin: 0 2% 0 2%;
+      width: 14%;
 
-  ul.tablist li:first-child {
-    margin-left: 0;
-  }
+      &:first-child {
+        margin-left: 0;
+      }
 
-  ul.tablist li:last-child {
-    margin-right: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
   .kontaktlinks {
@@ -568,14 +547,14 @@ ul.tablist li {
     display: block !important;
   }
 
-  .tab.fadetext article {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
   .tab {
     color: #000 !important;
     background-color: #fff !important;
+
+    &.fadetext article {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
   }
 
   ul.tablist li a.active {
