@@ -7,6 +7,10 @@
   "author": "Ingo Steinke <ingosteinke@ingosteinke.de>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.2.0",
+    "cross-env": "^5.0.5",
     "eslint": "^4.7.2",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.3.0",
@@ -20,7 +24,10 @@
   "scripts": {
     "lint": "npm-run-all --parallel lint-scripts lint-styles",
     "lint-scripts": "eslint ./src/scripts/**",
-    "lint-styles": "stylelint ./src/stylesheets/** --syntax scss"
+    "lint-styles": "stylelint ./src/stylesheets/** --syntax scss",
+    "build": "cross-env NODE_ENV=production npm-run-all --parallel build-scripts",
+    "build-scripts": "BABEL_ENV=production babel ./src/scripts --out-dir ./httest/js",
+    "build-styles": ""
   },
   "eslintConfig": {
     "extends": "standard",
