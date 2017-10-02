@@ -225,7 +225,7 @@ helper.event.ready(function(){
     var scrollto = true;
     var tab = location.hash.substr(1);
     /* AGB befinden sich auch im Reiter Kontakt */
-    if (tab==='agb'){tab='kontakt';scollto=false;}
+    if (tab==='agb'){tab='kontakt';scrollto=false;}
     var target = document.getElementById("link-"+tab);
     if (target) {
       helper.tab.showByName(tab,target,scrollto);
