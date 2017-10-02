@@ -27,6 +27,8 @@ http://piwik.kleiderordnung-duesseldorf.de/ (statistics)
 
 ## BUILD TARGETS
 
+(npm can be replaced by yarn)
+
 * **npm run lint** run all syntax checks
 * **npm run lint-scripts** check script syntax only (JavaScript / ES6)
 * **npm run lint-styles**  check styles syntax only (CSS 3 / SASS)

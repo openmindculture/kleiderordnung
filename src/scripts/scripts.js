@@ -1,5 +1,5 @@
+"use strict";
 /* common helper functions */
-/* TODO check for minimum "modern browser" */
 
 var helper = {};
 

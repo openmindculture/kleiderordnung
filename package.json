@@ -38,5 +38,8 @@
   },
   "jest": {
     "verbose": true
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.6.0"
   }
 }
