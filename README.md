@@ -8,11 +8,11 @@ Web development by Ingo Steinke.
 
 ## DOMAINS
 
-`http://www.kleiderordnung-duesseldorf.de/` (production: master branch)
+http://www.kleiderordnung-duesseldorf.de/ (production: master branch)
 
-`http://qa.kleiderordnung-duesseldorf.de/` (preview: dev branch)
+http://qa.kleiderordnung-duesseldorf.de/ (preview: dev branch)
 
-`http://piwik.kleiderordnung-duesseldorf.de/` (statistics)
+http://piwik.kleiderordnung-duesseldorf.de/ (statistics)
 
 ## DEPENDENCIES
 
