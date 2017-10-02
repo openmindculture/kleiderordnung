@@ -25,9 +25,9 @@
     "lint": "npm-run-all --parallel lint-scripts lint-styles",
     "lint-scripts": "eslint ./src/scripts/**",
     "lint-styles": "stylelint ./src/stylesheets/** --syntax scss",
-    "build": "cross-env NODE_ENV=production npm-run-all --parallel build-scripts",
-    "build-scripts": "BABEL_ENV=production babel ./src/scripts --out-dir ./httest/js",
-    "build-styles": ""
+    "build": "cross-env NODE_ENV=production npm-run-all --parallel build-scripts build-styles",
+    "build-scripts": "BABEL_ENV=production babel ./src/scripts --out-dir ./htdocs/js",
+    "build-styles": "node-sass ./src/stylesheets --output-style compressed -o htdocs/css"
   },
   "eslintConfig": {
     "extends": "standard",
@@ -40,6 +40,7 @@
     "verbose": true
   },
   "dependencies": {
-    "babel-preset-env": "^1.6.0"
+    "babel-preset-env": "^1.6.0",
+    "node-sass": "^4.5.3"
   }
 }
