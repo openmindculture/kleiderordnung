@@ -168,6 +168,20 @@ helper.tab = {
       helper.class.add(document.getElementById('agb'),'hidden');
       helper.class.add(document.getElementById('kontaktformular'),'hidden');
     }
+    helper.track.pageview(idtoshow);
+  }
+}
+
+helper.track = {
+  /* TODO initialize function(s) here, so we can remove generic 3rd party code from html code */
+  pageview : function(pageid) {
+    if (window._paq) {
+      var fragId = pageid || window.location.hash.substr(1);
+      _paq.push(['setGenerationTimeMs', 0]);
+      _paq.push(['setCustomUrl', '/' + fragId]);
+      _paq.push(['setDocumentTitle', fragId]);
+      _paq.push(['trackPageView']);
+    }
   }
 }
 
