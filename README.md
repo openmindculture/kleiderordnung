@@ -1,7 +1,5 @@
 # Kleiderordnung-Duesseldorf.de
 
-
-
 Small business website as a responsive single page application.
 Images and original CI by Vivien Kruggel.
 Web development by Ingo Steinke.
@@ -17,7 +15,7 @@ http://piwik.kleiderordnung-duesseldorf.de/ (statistics)
 ## DEPENDENCIES
 
 ### Development
-* npm (yarn) to build project
+* yarn or npm to build project
 
 ### Production
 * Apache webserver (HTTP header settings in .htaccess)
@@ -27,8 +25,8 @@ http://piwik.kleiderordnung-duesseldorf.de/ (statistics)
 
 ## BUILD TARGETS
 
-(npm can be replaced by yarn)
 
-* **npm run lint** run all syntax checks
-* **npm run lint-scripts** check script syntax only (JavaScript / ES6)
-* **npm run lint-styles**  check styles syntax only (CSS 3 / SASS)
+* **yarn run lint** run all syntax checks
+  * **npm run lint-scripts** check script syntax only (JavaScript / ES6)
+  * **npm run lint-styles**  check styles syntax only (CSS 3 / SASS)
+* **yarn run build** create scripts and styles for deployment
