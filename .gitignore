@@ -44,6 +44,10 @@ npm-debug.log
 .sass-cache
 *.css.map
 
+# build artifacts #
+htdocs/css
+htdocs/js
+
 # Materialordner
 material
 
