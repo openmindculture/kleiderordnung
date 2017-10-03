@@ -1,3 +1,0 @@
-Testing
-
-https://www.npmjs.com/package/casperjs
