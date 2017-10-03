@@ -173,7 +173,6 @@ helper.tab = {
 }
 
 helper.track = {
-  /* TODO initialize function(s) here, so we can remove generic 3rd party code from html code */
   pageview : function(pageid) {
     if (window._paq) {
       var fragId = pageid || window.location.hash.substr(1);
@@ -182,8 +181,21 @@ helper.track = {
       _paq.push(['setDocumentTitle', fragId]);
       _paq.push(['trackPageView']);
     }
+  },
+  init: function() {
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//piwik.kleiderordnung-duesseldorf.de/";
+      _paq.push(['setTrackerUrl', u+'js/']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+    })();
   }
 }
+
 
 helper.form = {
   validate : function(e) {
@@ -257,6 +269,8 @@ helper.event.ready(function(){
       }
     );
   };
+
+  helper.track.init();
 
   /* TODO make available offline as a progressive web app
    https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
