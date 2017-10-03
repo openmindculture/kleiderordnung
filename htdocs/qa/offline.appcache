@@ -1,0 +1,13 @@
+CACHE MANIFEST
+# v7 (change this file after any change in html content)
+
+# qa.kleiderordnung-duesseldorf.de should not cache
+
+# Allow loading anything else
+NETWORK:
+*
+
+# Prefer online version if available
+SETTINGS:
+prefer-online
+

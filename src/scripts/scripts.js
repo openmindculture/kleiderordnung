@@ -1,5 +1,5 @@
+"use strict";
 /* common helper functions */
-/* TODO check for minimum "modern browser" */
 
 var helper = {};
 
@@ -173,17 +173,37 @@ helper.tab = {
 }
 
 helper.track = {
-  /* TODO initialize function(s) here, so we can remove generic 3rd party code from html code */
   pageview : function(pageid) {
+    console.log('helper.track.pageview('+pageid+')');
     if (window._paq) {
       var fragId = pageid || window.location.hash.substr(1);
-      _paq.push(['setGenerationTimeMs', 0]);
-      _paq.push(['setCustomUrl', '/' + fragId]);
-      _paq.push(['setDocumentTitle', fragId]);
-      _paq.push(['trackPageView']);
+      console.log('ready to track fragId:'+fragId+' to piwik');
+      console.log('_paq:'); console.log(window._paq);
+      window._paq.push(['setGenerationTimeMs', 0]);
+      window._paq.push(['setCustomUrl', '/' + fragId]);
+      window._paq.push(['setDocumentTitle', fragId]);
+      window._paq.push(['trackPageView']);
     }
+  },
+  init: function() {
+    console.log('piwik init');
+    window._paq = window._paq || [];
+    window._paq.push(['trackPageView']);
+    window._paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//piwik.kleiderordnung-duesseldorf.de/";
+      window._paq.push(['setTrackerUrl', u+'js/']);
+      window._paq.push(['setSiteId', '1']);
+      console.log('_paq initialized:'); console.log(window._paq);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('body')[0];
+      g.type='text/javascript'; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+      console.log('created script:'); console.log(g);
+      d.head.appendChild(g);
+      console.log('appended script');
+    })();
   }
 }
+
 
 helper.form = {
   validate : function(e) {
@@ -220,12 +240,13 @@ helper.form = {
  und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
 /* TODO Redundanzen beseitigen und häufig verwendete Elemente / IDs dauerhaft speichern */
 helper.event.ready(function(){
+  helper.track.init();
   /* Ankernavigation berücksichtigen d.h. z.B. /#kontakt muss Reiter Kontakt öffnen */
   if (location.hash && location.hash!=""){
     var scrollto = true;
     var tab = location.hash.substr(1);
     /* AGB befinden sich auch im Reiter Kontakt */
-    if (tab==='agb'){tab='kontakt';scollto=false;}
+    if (tab==='agb'){tab='kontakt';scrollto=false;}
     var target = document.getElementById("link-"+tab);
     if (target) {
       helper.tab.showByName(tab,target,scrollto);
