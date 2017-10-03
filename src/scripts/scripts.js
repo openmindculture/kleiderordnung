@@ -174,24 +174,32 @@ helper.tab = {
 
 helper.track = {
   pageview : function(pageid) {
+    console.log('helper.track.pageview('+pageid+')');
     if (window._paq) {
       var fragId = pageid || window.location.hash.substr(1);
-      _paq.push(['setGenerationTimeMs', 0]);
-      _paq.push(['setCustomUrl', '/' + fragId]);
-      _paq.push(['setDocumentTitle', fragId]);
-      _paq.push(['trackPageView']);
+      console.log('ready to track fragId:'+fragId+' to piwik');
+      console.log('_paq:'); console.log(window._paq);
+      window._paq.push(['setGenerationTimeMs', 0]);
+      window._paq.push(['setCustomUrl', '/' + fragId]);
+      window._paq.push(['setDocumentTitle', fragId]);
+      window._paq.push(['trackPageView']);
     }
   },
   init: function() {
-    var _paq = _paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
+    console.log('piwik init');
+    window._paq = window._paq || [];
+    window._paq.push(['trackPageView']);
+    window._paq.push(['enableLinkTracking']);
     (function() {
       var u="//piwik.kleiderordnung-duesseldorf.de/";
-      _paq.push(['setTrackerUrl', u+'js/']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+      window._paq.push(['setTrackerUrl', u+'js/']);
+      window._paq.push(['setSiteId', '1']);
+      console.log('_paq initialized:'); console.log(window._paq);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('body')[0];
+      g.type='text/javascript'; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+      console.log('created script:'); console.log(g);
+      d.head.appendChild(g);
+      console.log('appended script');
     })();
   }
 }
