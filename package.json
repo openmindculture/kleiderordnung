@@ -25,7 +25,7 @@
     "lint-scripts": "eslint ./src/scripts/**",
     "lint-styles": "stylelint ./src/stylesheets/** --syntax scss",
     "build": "NODE_ENV=production npm-run-all --parallel build-scripts build-styles",
-    "build-scripts": "BABEL_ENV=production babel ./src/scripts --out-dir ./htdocs/js --source-maps",
+    "build-scripts": "BABEL_ENV=production babel ./src/scripts --out-dir ./htdocs/js --source-maps --plugins transform-remove-console",
     "build-styles": "node-sass ./src/stylesheets --output-style compressed -o htdocs/css --source-map htdocs/css/styles.scss"
   },
   "eslintConfig": {
@@ -39,6 +39,7 @@
     "verbose": true
   },
   "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.8.5",
     "babel-preset-env": "^1.6.0",
     "node-sass": "^4.5.3"
   }
