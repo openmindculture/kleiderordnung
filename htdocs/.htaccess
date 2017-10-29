@@ -12,3 +12,7 @@
 # activate gzip
 SetOutputFilter DEFLATE
 AddOutputFilterByType DEFLATE text/css text/html text/plain text/xml text/js application/x-javascript application/javascript
+
+# HTML 5 appcache
+AddType text/cache-manifest .appcache
+ExpiresByType text/cache-manifest "access plus 0 seconds"
