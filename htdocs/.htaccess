@@ -16,3 +16,10 @@ AddOutputFilterByType DEFLATE text/css text/html text/plain text/xml text/js app
 # HTML 5 appcache
 AddType text/cache-manifest .appcache
 ExpiresByType text/cache-manifest "access plus 0 seconds"
+
+# add security headers
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-Content-Type-Options  "nosniff"
+Header set X-Xss-Protection "1; mode=block"
+Header set Referrer-Policy "no-referrer-when-downgrade"
+Header set Content-Security-Policy  "default-src 'self' *.kleiderordnung-duesseldorf.de; style-src 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com;"
