@@ -243,7 +243,8 @@ ul.tablist {
   & h1,
   .footer .vcard h2,
   .footer .vcard a {
-    display: inline;
+    display: inline-block;
+    min-height: 95px;
     margin: 0 0.5em 0 0.5em;
   }
 
@@ -316,12 +317,14 @@ ul.tablist {
     height: auto;
     margin-right: 2%;
     margin-left: 2%;
+    margin-bottom: 1.25em;
+    border-radius: 1.25em;
 
-    &:first-child {
+    &:first-child, &:nth-child(3n+1) {
       margin-left: 0;
     }
 
-    &:last-child {
+    &:last-child, &:nth-child(3) {
       margin-right: 0;
     }
   }
