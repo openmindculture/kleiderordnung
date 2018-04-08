@@ -461,15 +461,35 @@ ul.tablist {
     background-size: 1100px 797px;
   }
 }
-
+/* Breakpoints */
 @media screen and (max-width: 660px) {
   ul.tablist li {
     width: 12%;
     margin: 0 3% 0 3%;
   }
+  /* 2 column gallery */
+  .gallery img {
+    width: 48%;
+    &:nth-child(3n+1) {
+      margin-left: 2%;
+    }
+    &:first-child, &:nth-child(2n+1) {
+      margin-left: 0;
+    }
+    &:last-child, &:nth-child(2) {
+      margin-right: 0;
+    }
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 520px) {
+  /* 1 column gallery */
+  .gallery img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
   .clearfix-wrapper {
     padding-bottom: 9em;
     max-width: 100%;
