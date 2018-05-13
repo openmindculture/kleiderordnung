@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# v11 (change this file after any change in html content)
+# v12 (change this file after any change in html content)
 
 # Pages that associate with a manifest become part of it.
-css/styles.css?v=11
-js/scripts.js?v=11
+css/styles.css?v=12
+js/scripts.js?v=12
 img/faden-kleider-ordnung.png
 img/faden-kleider-ordnung.svg
 img/herz-kleider-ordnung.svg
@@ -15,6 +15,15 @@ img/icon-ueber-mich.svg
 img/kleider-ordnung-logo.png
 img/Martina-Klein.svg
 img/Martina-Klein-Kleiderordnung.png
+fonts/average.woff
+fonts/average.ttf
+fonts/average.eot
+fonts/sourcesanspro.woff
+fonts/sourcesanspro.ttf
+fonts/sourcesanspro.eot
+fonts/sourcesanspro600.woff
+fonts/sourcesanspro600.ttf
+fonts/sourcesanspro600.eot
 
 # Allow loading anything else
 NETWORK:

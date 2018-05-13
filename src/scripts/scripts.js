@@ -240,7 +240,6 @@ helper.form = {
  und dann erst mit modernem JavaScript die Event Handler und initial hidden Styles bekommen */
 /* TODO Redundanzen beseitigen und häufig verwendete Elemente / IDs dauerhaft speichern */
 helper.event.ready(function(){
-  helper.track.init();
   /* Ankernavigation berücksichtigen d.h. z.B. /#kontakt muss Reiter Kontakt öffnen */
   if (location.hash && location.hash!=""){
     var scrollto = true;
