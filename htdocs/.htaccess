@@ -22,5 +22,7 @@ Header set X-Frame-Options "SAMEORIGIN"
 Header set X-Content-Type-Options  "nosniff"
 Header set X-Xss-Protection "1; mode=block"
 Header set Referrer-Policy "no-referrer-when-downgrade"
-# style-src unsafe-inline needed for SVG in Firefox: https://bugzilla.mozilla.org/show_bug.cgi?id=1295429
-Header set Content-Security-Policy  "default-src 'self' *.kleiderordnung-duesseldorf.de; script-src 'self' 'unsafe-inline' '*.kleiderordnung-duesseldorf.de'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com;"
+
+# allow strict browsers to actually send ajax requests
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "POST, GET, OPTIONS"
