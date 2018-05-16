@@ -174,32 +174,32 @@ helper.tab = {
 
 helper.track = {
   pageview : function(pageid) {
-    console.log('helper.track.pageview('+pageid+')');
     if (window._paq) {
       var fragId = pageid || window.location.hash.substr(1);
-      console.log('ready to track fragId:'+fragId+' to piwik');
-      console.log('_paq:'); console.log(window._paq);
-      window._paq.push(['setGenerationTimeMs', 0]);
-      window._paq.push(['setCustomUrl', '/' + fragId]);
-      window._paq.push(['setDocumentTitle', fragId]);
-      window._paq.push(['trackPageView']);
+      window._paq.push(
+        ['setGenerationTimeMs', 0],
+        ['setCustomUrl', '/' + fragId],
+        ['setDocumentTitle', fragId],
+        ['trackPageView']
+      );
     }
   },
   init: function() {
-    console.log('piwik init');
     window._paq = window._paq || [];
-    window._paq.push(['trackPageView']);
-    window._paq.push(['enableLinkTracking']);
+    window._paq.push(
+        ['disableCookies'],
+        ['enableLinkTracking']
+        ['trackPageView']
+    );
     (function() {
       var u="//piwik.kleiderordnung-duesseldorf.de/";
-      window._paq.push(['setTrackerUrl', u+'js/']);
-      window._paq.push(['setSiteId', '1']);
-      console.log('_paq initialized:'); console.log(window._paq);
+      window._paq.push(
+        ['setTrackerUrl', u+'js/'],
+        ['setSiteId', '1']
+      );
       var d=document, g=d.createElement('script'), s=d.getElementsByTagName('body')[0];
       g.type='text/javascript'; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
-      console.log('created script:'); console.log(g);
       d.head.appendChild(g);
-      console.log('appended script');
     })();
   }
 }
@@ -214,7 +214,7 @@ helper.form = {
     var url = form.action,
       xhr = new XMLHttpRequest();
 
-    /* only allow known form fields */
+    /* only send data from known form fields */
     var params=''+
       'Name='+encodeURIComponent(document.getElementById('Name').value)+
       '&E-Mail='+encodeURIComponent(document.getElementById('E-Mail').value)+
@@ -245,7 +245,7 @@ helper.event.ready(function(){
     var scrollto = true;
     var tab = location.hash.substr(1);
     /* AGB befinden sich auch im Reiter Kontakt */
-    if (tab==='agb'){tab='kontakt';scrollto=false;}
+    if (tab==='agb'||tab==='datenschutz'){tab='kontakt';scrollto=false;}
     var target = document.getElementById("link-"+tab);
     if (target) {
       helper.tab.showByName(tab,target,scrollto);
@@ -256,7 +256,11 @@ helper.event.ready(function(){
   helper.event.addListener(document.getElementById('showcontact'),'click',function(e){
       var scrollto = true;
       var caller = e.target || e.srcElement;
-      if (caller && caller.getAttribute('href')==='#agb') {scrollto=false;}
+      if (caller && (
+            caller.getAttribute('href')==='#agb' ||
+            caller.getAttribute('href')==='#datenschutz'
+            )
+          ) {scrollto=false;}
       var target = document.getElementById("link-kontakt");
       if (target) {
         helper.tab.showByName("kontakt",target,scrollto);
