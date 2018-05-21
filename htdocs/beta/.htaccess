@@ -1,0 +1,12 @@
+# QA Deployment is below main web root and inherits all other .htaccess settings
+
+# restrict qa with basic auth
+Authtype Basic
+AuthName "Preview"
+AuthUserFile /kunden/447296_40625/webseiten/kleiderordnung/beta/.htpasswd
+Require valid-user
+
+# NO Caching for preview
+Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"

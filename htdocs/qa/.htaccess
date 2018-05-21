@@ -1,7 +1,0 @@
-# QA Deployment is below main web root and inherits all other .htaccess settings
-
-# restrict qa with basic auth
-Authtype Basic
-AuthName "Preview"
-AuthUserFile /kunden/447296_40625/webseiten/kleiderordnung/qa/.htpasswd
-Require valid-user
