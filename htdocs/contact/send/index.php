@@ -2,7 +2,7 @@
 header('Cache-Control: no-store');
 header('Pragma: no-cache');
 
-/* don’t let your response headers talk too loudly */
+/* don’t let your default response header reveal technical details */
 header('X-Powered-By: Kleiderordnung');
 
 if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -27,7 +27,7 @@ $post_msg   = filter_var($_REQUEST['Nachricht'], FILTER_SANITIZE_STRING);
 $post_ref   = filter_var($_REQUEST['Referrer'],  FILTER_SANITIZE_STRING);
 $spamtrap   = filter_var($_REQUEST['recipient'], FILTER_SANITIZE_STRING);
 
-$to      = 'mklein@meine-modeberaterin.de';';
+$to      = 'mklein@meine-modeberaterin.de';
 $subject = 'Anfrage ueber kleiderordnung-duesseldorf.de';
 
 /* require spamtrap 'captcha' be empty, require msg not empty         */
@@ -47,9 +47,6 @@ $headers = 'MIME-Version: 1.0' . "\r\n".
            'From: Kleiderordnung-Kontaktformular<mklein@kleiderordnung-duesseldorf.de>' . "\r\n" .
            'Reply-To: ' . $post_email . "\r\n" .
            'Bcc: spamtrap@open-mind-culture.org'. "\r\n".
-           'Remote-Address: ' .   $_SERVER['REMOTE_ADDR'] . "\r\n".
-           'User-Agent: ' .       $_SERVER['HTTP_USER_AGENT'] . "\r\n".
-           'Referrer: ' .         $post_ref . "\r\n".
            'X-Requested-With: ' . $_SERVER['HTTP_X_REQUESTED_WITH'] . "\r\n".
            'X-Request-Method:'  . $_SERVER['REQUEST_METHOD'] . "\r\n".
            'X-Mailer: Kleiderordnung';
