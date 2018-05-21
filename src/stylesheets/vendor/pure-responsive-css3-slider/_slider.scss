@@ -1,0 +1,119 @@
+/** A pure responsive CSS3 Slider
+ ** by David Rey https://dreyacosta.com
+ ** https://github.com/dreyacosta/pure-responsive-css3-slider
+ **/
+
+.slider { // TODO add height to avoid jumping
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+/* slider content (ul) is 1000%
+ * for easy calculation of keyframe distance:
+ * mobile:  1 keyframe: 1 slide (li)  10%    * 1000% => 100%
+ * desktop: 1 keyframe: 3 slides (li)  3.33% * 1000% => 33.33%
+ * on mobile, we return to first slide after showing last one,
+ * on desktop, use redundant photos to avoid showing the last one less often:
+ * 123.... | .234... | ..345.. | ...451. | ....512
+ */
+
+.slider ul {
+  width: 1000%;
+  height: auto;
+  position: relative;
+  list-style: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  -moz-animation:slide-animation 15s infinite;
+  -webkit-animation:slide-animation 15s infinite;
+  animation:slide-animation 15s infinite;
+}
+
+.slider ul:hover {
+  -moz-animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;
+}
+
+.slider li {
+  width: 3.33%;
+  list-style: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.slider img {
+  // TODO optional: die Bilder zu groß bzw. den Rahmen zu klein,
+  // so dass das Bild abgeschnitten startet,
+  // und dann langsam, leicht seitlich hineinzoomen,
+  // ganz pfiffig wenn das alternierend bei verschiedenen Slides von verschiedenen
+  // Ecken aus passiert
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.slider span {
+  position: relative;
+  height: 50px;
+  display: block;
+  font-size: 0.8em;
+  bottom: 0;
+  padding: 0.5px 20px 0px 20px;
+  margin-top: -50px;
+  overflow: hidden;
+  background-color:rgba(54,44,48,0.6);
+  color: #fcfcfc;
+  text-shadow: 0px 1px 1px #9d9d9d;
+  font-weight: normal;
+  border-radius: 4px;
+}
+
+@keyframes slide-animation {
+  1% {left: 0%; opacity: 1;}
+  18% {left: 0%; opacity: 1}
+  19% {opacity: 0.5;}
+  20% {left: -33.33%; opacity: 1;}
+  38% {left: -33.33%; opacity: 1;}
+  39% {opacity: 0.5;}
+  40% {left: -66.66%; opacity: 1;}
+  58% {left: -66.66%; opacity: 1;}
+  59% {opacity: 0.5;}
+  60% {left: -100%; opacity: 1;}
+  78% {left: -100%; opacity: 1;}
+  79% {opacity: 0.5;}
+  80% {left: -133.33%; opacity: 1;}
+  98% {left: -133.33%; opacity: 1;}
+  99% {opacity: 0.5;}
+  100% {left: 0%;}
+}
+
+@media screen and (max-width: $breakpoint_onecol) {
+    .slider li {
+      width: 10%;
+    }
+    @keyframes slide-animation {
+      1% {left: 0%; opacity: 1;}
+      18% {left: 0%; opacity: 1}
+      19% {opacity: 0.5;}
+      20% {left: -100%; opacity: 1;}
+      38% {left: -100%; opacity: 1;}
+      39% {opacity: 0.5;}
+      40% {left: -200%; opacity: 1;}
+      58% {left: -200%; opacity: 1;}
+      59% {opacity: 0.5;}
+      60% {left: -300%; opacity: 1;}
+      78% {left: -300%; opacity: 1;}
+      79% {opacity: 0.5;}
+      80% {left: -400%; opacity: 1;}
+      98% {left: -400%; opacity: 1;}
+      99% {opacity: 0.5;}
+      100% {left: 0%;}
+    }
+}

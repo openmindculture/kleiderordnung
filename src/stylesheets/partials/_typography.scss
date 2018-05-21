@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Average';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Average Regular'),
+    local('Average-Regular'),
+    url(../fonts/average.woff) format('woff'),
+    url(../fonts/average.ttf) format('truetype'),
+    url(../fonts/average.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Source Sans Pro Regular'),
+    local('SourceSansPro-Regular'),
+    url(../fonts/sourcesanspro.woff) format('woff'),
+    url(../fonts/sourcesanspro.ttf) format('truetype'),
+    url(../fonts/sourcesanspro.eot) format('eot');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Source Sans Pro SemiBold'),
+    local('SourceSansPro-SemiBold'),
+    url(../fonts/sourcesanspro600.woff) format('woff'),
+    url(../fonts/sourcesanspro600.ttf) format('truetype'),
+    url(../fonts/sourcesanspro.eot) format('eot');
+}

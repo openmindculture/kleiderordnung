@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="de" manifest="offline.appcache?v=14"><!-- change manifest content after html content change -->
+<html lang="de" manifest="offline.appcache?v=15"><!-- change manifest content after html content change -->
 <head>
   <meta charset="utf-8">
   <title>Kleiderordnung - Ihr roter Faden zum eigenen Stil -
   meine Modeberaterin und Stylistin Martina Klein in Düsseldorf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="css/styles.css?v=14">
-  <link rel="canonical" href="http://www.kleiderordnung-duesseldorf.de/">
-  <script src="js/scripts.js?v=14" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css?v=15">
+  <link rel="canonical" href="https://www.kleiderordnung-duesseldorf.de/">
+  <script src="js/scripts.js?v=15" type="text/javascript"></script>
   <meta name="description" content="Stilberatung, Shoppingbegleitung und Kleiderschrank-Check in Düsseldorf und Umgebung">
   <meta name="keywords" content="Stilberatung,Stil,Beratung,Mode,Shopping,einkaufen,kombinieren,aussehen,aufräumen,aussortieren,Kleiderschrank,Check,Begleitung,Düsseldorf,Niederrhein,Bergisches,Land,Ruhrgebiet,Preise,Frauen,Männer,Damen,Herren">
   <meta name="author" content="ingo" >
@@ -99,6 +99,18 @@
       </div>
       <div id="leistungen" class="tab tab-red">
         <article>
+          <div class="slider">
+                <ul>
+                    <li><!-- 1 --><img src="img/martina-klein-212.jpg" /></li>
+                    <li><!-- 2 --><img src="img/martina-klein-073-kunstsammlung.jpg" /></li>
+                    <li><!-- 3 --><img src="img/martina-klein-261-shopping-flingern.jpg" /></li>
+                    <li><!-- 4 --><img src="img/martina-klein-157-blaue-wand-rote-tasche.jpg" ></li>
+                    <li><!-- 5 --><img src="img/martina-klein-304-hemd-umgekehrt.jpg" ></li>
+                    <!-- erneut Bilder 1 und 2 für breite Anzeige mit 3 Bildern nebeneinander -->
+                    <li><!-- 1 --><img src="img/martina-klein-212.jpg" /></li>
+                    <li><!-- 2 --><img src="img/martina-klein-073-kunstsammlung.jpg" /></li>
+                </ul>
+            </div>
           <div id="showcontact" class="kontaktlinks">
             <!-- id 'showcontact' adds click handler for tab change -->
             <a href="#kontakt">Impressum</a> /
@@ -146,6 +158,35 @@
         <article>
           <h2>Impressionen, Eindrücke, Erfahrungen</h2>
           <div class="gallery">
+            <!-- TODO wenn die Bilder ohnehin größer sind als dargestellt,
+                 dann könnte man einen Lightbox-Zoom auch mit reiner CSS-Animation bauen?
+                 onClick animate to big, on click or click outside shrink back
+                 lightbox:target
+                 thumb    -> href: #lightbox
+                 lightbox -> href: #_
+                 Nachteile: Bilder redundant eingebunden, hidden Container,
+                            potenzielle Konflikte mit Fragment-IDs für Tabnavi?!
+                 Vorteil: deeplink zu großem Bild möglich
+
+                 JS:
+                 click handler auf den image container,
+                 den Auslöser finden (ggf. Tab-Code wiederverwenden?)
+                 und das entsprechende Bild vergrößern, alle anderen verkleinern
+                 (das wäre mit class change wie bei den Tabs unschön,
+                  zumal mit steigender Anzahl an Bildern vielleicht unperformant)
+                 (ist es besser, in einem bestehenden lightboxelement jeweils das
+                  image-element, oder aber die src (u.ggf.geometry) eines Bildes zu tauschen,
+                  hat den Vorteil, dass man ansonsten nichts früheres deaktivieren muss;
+                  und einen backdrop auf der ganzen seite mit 1% opacity fast unsichtbar
+                  aber aktiv, der den click handler für close enthält;
+                  in dieser Lightbox kann man dann optional noch mit Pfeilen navigieren;
+                  ABER vermeiden, hier 2 parallele redundante slider-implementationen
+                       zu bauen vgl. Startseitenslider welcher aber minimal pur CSS)
+
+                 Die Größe auf die native Größe der Bilder begrenzen!
+                 Als Fallback genügt es im schlimmsten Falle, dass nichts stört
+                 und die Bilder einfach wie früher ohne Aktion bleiben.
+              -->
             <img src="img/martina-klein-212.jpg" class="float" width="198" height="198" alt="Foto">
             <img src="img/martina-klein-073-kunstsammlung.jpg" class="float" width="198" height="198" alt="Foto an der Kunstsammlung NRW in Düsseldorf">
             <img src="img/martina-klein-261-shopping-flingern.jpg" class="float" width="198" height="198" alt="Martina Klein: Shopping in Flingern">
@@ -176,6 +217,7 @@
       <label for="Nachricht">
         <textarea name="Nachricht" id="Nachricht" placeholder="Meine Nachricht an Martina Klein" label="Meine Nachricht an Martina Klein"></textarea>
       </label>
+      <!-- TODO Der folgende Datenschutztext ist für mobile zu lang oder groß -->
       <label for="Datenschutzerklaerung_zur_Kenntnis genommen">
         <textarea name="Datenschutzhinweis" id="Datenschutzhinweis" readonly="readonly" placeholder="Meine Kontaktdaten werden zwecks eventueller vorvertraglicher Maßnahmen übermittelt und gespeichert. Die Datenschutzerklärung informiert über Rechtsgrundlage, Art der Datenverarbeitung, Lösch- und Widerrufsmöglichkeit.
 Es gelten die allgemeinen Geschäftsbedingungen."></textarea>
