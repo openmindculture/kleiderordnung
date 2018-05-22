@@ -170,7 +170,22 @@ helper.tab = {
     }
     helper.track.pageview(idtoshow);
   }
-}
+};
+
+helper.gallery = {
+  lightbox : undefined,
+  toggle : function(e) {
+    let target = e.target || e.srcElement;
+    lightbox = helper.gallery.lightbox || document.getElementById('lightbox');
+    helper.gallery.lightbox = lightbox;
+    if ('IMG'===target.tagName && 'lightbox'!==target.id) {
+      lightbox.src = target.src;
+      helper.class.remove(lightbox, 'hidden');
+    } else {
+      helper.class.add(lightbox, 'hidden');
+    }
+  }
+};
 
 helper.track = {
   pageview : function(pageid) {
@@ -202,7 +217,7 @@ helper.track = {
       d.head.appendChild(g);
     })();
   }
-}
+};
 
 
 helper.form = {
@@ -233,7 +248,7 @@ helper.form = {
     //All preperations are clear, send the request!
     xhr.send(params);
   }
-}
+};
 
 /* attach link handlers for nice tab navigation effect */
 /* TODO wirklich barrierefrei sollte der Tabbereich initial ausgeklappt sein
@@ -261,12 +276,13 @@ helper.event.ready(function(){
             caller.getAttribute('href')==='#datenschutz'
             )
           ) {scrollto=false;}
-      var target = document.getElementById("link-kontakt");
+      var target = document.getElementById('link-kontakt');
       if (target) {
-        helper.tab.showByName("kontakt",target,scrollto);
+        helper.tab.showByName('kontakt',target,scrollto);
       }
     }
   );
+  helper.event.addListener(document.getElementById('gallery'),'click',helper.gallery.toggle);
 
   var contactform = document.getElementById('kontaktformular');
   /* submit by AJAX - TODO just leave default for elderly browsers */
