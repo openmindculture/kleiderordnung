@@ -192,7 +192,7 @@ helper.track = {
         ['trackPageView']
     );
     (function() {
-      var u="//piwik.kleiderordnung-duesseldorf.de/";
+      var u="//www.kleiderordnung-duesseldorf.de/piwik/";
       window._paq.push(
         ['setTrackerUrl', u+'js/'],
         ['setSiteId', '1']
