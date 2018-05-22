@@ -8,9 +8,9 @@ Web development by Ingo Steinke.
 
 http://www.kleiderordnung-duesseldorf.de/ (production: master branch)
 
-http://qa.kleiderordnung-duesseldorf.de/ (preview: dev branch)
+https://www.kleiderordnung-duesseldorf.de/beta/ (preview: dev branch)
 
-http://piwik.kleiderordnung-duesseldorf.de/ (statistics)
+https://www.kleiderordnung-duesseldorf.de/piwik/ (statistics)
 
 ## DEPENDENCIES
 
@@ -20,7 +20,7 @@ http://piwik.kleiderordnung-duesseldorf.de/ (statistics)
 ### Production
 * Apache webserver (HTTP header settings in .htaccess)
 * PHP (with email service, to send contact form)
-* Piwik analytics installed at piwik.kleiderordnung-duesseldorf.de
+* Piwik analytics installed at www.kleiderordnung-duesseldorf.de/piwik
 
 
 ## BUILD TARGETS
