@@ -470,6 +470,11 @@ ul.tablist {
   & .captcha {
     display: none;
   }
+  & .homepage {
+    opacity: 0.1;
+    height: 1px;
+    overflow: hidden;
+  }
 }
 
 /* media queries */

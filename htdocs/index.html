@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="de" manifest="offline.appcache?v=14"><!-- change manifest content after html content change -->
+<html lang="de" manifest="offline.appcache?v=15"><!-- change manifest content after html content change -->
 <head>
   <meta charset="utf-8">
   <title>Kleiderordnung - Ihr roter Faden zum eigenen Stil -
   meine Modeberaterin und Stylistin Martina Klein in Düsseldorf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="css/styles.css?v=14">
+  <link rel="stylesheet" type="text/css" href="css/styles.css?v=15">
   <link rel="canonical" href="http://www.kleiderordnung-duesseldorf.de/">
-  <script src="js/scripts.js?v=14" type="text/javascript"></script>
+  <script src="js/scripts.js?v=15" type="text/javascript"></script>
   <meta name="description" content="Stilberatung, Shoppingbegleitung und Kleiderschrank-Check in Düsseldorf und Umgebung">
   <meta name="keywords" content="Stilberatung,Stil,Beratung,Mode,Shopping,einkaufen,kombinieren,aussehen,aufräumen,aussortieren,Kleiderschrank,Check,Begleitung,Düsseldorf,Niederrhein,Bergisches,Land,Ruhrgebiet,Preise,Frauen,Männer,Damen,Herren">
   <meta name="author" content="ingo" >
@@ -180,13 +180,25 @@
         <textarea name="Datenschutzhinweis" id="Datenschutzhinweis" readonly="readonly" placeholder="Meine Kontaktdaten werden zwecks eventueller vorvertraglicher Maßnahmen übermittelt und gespeichert. Die Datenschutzerklärung informiert über Rechtsgrundlage, Art der Datenverarbeitung, Lösch- und Widerrufsmöglichkeit.
 Es gelten die allgemeinen Geschäftsbedingungen."></textarea>
       </label>
-      <input type="hidden" name="Referrer" id="form-referrer">
+
+      <label for="captcha" class="captcha">1+2</label>
+      <input type="text" name="Captcha" value="" class="captcha" id="captchafield">
+      <input type="text" name="Homepage" id="homepageurl" value="" class="homepage">
       <input type="submit" class="submit" value="absenden">
-      <div id=captcha><input type="text" name="recipient" value="" class="captcha" id="captchafield"></div>
       </fieldset>
+      <div id="formularsendet" class="hidden sent">
+        <aside>
+          Ihre Nachricht wird versendet ...
+        </aside>
+      </div>
       <div id="formularversandt" class="hidden sent">
         <aside>
           Vielen Dank für Ihre Nachricht!
+        </aside>
+      </div>
+      <div id="formularfehler" class="hidden sent">
+        <aside>
+          Leider konnte Ihre Nachricht nicht versendet werden.
         </aside>
       </div>
     </form>
@@ -317,7 +329,7 @@ Es gelten die allgemeinen Geschäftsbedingungen."></textarea>
 
     <p><b>Diese Website verwendet keine Cookies.</b></p>
 
-    <p>Verweise zu sozialen Netzwerken, wie beispielsweise Instagam, Pinterest, Xing oder LinkedIn, sind lediglich Links zu externen Anbietern. Anzeigen und Ansehen der dieser Verweise führt zu <b>keiner Datenübertragung an Drittanbieter</b>.</p>
+    <p>Verweise zu sozialen Netzwerken, wie beispielsweise Instagram, Pinterest, Xing oder LinkedIn, sind lediglich Links zu externen Anbietern. Anzeigen und Ansehen der dieser Verweise führt zu <b>keiner Datenübertragung an Drittanbieter</b>.</p>
 
     <p>Schriftarten, Grafiken und Scriptdateien werden ausschließlich von unseren Servern geladen, es findet kein Abruf von Google oder anderen Drittanbietern statt. Wir verzichten zudem auf Auswertungs- und Werbefunktionen externer Anbieter, daher werden auch keinerlei Daten von oder an Google Analytics oder Google AdWords übertragen.</p>
 

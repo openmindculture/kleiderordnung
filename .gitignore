@@ -53,3 +53,6 @@ material
 
 # Logfiles #
 yarn-error.loyarn-error.log
+
+# Configurations #
+config.inc.php
