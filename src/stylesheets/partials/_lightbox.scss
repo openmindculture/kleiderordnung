@@ -1,0 +1,10 @@
+#lightbox {
+    z-index: 200;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    float: none;
+    box-shadow: 0px 0px 64px 71px rgba(0,0,0,0.87);
+    transition: height 1s ease;
+}

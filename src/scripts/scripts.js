@@ -2,7 +2,8 @@
 /* common helper functions */
 
 var helper = {};
-
+// TODO refactor syntax (no empty above)
+// TODO refactor names (don't override prototype functions)
 helper.class = {
   has: function (element, className) {
     if (!element) {
