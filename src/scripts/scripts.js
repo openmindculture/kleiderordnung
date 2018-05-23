@@ -223,7 +223,7 @@ helper.track = {
 
 helper.form = {
   validate : function(e) {
-    /* TODO assure required fields or return false */
+    /* nothing is mandatory */
     return true;
   },
   ajaxPost : function(form, callback) {
@@ -236,17 +236,26 @@ helper.form = {
       '&E-Mail='+encodeURIComponent(document.getElementById('E-Mail').value)+
       '&Telefon='+encodeURIComponent(document.getElementById('Telefon').value)+
       '&Nachricht='+encodeURIComponent(document.getElementById('Nachricht').value)+
-      '&captcha='+encodeURIComponent(document.getElementById('captchafield').value);
+      '&Captcha='+encodeURIComponent(document.getElementById('captchafield').value)+
+      '&Homepage='+encodeURIComponent(document.getElementById('homepageurl').value);
     if(document.referrer){params+='Referrer='+encodeURIComponent(document.referrer)}
     xhr.open("POST", url);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.setRequestHeader("X-Requested-With", "xmlhttprequest");
 
-    //.bind ensures that this inside of the function is the XHR object.
-    xhr.onload = callback.bind(xhr);
+    helper.class.add(document.getElementById('formularfehler'), 'hidden');
+    helper.class.remove(document.getElementById('formularsendet'), 'hidden');
 
-    //All preperations are clear, send the request!
+    xhr.onload = function(){
+      helper.class.add(document.getElementById('formularsendet'), 'hidden');
+      if (xhr.status == 200) {
+        helper.class.remove(document.getElementById('formularversandt'), 'hidden');
+        helper.class.add(document.getElementById('formularfelder'), 'hidden');
+      } else {
+        helper.class.remove(document.getElementById('formularfehler'), 'hidden');
+      }
+    }
     xhr.send(params);
   }
 };
@@ -286,20 +295,8 @@ helper.event.ready(function(){
   helper.event.addListener(document.getElementById('gallery'),'click',helper.gallery.toggle);
 
   var contactform = document.getElementById('kontaktformular');
-  /* submit by AJAX - TODO just leave default for elderly browsers */
   contactform.onsubmit = function(e) {
     e.preventDefault();
-    document.getElementById('form-referrer').value=document.referrer;
-    helper.form.ajaxPost(contactform,function(xhr){
-        if (xhr) {/* TODO properly check success */
-          helper.class.remove(document.getElementById('formularversandt'), 'hidden');
-          helper.class.add(document.getElementById('formularfelder'), 'hidden');
-        }
-      }
-    );
+    helper.form.ajaxPost(contactform);
   };
-
-  /* TODO make available offline as a progressive web app
-   https://developers.google.com/web/fundamentals/getting-started/codelabs/offline/
-   */
 });

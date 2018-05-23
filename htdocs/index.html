@@ -224,13 +224,25 @@
         <textarea name="Datenschutzhinweis" id="Datenschutzhinweis" readonly="readonly" placeholder="Meine Kontaktdaten werden zwecks eventueller vorvertraglicher Maßnahmen übermittelt und gespeichert. Die Datenschutzerklärung informiert über Rechtsgrundlage, Art der Datenverarbeitung, Lösch- und Widerrufsmöglichkeit.
 Es gelten die allgemeinen Geschäftsbedingungen."></textarea>
       </label>
-      <input type="hidden" name="Referrer" id="form-referrer">
+
+      <label for="captcha" class="captcha">1+2</label>
+      <input type="text" name="Captcha" value="" class="captcha" id="captchafield">
+      <input type="text" name="Homepage" id="homepageurl" value="" class="homepage">
       <input type="submit" class="submit" value="absenden">
-      <div id=captcha><input type="text" name="recipient" value="" class="captcha" id="captchafield"></div>
       </fieldset>
+      <div id="formularsendet" class="hidden sent">
+        <aside>
+          Ihre Nachricht wird versendet ...
+        </aside>
+      </div>
       <div id="formularversandt" class="hidden sent">
         <aside>
           Vielen Dank für Ihre Nachricht!
+        </aside>
+      </div>
+      <div id="formularfehler" class="hidden sent">
+        <aside>
+          Leider konnte Ihre Nachricht nicht versendet werden.
         </aside>
       </div>
     </form>
