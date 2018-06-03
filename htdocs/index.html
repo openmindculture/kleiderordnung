@@ -47,29 +47,29 @@
   </header>
   <div class="content-wrapper">
     <ul class="tablist" id="tablist">
-      <li><!-- Persona weiss auf rot -->
+      <li><!-- Persona weiss auf blau -->
         <a id="link-ueber-mich" class="link-ueber" href="#ueber-mich" data-tab="ueber-mich" title="Über mich">
         </a>
       </li>
-      <li><!-- Krawatte weiss auf blau -->
+      <li><!-- Krawatte weiss auf rot -->
         <a id="link-business" class="link-b" href="#business" data-tab="business" title="Stil für den Job, Ordnung im Kleiderschrank">
         </a>
       </li>
-      <li><!-- Kleiderbügel weiss auf rot -->
+      <li><!-- Kleiderbügel weiss auf blau -->
         <a id="link-leistungen" class="link-leistungen active" href="#leistungen" data-tab="leistungen" title="Leistungen">
-        </a>
-      </li>
-      <li><!-- Briefumschlag weiss auf blau -->
-        <a id="link-kontakt" class="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt / Impressum / AGB / Datenschutz">
         </a>
       </li>
       <li ><!-- Bildsymbol weiss auf rot -->
         <a id="link-media" class="link-media" href="#media" data-tab="media" title="Impressionen, Eindrücke">
         </a>
       </li>
+      <li><!-- Briefumschlag weiss auf blau -->
+        <a id="link-kontakt" class="link-kontakt" href="#kontakt" data-tab="kontakt" title="Kontakt / Impressum / AGB / Datenschutz">
+        </a>
+      </li>
     </ul>
     <section class="tabs" id="tabcontainer">
-      <div id="ueber-mich" class="hidden tab tab-red">
+      <div id="ueber-mich" class="hidden tab tab-blue">
         <article>
           <img class="floatcircle" src="img/Martina-Klein-Kleiderordnung.png" width="198" height="198" alt="Martina Klein (Foto)"><!-- 198 x2 =396 -->
           <h2>Über mich</h2>
@@ -86,9 +86,10 @@
 					</p>
         </article>
       </div>
-      <div id="business" class="hidden tab tab-blue">
+      <div id="business" class="hidden tab tab-red">
         <article>
-          <h2>Professioneller &amp; individueller Stil für den Job? </h2>
+          <!-- ähnl. wie rundes Bild "über mich" hier ein rundes Bild an der rechten Seite mit Testimonial -->
+          <!-- Reiter Kontakt und Galerie tauschen, dann bleiben die Farben -->
           <p>Sie wünschen sich eine professionelle aber ebenso individuelle Garderobe für den Job? Wir finden für Sie einen unkomplizierten Look,
             der Sie morgens nicht stresst, jederzeit gut und passend aussehen lässt und dennoch ihre ganz individuelle Note aufweist.</p>
           <h2>Sie haben Sehnsucht nach ORDNUNG im Kleiderschrank?</h2>
@@ -97,7 +98,7 @@
             diese Herzensstücke perfekt in ORDNUNG zu halten!</p>
         </article>
       </div>
-      <div id="leistungen" class="tab tab-red">
+      <div id="leistungen" class="tab tab-blue">
         <article>
           <div class="slider">
                 <ul>
@@ -136,22 +137,6 @@
           Diese ersten Eindrücke, Kenntnisse und Notizen nehme ich als Grundlage, Ihnen den zeitlichen und preislichen
           Umfang meiner Beratung zu nennen und mich vor allem optimal auf unseren Termin vorzubereiten. </p>
 				<h2>Ich freue mich auf Ihren Auftrag.</h2>
-        </article>
-      </div>
-      <div id="kontakt" class="hidden tab tab-blue">
-        <article>
-          <h2>
-            Kontakt / Impressum / AGB
-          </h2>
-          <address class="vcard">
-            <div>
-              <h1 class="fn" itemprop="name"><img src="img/Martina-Klein.svg" alt="Martina Klein" width="438" height="119"></h1>
-              <div class="jobtitle" itemprop="jobTitle">Modeberaterin und Stylistin</div>
-              <a class="telephone" itemprop="telephone" href="tel:+491625445028">0 162 . 54 450 28</a>
-              <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
-              <a itemscope="url" href="//www.kleiderordnung-duesseldorf.de/">www.kleiderordnung-duesseldorf.de</a>
-            </div>
-          </address>
         </article>
       </div>
       <div id="media" class="hidden tab tab-red">
@@ -198,6 +183,22 @@
 
             <img id="lightbox" class="lightbox hidden" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
           </div>
+        </article>
+      </div>
+      <div id="kontakt" class="hidden tab tab-blue">
+        <article>
+          <h2>
+            Kontakt / Impressum / AGB
+          </h2>
+          <address class="vcard">
+            <div>
+              <h1 class="fn" itemprop="name"><img src="img/Martina-Klein.svg" alt="Martina Klein" width="438" height="119"></h1>
+              <div class="jobtitle" itemprop="jobTitle">Modeberaterin und Stylistin</div>
+              <a class="telephone" itemprop="telephone" href="tel:+491625445028">0 162 . 54 450 28</a>
+              <a class="email" itemprop="email" itemscope="email" href="mailto:mklein@meine-modeberaterin.de">mklein@meine-modeberaterin.de</a>
+              <a itemscope="url" href="//www.kleiderordnung-duesseldorf.de/">www.kleiderordnung-duesseldorf.de</a>
+            </div>
+          </address>
         </article>
       </div>
     </section><!-- /section.tabcontainer -->

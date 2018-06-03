@@ -129,14 +129,14 @@ ul.tablist {
     }
 
     &:nth-child(even) a {
-      background-color: $blue;
+      background-color: $red;
     }
   }
 
   & a {
     width: 100%;
     margin: 0;
-    background-color: $red;
+    background-color: $blue;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 62% 62%;
