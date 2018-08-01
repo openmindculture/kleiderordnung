@@ -310,19 +310,62 @@ ul.tablist {
   }
 
   & img {
-    /* pragmatisch quadratisch: mehr als 100% erlauben und den Rest mit Overflow abschneiden */
-    width: 30%;
-    height: auto;
-    margin-right: 2%;
-    margin-left: 2%;
+    border-radius: .75em;
     margin-bottom: 1.25em;
-    border-radius: 1.25em;
+    height: auto;
+  }
 
-    &:first-child, &:nth-child(3n+1) {
-      margin-left: 0;
+  & .column {
+    float: left;
+    margin-right: .625em;
+    &.portraits { 
+      width: 27%; 
     }
+    &.landscapes {
+      width: 40%; 
+    }
+    &.column3 {
+      margin-right: 0;
+    }
+    & img {
+      width: 100%;
+      height: auto;
+      margin-bottom: .5em;
+    }
+    &.portraits img {
+      margin-bottom: .75em;
+    }
+  }
+}
 
-    &:last-child, &:nth-child(3) {
+@media screen and (max-width: $breakpoint_twocol) {
+  .gallery {
+    .column.column1 {
+      width: 37%;
+      margin-right: 1em;
+    } 
+    .column.column2 {
+      width: 55%;
+      margin-right: 0;
+    }
+    .column.column3 {
+      width: 100%;
+      clear: left;
+      float: none;
+      margin-right: 0;
+    }
+    .column.column3 > img {
+      float: left;
+      width: 46%;
+      margin-right: 5%;
+    }
+    .column > img {
+      margin-bottom: .75em;
+    }
+    .column.column2 > img {
+      margin-bottom: .325em;
+    }
+    .column.column3 > img:last-child {
       margin-right: 0;
     }
   }
@@ -466,29 +509,9 @@ ul.tablist {
     width: 12%;
     margin: 0 3% 0 3%;
   }
-  /* 2 column gallery */
-  .gallery img {
-    width: 48%;
-    &:nth-child(3n+1) {
-      margin-left: 2%;
-    }
-    &:first-child, &:nth-child(2n+1) {
-      margin-left: 0;
-    }
-    &:last-child, &:nth-child(2) {
-      margin-right: 0;
-    }
-    margin-right: 0;
-  }
 }
 
 @media screen and (max-width: $breakpoint_onecol) {
-  /* 1 column gallery */
-  .gallery img {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
   .clearfix-wrapper {
     padding-bottom: 9em;
     max-width: 100%;
