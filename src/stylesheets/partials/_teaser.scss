@@ -1,0 +1,65 @@
+.teaser{
+    clear: both;
+    & img {
+        height: auto;
+        border-radius: 1em;
+        max-width: 100%;
+    }
+    & h3 {
+        font-size: 1.25em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: .5em;
+        border-bottom: solid 2px $white;
+        padding-bottom: .5em;
+        width: 35%;
+    }
+}
+
+.teaser-primary {
+    background-color: $white;
+    color: $red;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 3em 0 13em 0;
+    position: relative;
+    float: right;
+    right: 0;
+    width: 75%;
+    height: 7em;
+    & img.primary {
+        position: absolute;
+        top: 4em;
+        left: -24%;
+        width: 75%;
+        height: auto;
+    }
+    & h3, & p {
+        padding-left: 55%;
+    }
+}
+
+.teaser-secondary {
+    position: relative;
+    height: 20em;
+    & p {
+        float: left;
+        width: 40%;
+    }
+    & img.primary {
+        width: 50%;
+        right: 0;
+        top: -.25em;
+        position: absolute;
+    }
+    & img.secondary {
+        width: 30%;
+        position: absolute;
+        top: 55%;
+        left: 0;
+        box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+    }
+    & img.secondary:last-child {
+        left: 33%;
+    }
+}

@@ -148,45 +148,14 @@
       <div id="media" class="hidden tab tab-red">
         <article>
           <h2>Impressionen, Eindrücke, Erfahrungen</h2>
-          <div class="gallery" id="gallery">
-            <!-- TODO wenn die Bilder ohnehin größer sind als dargestellt,
-                 dann könnte man einen Lightbox-Zoom auch mit reiner CSS-Animation bauen?
-                 onClick animate to big, on click or click outside shrink back
-                 lightbox:target
-                 thumb    -> href: #lightbox
-                 lightbox -> href: #_
-                 Nachteile: Bilder redundant eingebunden, hidden Container,
-                            potenzielle Konflikte mit Fragment-IDs für Tabnavi?!
-                 Vorteil: deeplink zu großem Bild möglich
-
-                 JS:
-                 click handler auf den image container,
-                 den Auslöser finden (ggf. Tab-Code wiederverwenden?)
-                 und das entsprechende Bild vergrößern, alle anderen verkleinern
-                 (das wäre mit class change wie bei den Tabs unschön,
-                  zumal mit steigender Anzahl an Bildern vielleicht unperformant)
-                 (ist es besser, in einem bestehenden lightboxelement jeweils das
-                  image-element, oder aber die src (u.ggf.geometry) eines Bildes zu tauschen,
-                  hat den Vorteil, dass man ansonsten nichts früheres deaktivieren muss;
-                  und einen backdrop auf der ganzen seite mit 1% opacity fast unsichtbar
-                  aber aktiv, der den click handler für close enthält;
-                  in dieser Lightbox kann man dann optional noch mit Pfeilen navigieren;
-                  ABER vermeiden, hier 2 parallele redundante slider-implementationen
-                       zu bauen vgl. Startseitenslider welcher aber minimal pur CSS)
-
-                 Die Größe auf die native Größe der Bilder begrenzen!
-                 Als Fallback genügt es im schlimmsten Falle, dass nichts stört
-                 und die Bilder einfach wie früher ohne Aktion bleiben.
-              -->
-              <!-- float fallback
-                   TODO enhance: flexbox cssgrid srcset
-              -->
-              <div class="column column1 portraits">
+          <section>
+            <div class="gallery" id="gallery">
+                <div class="column column1 portraits">
                   <img src="img/test_hoch_5231.jpg" class="p" width="198" height="297" alt="Efeu und Sonnenbrille">
                   <img src="img/test_hoch_5604.jpg" class="p" width="198" height="297" alt="Kaffee trinkend">
               </div>
               <div class="column column2 landscapes">
-                  <img src="img/test_quer_5585.jpg" class="l" width="198" height="70" alt="Lesen im Café">
+                  <img src="img/test_quer_5585.jpg" srcset="img/test_quer_5585.jpg 1x, img/test_quer_5585_2x.jpg 2x" class="l" width="198" height="70" alt="Lesen im Café">
                   <img src="img/test_quer_5150.jpg" class="l" width="198" height="70" alt="Blumenstrauß">
                   <img src="img/test_quer_5628.jpg" class="l" width="198" height="70" alt="Tafel">
               </div>
@@ -194,13 +163,30 @@
                   <img src="img/test_hoch_5320.jpg" class="p" width="198" height="297" alt="Rock passend zur Wand">
                   <img src="img/test_hoch_5393.jpg" class="p" width="198" height="297" alt="gelber Container">
               </div>
-            
-
-            
-            
-
-            <img id="lightbox" class="lightbox hidden" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
-          </div>
+              <img id="lightbox" class="lightbox hidden" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+            </div>
+          </section>
+          <section>
+            <div class="teaser teaser-primary">
+              <h3>Trendalarm</h3>
+              <p>
+                Landlust ist jetzt im Trend.
+              </p>
+              <img src="img/test_quer_5143.jpg" class="primary" width="640" height="427" alt="Trendalarm Landlust">
+            </div>            
+          </section>
+          <section>
+            <div class="teaser teaser-secondary">
+              <h3>Personal Shopping<br>
+                  in Düsseldorf</h3>
+              <p>
+                Klein-Paris mit einem großen und zwei kleinen Fotos.
+              </p>
+              <img src="img/test_quad_5669.jpg" class="primary" width="640" height="640" alt="Frankreich quadratisch">
+              <img src="img/test_quer_5376.jpg" class="secondary" width="640" height="427" alt="Frankreich klein 1">
+              <img src="img/test_quer_5413.jpg" class="secondary" width="640" height="427" alt="Frankreich klein 2">
+            </div>
+          </section>
         </article>
       </div>
       <div id="kontakt" class="hidden tab tab-blue">
