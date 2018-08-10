@@ -175,16 +175,28 @@ helper.tab = {
 
 helper.gallery = {
   lightbox : undefined,
+  lightboxWrapper: undefined,
   toggle : function(e) {
-    let target = e.target || e.srcElement;
-    lightbox = helper.gallery.lightbox || document.getElementById('lightbox');
-    helper.gallery.lightbox = lightbox;
+    var target = e.target || e.srcElement;
+    this.lightbox = this.lightbox || document.getElementById('lightbox');
+    this.lightboxWrapper = this.lightboxWrapper || document.getElementById('lightbox-wrapper');
     if ('IMG'===target.tagName && 'lightbox'!==target.id) {
       lightbox.src = target.src;
-      helper.class.remove(lightbox, 'hidden');
+      if (helper.class.has(target, 'l')) {
+        helper.class.remove(this.lightbox, 'p');
+        helper.class.add(this.lightbox, 'l');
+      } else {
+        helper.class.remove(this.lightbox, 'l');
+        helper.class.add(this.lightbox, 'p');
+      }
+      helper.class.remove(this.lightboxWrapper, 'hidden');
     } else {
-      helper.class.add(lightbox, 'hidden');
+      helper.class.add(this.lightboxWrapper, 'hidden');
     }
+  },
+  hide: function(e) {
+    this.lightboxWrapper = this.lightboxWrapper || document.getElementById('lightbox-wrapper');
+    helper.class.add(this.lightboxWrapper, 'hidden');
   }
 };
 
@@ -292,7 +304,8 @@ helper.event.ready(function(){
       }
     }
   );
-  helper.event.addListener(document.getElementById('gallery'),'click',helper.gallery.toggle);
+  helper.event.addListener(document.getElementById('media'),'click',helper.gallery.toggle);
+  helper.event.addListener(document.getElementById('lightbox-wrapper'),'click',helper.gallery.hide);
 
   var contactform = document.getElementById('kontaktformular');
   contactform.onsubmit = function(e) {
