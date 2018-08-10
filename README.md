@@ -22,11 +22,13 @@ https://www.kleiderordnung-duesseldorf.de/piwik/ (statistics)
 * PHP (with email service, to send contact form)
 * Piwik analytics installed at www.kleiderordnung-duesseldorf.de/piwik
 
-
 ## BUILD TARGETS
-
 
 * **yarn run lint** run all syntax checks
   * **npm run lint-scripts** check script syntax only (JavaScript / ES6)
   * **npm run lint-styles**  check styles syntax only (CSS 3 / SASS)
 * **yarn run build** create scripts and styles for deployment
+
+## PROJECT PLANNING
+
+[trello.com/b/iqD5Vfns/kleiderordnung-website](https://trello.com/b/iqD5Vfns/kleiderordnung-website)
