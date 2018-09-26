@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# v17 (change this file after any change in html content)
+# v18 (change this file after any change in html content)
 
 # Pages that associate with a manifest become part of it.
-css/styles.css?v=17
-js/scripts.js?v=17
+css/styles.css?v=18
+js/scripts.js?v=18
 img/faden-kleider-ordnung.png
 img/faden-kleider-ordnung.svg
 img/herz-kleider-ordnung.svg
@@ -15,6 +15,19 @@ img/icon-ueber-mich.svg
 img/kleider-ordnung-logo.png
 img/Martina-Klein.svg
 img/Martina-Klein-Kleiderordnung.png
+img/Tina_Klein-5407.jpg
+img/Tina_Klein-5277.jpg
+img/Tina_Klein-5384.jpg
+img/Tina_Klein-5628.jpg
+img/Tina_Klein-5150.jpg
+img/Tina_Klein-Festival.jpg
+img/Tina_Klein-5118.jpg
+img/Tina_Klein-5232_quad.jpg
+img/Tina_Klein-5628_quad.jpg
+img/Tina_Klein-5143_quad.jpg
+img/Tina_Klein-5118_quad.jpg
+img/Tina_Klein-5202_quad.jpg
+img/Tina_Klein-5529_quad.jpg
 fonts/average.woff
 fonts/average.ttf
 fonts/average.eot
