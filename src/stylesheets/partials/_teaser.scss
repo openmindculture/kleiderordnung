@@ -94,5 +94,12 @@
             float: right;
             left: 0;
         }
+        & .content {
+          position: relative;
+          p {
+            clear: both;
+            width: 100%;
+            }
+          }
     }
 }

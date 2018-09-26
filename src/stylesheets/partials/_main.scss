@@ -529,9 +529,9 @@ ul.tablist {
 /* todo even smaller screens, and any incapable client should fall back to a rollout version like media print */
 
 @media print {
-  .hidden {
+  /* .hidden {
     display: block !important;
-  }
+  } */
 
   .tab {
     color: #000 !important;
@@ -572,5 +572,10 @@ ul.tablist {
   #agb {
     position: relative !important;
     color: #000 !important;
+  }
+
+  #lightbox,
+  aside div#lightbox-wrapper  {
+    display: none !important;
   }
 }
