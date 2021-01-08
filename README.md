@@ -6,9 +6,7 @@ Web development by Ingo Steinke.
 
 ## DOMAINS
 
-http://www.kleiderordnung-duesseldorf.de/ (production: master branch)
-
-https://www.kleiderordnung-duesseldorf.de/beta/ (preview: dev branch)
+http://www.kleiderordnung-duesseldorf.de/
 
 https://www.kleiderordnung-duesseldorf.de/piwik/ (statistics)
 
