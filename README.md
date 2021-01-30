@@ -10,13 +10,15 @@ Web development by Ingo Steinke.
 
 ![Screenshot intro on broad landscape screen](material/screenshot-broad-landscape.jpg)
 
+### gallery page, mobile
+
+![Screenshot gallery page](material/screenshot-gallery.jpg)
+
+
 ### gallery page, laptop
 
 ![Screenshot mobile (emulated Galaxy S5)](material/screenshot-mobile.jpg)
 
-### gallery page, mobile
-
-![Screenshot gallery page](material/screenshot-gallery.jpg)
 
 ## DOMAINS
 
