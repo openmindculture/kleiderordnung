@@ -4,6 +4,22 @@ Small business website as a responsive single page application.
 Images and original CI by Vivien Kruggel.
 Web development by Ingo Steinke.
 
+## SCREENSHOTS
+
+### intro, large screen
+
+![Screenshot intro on broad landscape screen](material/screenshot-broad-landscape.jpg)
+
+### gallery page, mobile (emulated)
+
+![Screenshot mobile (emulated Galaxy S5)](material/screenshot-mobile.jpg)
+
+
+### gallery page, laptop
+
+![Screenshot gallery page](material/screenshot-gallery.jpg)
+
+
 ## DOMAINS
 
 http://www.kleiderordnung-duesseldorf.de/
