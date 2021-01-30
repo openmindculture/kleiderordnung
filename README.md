@@ -6,9 +6,9 @@ Web development by Ingo Steinke.
 
 ## SCREENSHOTS
 
-![Screenshot intro on broad landscape screen](screenshot-broad-landscape.jpg)
-![Screenshot gallery page](material/screenshot-gallery.jpg)
+![Screenshot intro on broad landscape screen](material/screenshot-broad-landscape.jpg)
 ![Screenshot mobile (emulated Galaxy S5)](material/screenshot-mobile.jpg)
+![Screenshot gallery page](material/screenshot-gallery.jpg)
 
 ## DOMAINS
 
