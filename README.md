@@ -10,7 +10,7 @@ Web development by Ingo Steinke.
 
 ![Screenshot intro on broad landscape screen](material/screenshot-broad-landscape.jpg)
 
-### gallery page, mobile
+### gallery page, mobile (emulated)
 
 ![Screenshot mobile (emulated Galaxy S5)](material/screenshot-mobile.jpg)
 
