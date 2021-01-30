@@ -12,12 +12,12 @@ Web development by Ingo Steinke.
 
 ### gallery page, mobile
 
-![Screenshot gallery page](material/screenshot-gallery.jpg)
+![Screenshot mobile (emulated Galaxy S5)](material/screenshot-mobile.jpg)
 
 
 ### gallery page, laptop
 
-![Screenshot mobile (emulated Galaxy S5)](material/screenshot-mobile.jpg)
+![Screenshot gallery page](material/screenshot-gallery.jpg)
 
 
 ## DOMAINS
