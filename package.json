@@ -19,7 +19,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "force-resolutions": "^1.0.9",
-    "node-sass": "^6.0.0",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.1",
     "stylelint": "^13.0.0",
     "stylelint-config-standard": "^22.0.0"
