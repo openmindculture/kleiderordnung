@@ -53,9 +53,6 @@ htdocs/js
 htdocs/.htpasswd
 htdocs/beta/.htpasswd
 
-# Materialordner
-material
-
 # Logfiles #
 yarn-error.loyarn-error.log
 
