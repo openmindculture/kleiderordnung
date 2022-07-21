@@ -284,7 +284,7 @@ ul.tablist {
 
   & .social {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 1em auto 0 auto;
     width: 8em;
     & a {
@@ -292,6 +292,11 @@ ul.tablist {
       padding: 0 .25em;
       & svg {
         border-radius: .125em;
+        height: 36px;
+        width: auto;
+      }
+      & + a {
+        margin-left: .5em;
       }
     }
   }
@@ -587,7 +592,7 @@ ul.tablist {
 
 .dot-after::after {
   content: ".";
-  letter-spacing: .25rem;
+  margin-left: .25rem;
 }
 
 .sticker {
