@@ -284,7 +284,7 @@ ul.tablist {
 
   & .social {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 1em auto 0 auto;
     width: 8em;
     & a {
@@ -292,6 +292,11 @@ ul.tablist {
       padding: 0 .25em;
       & svg {
         border-radius: .125em;
+        height: 36px;
+        width: auto;
+      }
+      & + a {
+        margin-left: .5em;
       }
     }
   }
@@ -577,5 +582,35 @@ ul.tablist {
   #lightbox,
   aside div#lightbox-wrapper  {
     display: none !important;
+  }
+}
+
+.visually-spaced+.visually-spaced::before {
+  content: " ";
+  letter-spacing: .25rem;
+}
+
+.dot-after::after {
+  content: ".";
+  margin-left: .25rem;
+}
+
+.sticker {
+  border: solid 0 transparent;
+  border-radius: 5px;
+  width: 200px;
+  height: auto;
+  background: rgba(255,0,0,.75);
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  font-size: 0.95em;
+  font-weight: bold;
+  position: absolute;
+  transform: rotate(7deg);
+  right: 10%;
+  top: 2rem;
+  @media screen and (max-width: $breakpoint_twocol) {
+    top: 7rem;
   }
 }

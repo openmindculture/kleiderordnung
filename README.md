@@ -1,8 +1,10 @@
 # Kleiderordnung-Duesseldorf.de
 
 Small business website as a responsive single page application.
-Images and original CI by Vivien Kruggel.
-Web development by Ingo Steinke.
+Images and original design by Vivien Kruggel,
+web development by Ingo Steinke in 2016.
+
+Content update in 2022: contact update, teaser for upcoming https://www.kleiderordnung-berlin.de/
 
 ## SCREENSHOTS
 
@@ -24,8 +26,6 @@ Web development by Ingo Steinke.
 
 http://www.kleiderordnung-duesseldorf.de/
 
-https://www.kleiderordnung-duesseldorf.de/piwik/ (statistics)
-
 ## DEPENDENCIES
 
 ### Development
@@ -34,7 +34,6 @@ https://www.kleiderordnung-duesseldorf.de/piwik/ (statistics)
 ### Production
 * Apache webserver (HTTP header settings in .htaccess)
 * PHP (with email service, to send contact form)
-* Piwik analytics installed at www.kleiderordnung-duesseldorf.de/piwik
 
 ## BUILD TARGETS
 
