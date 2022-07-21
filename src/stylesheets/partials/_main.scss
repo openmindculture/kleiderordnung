@@ -579,3 +579,13 @@ ul.tablist {
     display: none !important;
   }
 }
+
+.visually-spaced+.visually-spaced::before {
+  content: " ";
+  letter-spacing: .25rem;
+}
+
+.dot-after::after {
+  content: ".";
+  letter-spacing: .25rem;
+}
