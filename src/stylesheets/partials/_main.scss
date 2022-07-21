@@ -590,14 +590,16 @@ ul.tablist {
   letter-spacing: .25rem;
 }
 
-.teaser {
-  border: solid 1px red;
+.sticker {
+  border: solid 0 transparent;
   border-radius: 5px;
   width: 200px;
   height: auto;
-  background: red;
-  color: white;
-  padding: 0.5rem;
+  background: rgba(255,0,0,.75);
+  box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+  color: #ffffff;
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  font-size: 0.95em;
   font-weight: bold;
   position: absolute;
   transform: rotate(7deg);
