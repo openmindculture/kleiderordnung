@@ -589,3 +589,21 @@ ul.tablist {
   content: ".";
   letter-spacing: .25rem;
 }
+
+.teaser {
+  border: solid 1px red;
+  border-radius: 5px;
+  width: 200px;
+  height: auto;
+  background: red;
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+  position: absolute;
+  transform: rotate(7deg);
+  right: 10%;
+  top: 2rem;
+  @media screen and (max-width: $breakpoint_twocol) {
+    top: 7rem;
+  }
+}
