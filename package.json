@@ -1,6 +1,6 @@
 {
   "name": "kleiderordnung",
-  "version": "1.6.0",
+  "version": "2.1.0",
   "description": "website www.kleiderordnung-duesseldorf.de",
   "main": "index.js",
   "repository": "git@github.com:openmindculture/kleiderordnung.git",

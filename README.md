@@ -4,7 +4,7 @@ Small business website as a responsive single page application.
 Images and original design by Vivien Kruggel,
 web development by Ingo Steinke in 2016.
 
-Content update in 2022: contact update, teaser for upcoming https://www.kleiderordnung-berlin.de/
+Content update in 2022: contact update, teaser for upcoming [www.kleiderordnung-berlin.de/](http://www.kleiderordnung-berlin.de/)
 
 ## SCREENSHOTS
 
