@@ -2,9 +2,9 @@
 
 Small business website as a responsive single page application.
 Images and original design by Vivien Kruggel,
-web development by Ingo Steinke in 2016.
+[web development by Ingo Steinke](https://www.ingo-steinke.de/) in 2016.
 
-Content update in 2022: contact update, teaser for upcoming [www.kleiderordnung-berlin.de/](http://www.kleiderordnung-berlin.de/)
+Content update in 2022/2023: contact information, teaser for upcoming [www.kleiderordnung-berlin.de](http://www.kleiderordnung-berlin.de/)
 
 ## SCREENSHOTS
 
@@ -42,6 +42,4 @@ http://www.kleiderordnung-duesseldorf.de/
   * **npm run lint-styles**  check styles syntax only (CSS 3 / SASS)
 * **yarn run build** create scripts and styles for deployment
 
-## PROJECT PLANNING
 
-[trello.com/b/iqD5Vfns/kleiderordnung-website](https://trello.com/b/iqD5Vfns/kleiderordnung-website)
