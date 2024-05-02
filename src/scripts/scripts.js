@@ -306,10 +306,4 @@ helper.event.ready(function(){
   );
   helper.event.addListener(document.getElementById('media'),'click',helper.gallery.toggle);
   helper.event.addListener(document.getElementById('lightbox-wrapper'),'click',helper.gallery.hide);
-
-  var contactform = document.getElementById('kontaktformular');
-  contactform.onsubmit = function(e) {
-    e.preventDefault();
-    helper.form.ajaxPost(contactform);
-  };
 });
