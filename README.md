@@ -24,7 +24,13 @@ Content update in 2022/2023: contact information, teaser for upcoming [www.kleid
 
 ## DOMAINS
 
-http://www.kleiderordnung-duesseldorf.de/
+https://www.kleiderordnung-duesseldorf.de/
+
+### Related Domains, Partners, SEM/SEO
+
+- https://kleiderordnung.berlin/
+- http://www.stilberatung-duesseldorf.de
+- https://meine-modeberaterin.de
 
 ## DEPENDENCIES
 
