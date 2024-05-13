@@ -26,11 +26,13 @@ Content update in 2022/2023: contact information, teaser for upcoming [www.kleid
 
 https://www.kleiderordnung-duesseldorf.de/
 
-### Related Domains, Partners, SEM/SEO
+### Related Domains, Partners, SEM/SEO Projects and Work in Progress
 
 - https://kleiderordnung.berlin/
 - http://www.stilberatung-duesseldorf.de
+- https://slow-fashion-mode.wikidot.com
 - https://meine-modeberaterin.de
+- https://mklein04.wixsite.com/slow-fashion-inspira
 
 ## DEPENDENCIES
 
